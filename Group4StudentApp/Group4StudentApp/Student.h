@@ -25,7 +25,7 @@ namespace SpaghettiLizards
 		//Email
 		Email mail;
 
-		//
+		//I am bad at coding
 
 
 	public:

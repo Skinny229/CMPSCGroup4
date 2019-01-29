@@ -25,7 +25,8 @@ namespace SpaghettiLizards
 		//Email
 		Email mail;
 
-		//I am bad at coding
+		//Phone number 
+		PhoneNumber number;
 
 
 	public:

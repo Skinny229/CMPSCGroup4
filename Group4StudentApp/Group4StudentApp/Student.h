@@ -25,7 +25,8 @@ namespace SpaghettiLizards
 		//Email
 		Email mail;
 
-		//
+		//Phone number 
+		PhoneNumber number;
 
 
 	public:

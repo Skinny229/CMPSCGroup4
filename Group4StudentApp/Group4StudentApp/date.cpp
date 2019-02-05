@@ -2,9 +2,9 @@
 #include <cstdlib>
 #include "date.h"
 using namespace std;
-using namespace dimperio_1;
 
-namespace dimperio_1
+
+namespace SpaghettiLizards
 {
       date::date(int mm, int dd, int yy)
       {

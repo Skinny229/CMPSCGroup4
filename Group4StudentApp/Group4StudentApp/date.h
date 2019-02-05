@@ -1,6 +1,6 @@
 #ifndef DATE_H
 #define DATE_H
-namespace dimperio_1
+namespace SpaghettiLizards
 {
 	class date
 	{

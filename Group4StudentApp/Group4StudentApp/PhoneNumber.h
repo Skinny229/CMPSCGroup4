@@ -15,7 +15,7 @@ namespace SpaghettiLizards
 		string type; 
 
 	public:
-		PhoneNumber(string number = " ",string type = " ");
+		PhoneNumber(string = " ",string = " ");
 
 	};
 

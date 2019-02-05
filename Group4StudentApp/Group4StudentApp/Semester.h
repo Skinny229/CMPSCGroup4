@@ -10,7 +10,8 @@ namespace SpaghettiLizards
 	class Semester
 	{
 	public:
-		Semester(int year = 0, string semester = " ");
+		Semester(int = 0, string = " ");
+
 	private:
 		int year;
 		string semester;

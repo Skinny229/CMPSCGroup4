@@ -11,9 +11,11 @@ namespace SpaghettiLizards
 	{
 
 	private:
-		
+		string number;
+		string type; 
 
 	public:
+		PhoneNumber(string number = " ",string type = " ");
 
 	};
 

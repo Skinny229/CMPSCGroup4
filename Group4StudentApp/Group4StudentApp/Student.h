@@ -5,6 +5,7 @@
 #include "MailingAddress.h"
 #include "Email.h"
 #include "PhoneNumber.h"
+#include "date.h"
 
 using namespace std;
 
@@ -29,10 +30,19 @@ namespace SpaghettiLizards
 		//Phone number 
 		PhoneNumber number;
 
-		//Date Class
-
+		//Important dates
+		Date birthDate;
+		Date acceptedDate;
 
 	public:
+
+		//Constructor
+		Student();
+
+		//Setters
+
+		//Getters
+
 
 	};
 

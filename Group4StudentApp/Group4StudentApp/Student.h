@@ -5,7 +5,7 @@
 #include "MailingAddress.h"
 #include "Email.h"
 #include "PhoneNumber.h"
-#include "StartSemester.h"
+#include "Semester.h"
 
 using namespace std;
 
@@ -33,7 +33,7 @@ namespace SpaghettiLizards
 		PhoneNumber phoneNumber;
 
 		//Semester
-		StartSemester semester;
+		Semester startSemester;
 
 	public:
 

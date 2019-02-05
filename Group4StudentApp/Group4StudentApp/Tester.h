@@ -19,6 +19,7 @@ namespace rlopez
 		*/
 		typedef SpaghettiLizards::Student objectType;
 
+		objectType object;
 
 		//Menu
 		vector<string> optionsMenu;
@@ -49,9 +50,10 @@ namespace rlopez
 		/*
 			PRECONDITION:
 		*/
+		void setObj(objectType obj) { object = obj; }
 		void addOptionMenu(string);
-		bool next(objectType&);
-		void test(objectType&);
+		bool next();
+		void test();
 
 
 		/*

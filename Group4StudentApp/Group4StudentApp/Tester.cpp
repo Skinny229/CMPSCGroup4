@@ -22,7 +22,7 @@ namespace rlopez
 	}
 
 	//Takes in the next selection and then executes
-	bool Tester::next(objectType& object) 
+	bool Tester::next() 
 	{
 		int selection;
 
@@ -43,9 +43,9 @@ namespace rlopez
 	}
 
 	//Same as next, but this will run until the execOption returns false
-	void Tester::test(objectType& object) 
+	void Tester::test() 
 	{
-		while (next(object));
+		while (next());
 		
 	}
 

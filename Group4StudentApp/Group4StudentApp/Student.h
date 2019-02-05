@@ -14,6 +14,7 @@ namespace SpaghettiLizards
 	{
 
 	private:
+
 		//Name of the Student
 		string firstName, middleName, lastName;
 		//ID's
@@ -27,6 +28,8 @@ namespace SpaghettiLizards
 
 		//Phone number 
 		PhoneNumber number;
+
+		//Date Class
 
 
 	public:

@@ -1,16 +1,16 @@
 #pragma once
-#ifndef SEMESTER_H
-#define SEMESTER_H
+#ifndef STARTSEMESTER_H
+#define STARTSEMESTER_H
 #include <string>
 
 using namespace std;
 
 namespace SpaghettiLizards
 {
-	class Semester
+	class StartSemester
 	{
 	public:
-		Semester(int = 0, string = " ");
+		StartSemester(int = 0, string = " ");
 
 	private:
 		int year;

@@ -2,6 +2,7 @@
 #ifndef PHONENUMBER_H
 #define PHONENUMBER_H
 #include <string>
+#include <ostream>
 
 using namespace std;
 
@@ -17,9 +18,10 @@ namespace SpaghettiLizards
 	public:
 		PhoneNumber(string = " ",string = " ");
 		void setPhoneNumber(string,string);
-		void displayPhoneNumber();
-
+		string getNumber() const;
+		string getType() const;
 	};
-
+	
+	ostream& operator << (ostream& , const PhoneNumber&);
 }
 #endif

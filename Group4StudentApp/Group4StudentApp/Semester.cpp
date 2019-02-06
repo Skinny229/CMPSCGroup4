@@ -1,6 +1,8 @@
 #include<iostream>
 #include <cstdlib>
 #include "Semester.h"
+#include <string>
+#include <ostream>
 using namespace std;
 
 
@@ -16,8 +18,16 @@ namespace SpaghettiLizards
 		year = year1;
 		springOrFall = springOrFall1;
 	}
-	void Semester::displaySemester()
+	int Semester::getYear() const
 	{
-		cout << "The semester is in the " << springOrFall << ". The year is " << year << endl;
+		return year;
+	}
+	string Semester::getSpringOrFall() const
+	{
+		return springOrFall;
+	}
+	ostream& operator << (ostream&, const Semester& s)
+	{
+		cout << p.getYear() << p.getSpringOrFall() << endl;
 	}
 }

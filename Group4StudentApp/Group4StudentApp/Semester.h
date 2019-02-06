@@ -3,6 +3,7 @@
 #define SEMESTER_H
 #include <string>
 
+#include <ostream>
 using namespace std;
 
 namespace SpaghettiLizards
@@ -12,10 +13,12 @@ namespace SpaghettiLizards
 	public:
 		Semester(int = 0, string = " ");
 		void setSemester(int, string);
-		void displaySemester();
+		int getYear() const ;
+		string getSpringOrFall() const;
 	private:
 		int year;
 		string springOrFall;
 	};
+	ostream& operator << (ostream&, const Semester&);
 }
 #endif

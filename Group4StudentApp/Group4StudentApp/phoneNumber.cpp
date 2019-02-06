@@ -1,6 +1,8 @@
 #include<iostream>
 #include <cstdlib>
 #include "phoneNumber.h"
+#include <string>
+#include <ostream>
 using namespace std;
 
 
@@ -16,8 +18,16 @@ namespace SpaghettiLizards
 		number = number1;
 		homeOrMobile = homeOrMobile1;
 	}
-	void PhoneNumber::displayPhoneNumber()
+	string PhoneNumber::getNumber() const
 	{
-		cout << "The " << homeOrMobile << " phone number is: " << number << endl;
+		return number;
+	}
+	string PhoneNumber::getType() const
+	{
+		return homeOrMobile;
+	}
+	ostream& operator << (ostream&, const PhoneNumber& p)
+	{
+		cout << p.getNumber() << p.getType() << endl;
 	}
 }

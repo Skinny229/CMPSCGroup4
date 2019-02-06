@@ -15,30 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Student.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MailingAddress.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Email.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PhoneNumber.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tester.h">
+    <ClInclude Include="Student.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Email.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Semester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Student.cpp">
+    <ClCompile Include="Semester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Group4_Milestone1_Test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tester.cpp">
+    <ClCompile Include="phoneNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

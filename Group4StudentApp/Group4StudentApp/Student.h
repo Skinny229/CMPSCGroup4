@@ -15,6 +15,7 @@ namespace SpaghettiLizards
 	{
 
 	private:
+
 		//Name of the Student
 		string firstName, middleName, lastName;
 		//ID's

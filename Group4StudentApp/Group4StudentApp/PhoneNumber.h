@@ -12,10 +12,12 @@ namespace SpaghettiLizards
 
 	private:
 		string number;
-		string type; 
+		string homeOrMobile;
 
 	public:
 		PhoneNumber(string = " ",string = " ");
+		void setPhoneNumber(string,string);
+		void displayPhoneNumber();
 
 	};
 

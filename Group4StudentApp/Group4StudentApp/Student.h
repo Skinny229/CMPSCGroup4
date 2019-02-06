@@ -27,10 +27,10 @@ namespace SpaghettiLizards
 		MailingAddress address;
 
 		//Email
-		Email mail;
+		Email mail[3];
 
 		//Phone number
-		PhoneNumber phoneNumber;
+		PhoneNumber phoneNumber[3];
 
 		//Semester
 		Semester startSemester;

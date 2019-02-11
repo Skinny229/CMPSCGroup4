@@ -6,13 +6,13 @@ using namespace std;
 
 namespace SpaghettiLizards
 {
-      date::date(int mm, int dd, int yy)
+      Date::Date(int mm, int dd, int yy)
       {
             month = mm;
             day = dd;
             year = yy;
       }
-      void date::setdate(int mm, int dd, int yy)
+      void Date::setdate(int mm, int dd, int yy)
       {
             //precondition: Values passed for month, day and year must be of type integer
             //postcondition: The date has been set
@@ -20,7 +20,7 @@ namespace SpaghettiLizards
             day = dd;
             year = yy;
       }
-      void date::showdate( )
+      void Date::showdate( )
       {
             cout << "The date is " << month << "/" << day << "/" << year << "\n";
       }

@@ -37,7 +37,7 @@ namespace SpaghettiLizards
 	public:
 
 		//Constructor
-		Student();
+		Student(string,string,string,int,int,MailingAddress,Email,PhoneNumber,Date,Date);
 
 		//Setters
 

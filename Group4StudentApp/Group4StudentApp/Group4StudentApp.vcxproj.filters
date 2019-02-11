@@ -15,28 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Email.h">
+    <ClInclude Include="Student.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MailingAddress.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PhoneNumber.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Student.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Email.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MailingAddress.cpp">
     <ClInclude Include="Email.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Semester.h">
+    <ClInclude Include="PhoneNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="date.h">
@@ -44,10 +35,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Semester.cpp">
+    <ClCompile Include="Student.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="phoneNumber.cpp">
+    <ClCompile Include="Group4_Milestone1_Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="date.cpp">

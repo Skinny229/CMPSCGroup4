@@ -11,8 +11,11 @@ namespace SpaghettiLizards
 	{
 
 	private:
-	
+		//email address
+		string mail, type;
+
 	public:
+		Email(string = " ", string = " ");
 
 	};
 

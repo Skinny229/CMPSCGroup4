@@ -9,12 +9,14 @@ namespace SpaghettiLizards
 {
 	class MailingAddress
 	{
-
+	
 	private:
-
+		//address
+		string address, city, state, zip, type;
+		
 
 	public:
-
+		MailingAddress(string = " ", string = " ");
 	};
 
 }

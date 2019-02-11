@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="date.h" />
     <ClInclude Include="Email.h" />
     <ClInclude Include="MailingAddress.h" />
     <ClInclude Include="PhoneNumber.h" />
@@ -122,6 +123,7 @@
     <ClInclude Include="Tester.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="date.cpp" />
     <ClCompile Include="Group4_Milestone1_Test.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Tester.cpp" />

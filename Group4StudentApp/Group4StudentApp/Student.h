@@ -2,6 +2,7 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 #include <string>
+#include <iostream>
 #include "MailingAddress.h"
 #include "Email.h"
 #include "PhoneNumber.h"
@@ -61,7 +62,20 @@ namespace SpaghettiLizards
 		 */
 		Student(string,string,string,int,int,MailingAddress,Email,PhoneNumber,Date,Date);
 
-	
+		 
+		/*
+		 * PRECONDITION: enters valid file path
+		 * POSTCONDITION: Returns the an instanciated stu object
+		 */
+		Student getStuFromFile(string);
+
+		/*
+		 * PRECONDITION: Enters valid ostream object
+		 * 
+		 * POSTCONDITION: Prints all value content from the member variables
+		 *
+		 */
+		void printAllStuValues(ostream&);
 		
 
 		//GETTER and SETTERS by constructor order

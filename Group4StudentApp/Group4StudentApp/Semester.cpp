@@ -28,6 +28,6 @@ namespace SpaghettiLizards
 	}
 	ostream& operator << (ostream&, const Semester& s)
 	{
-		cout << p.getYear() << p.getSpringOrFall() << endl;
+		cout << s.getYear() << s.getSpringOrFall() << endl;
 	}
 }

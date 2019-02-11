@@ -36,7 +36,19 @@ namespace SpaghettiLizards
 
 	public:
 
-		//Constructor
+		/*
+		 * string firstName
+		 * string middleName
+		 * string lastName
+		 * int id
+		 * int userId
+		 * MailingAddress address
+		 * Email mail
+		 * PhoneNumber number
+		 * Date bithDate
+		 * Date accpetedDate
+		 *
+		 */
 		Student(string,string,string,int,int,MailingAddress,Email,PhoneNumber,Date,Date);
 
 		//Setters

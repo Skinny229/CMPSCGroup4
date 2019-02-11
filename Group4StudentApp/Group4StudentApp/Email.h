@@ -13,13 +13,13 @@ namespace SpaghettiLizards
 
 	private:
 		//email address
-		string mail, type;
+		string mail, universityOrPersonal;
 
 	public:
 		Email(string = " ", string = " ");
 		void setEmail(string, string);
-		string getMail();
-		string getType();
+		string getMail() const;
+		string getUniversityOrPersonal() const;
 
 	};
 	ostream& operator << (ostream&, const Email&);

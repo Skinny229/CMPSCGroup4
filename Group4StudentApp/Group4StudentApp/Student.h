@@ -30,13 +30,13 @@ namespace SpaghettiLizards
 		MailingAddress address;
 
 		//Email
-		Email mail;
+		Email mail[3];
 
 		//Important dates
 		Date birthDate;
 		Date acceptedDate;
 		//Phone number
-		PhoneNumber phoneNumber;
+		PhoneNumber phoneNumber[3];
 
 		//Semester
 		Semester startSemester;

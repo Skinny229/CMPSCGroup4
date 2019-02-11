@@ -120,10 +120,6 @@
     <ClInclude Include="MailingAddress.h" />
     <ClInclude Include="PhoneNumber.h" />
     <ClInclude Include="Student.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Email.cpp" />
-    <ClCompile Include="MailingAddress.cpp" />
     <ClInclude Include="Tester.h" />
   </ItemGroup>
   <ItemGroup>

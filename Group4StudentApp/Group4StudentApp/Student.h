@@ -6,6 +6,8 @@
 #include "Email.h"
 #include "PhoneNumber.h"
 #include "date.h"
+#include "Semester.h"
+
 
 using namespace std;
 
@@ -20,19 +22,24 @@ namespace SpaghettiLizards
 		string firstName, middleName, lastName;
 		//ID's
 		int id, userId;
-		
+		//Major and Minor
+		string intendedMajor;
+		string intendedMinor;
+
 		//Address
 		MailingAddress address;
 
 		//Email
 		Email mail;
 
-		//Phone number 
-		PhoneNumber number;
-
 		//Important dates
 		Date birthDate;
 		Date acceptedDate;
+		//Phone number
+		PhoneNumber phoneNumber;
+
+		//Semester
+		Semester startSemester;
 
 	public:
 

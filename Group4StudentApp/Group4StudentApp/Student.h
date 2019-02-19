@@ -62,12 +62,15 @@ namespace SpaghettiLizards
 		 */
 		Student(string,string,string,int,int,MailingAddress,Email,PhoneNumber,Date,Date);
 
+
 		 
 		/*
 		 * PRECONDITION: enters valid file path
 		 * POSTCONDITION: Returns the an instanciated stu object
 		 */
-		Student getStuFromFile(string);
+		void getStuFromFile(string);
+
+
 
 		/*
 		 * PRECONDITION: Enters valid ostream object

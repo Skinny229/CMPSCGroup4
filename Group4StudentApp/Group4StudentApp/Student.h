@@ -47,19 +47,19 @@ namespace SpaghettiLizards
 
 	public:
 
-		/*
-		 * string firstName
-		 * string middleName
-		 * string lastName
-		 * int id
-		 * int userId
-		 * MailingAddress address
-		 * Email mail
-		 * PhoneNumber number
-		 * Date bithDate
-		 * Date accpetedDate
-		 *
-		 */
+		
+		string firstName;
+		string middleName;
+		string lastName;
+		int id;
+		int userId;
+		MailingAddress address;
+		Email mail;
+		PhoneNumber number;
+		Date bithDate;
+		Date accepetedDate;
+		
+		
 		Student(string,string,string,int,int,MailingAddress,Email,PhoneNumber,Date,Date);
 
 		 
@@ -79,126 +79,53 @@ namespace SpaghettiLizards
 		
 
 		//GETTER and SETTERS by constructor order
-		string getFirstName() const
-		{
-			return firstName;
-		}
+		string getFirstName() const;
+		void setFirstName(string firstName);
 
-		void setFirstName(string firstName)
-		{
-			this->firstName = firstName;
-		}
+		string getMiddleName() const;
 
-		string getMiddleName() const
-		{
-			return middleName;
-		}
+		void setMiddleName(string middleName);
 
-		void setMiddleName(string middleName)
-		{
-			this->middleName = middleName;
-		}
+		string getLastName() const;
 
-		string getLastName() const
-		{
-			return lastName;
-		}
+		void setLastName(string lastName);
 
-		void setLastName(string lastName)
-		{
-			this->lastName = lastName;
-		}
+		int getId() const;
 
-		int getId() const
-		{
-			return id;
-		}
+		void setId1(int id);
 
-		void setId1(int id)
-		{
-			this->id = id;
-		}
+		int getUserId() const;
 
-		int getUserId() const
-		{
-			return userId;
-		}
+		void setUserId1(int userId);
 
-		void setUserId1(int userId)
-		{
-			this->userId = userId;
-		}
+		string getIntendedMajor() const;
 
-		string getIntendedMajor() const
-		{
-			return intendedMajor;
-		}
+		void setIntendedMajor(string intendedMajor);
 
-		void setIntendedMajor(string intendedMajor)
-		{
-			this->intendedMajor = intendedMajor;
-		}
+		string getIntendedMinor() const;
 
-		string getIntendedMinor() const
-		{
-			return intendedMinor;
-		}
+		void setIntendedMinor(string intendedMinor);
 
-		void setIntendedMinor(string intendedMinor)
-		{
-			this->intendedMinor = intendedMinor;
-		}
 
-		MailingAddress getAddress() const
-		{
-			return address;
-		}
+		MailingAddress getAddress() const;
 
-		void setAddress(MailingAddress address)
-		{
-			this->address = address;
-		}
+		void setAddress(MailingAddress address);
 
-		Date getBirthDate() const
-		{
-			return birthDate;
-		}
+		Date getBirthDate() const;
 
-		void setBirthDate(Date birthDate)
-		{
-			this->birthDate = birthDate;
-		}
+		void setBirthDate(Date birthDate);
 
-		Date getAcceptedDate() const
-		{
-			return acceptedDate;
-		}
+		Date getAcceptedDate() const;
 
-		void setAcceptedDate(Date acceptedDate)
-		{
-			this->acceptedDate = acceptedDate;
-		}
+		void setAcceptedDate(Date acceptedDate);
 
-		Semester getStartSemester() const
-		{
-			return startSemester;
-		}
+		Semester getStartSemester() const;
 
-		void setStartSemester(Semester startSemester)
-		{
-			this->startSemester = startSemester;
-		}
+		void setStartSemester(Semester startSemester);
+		string getStatus() const;
 
-		string getStatus() const
-		{
-			return status;
-		}
-
-		void setStatus(string status)
-		{
-			this->status = status;
-		}
-	};
+		void setStatus(string status);
+		
 
 }
 #endif

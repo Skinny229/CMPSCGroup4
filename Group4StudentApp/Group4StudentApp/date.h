@@ -10,8 +10,11 @@ namespace SpaghettiLizards
 		int year;
 	  public:
 		Date(int=7, int=4, int=94);  // constructor
-		void setdate(int, int, int); // member function to assign a date
-		void showdate( );            // member function to display a date
+		void setDate(int, int, int); // member function to assign a date
+		void showDate( );            // member function to display a date
+		int getMonth();
+		int getDay();
+		int getYear();
 	};
 }
 #endif

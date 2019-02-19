@@ -22,7 +22,8 @@ namespace SpaghettiLizards
 		//Name of the Student
 		string firstName, middleName, lastName;
 		//ID's
-		int id, userId;
+		int id;
+		string userId;
 		//Major and Minor
 		string intendedMajor;
 		string intendedMinor;

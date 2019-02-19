@@ -22,7 +22,8 @@ namespace SpaghettiLizards
 		//Name of the Student
 		string firstName, middleName, lastName;
 		//ID's
-		int id, userId;
+		int id;
+		string userId;
 		//Major and Minor
 		string intendedMajor;
 		string intendedMinor;
@@ -119,7 +120,7 @@ namespace SpaghettiLizards
 			this->id = id;
 		}
 
-		int getUserId() const
+		string getUserId() const
 		{
 			return userId;
 		}

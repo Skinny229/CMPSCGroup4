@@ -22,7 +22,8 @@ namespace SpaghettiLizards
 		//Name of the Student
 		string firstName, middleName, lastName;
 		//ID's
-		int id, userId;
+		int id;
+		string userId;
 		//Major and Minor
 		string intendedMajor;
 		string intendedMinor;
@@ -60,15 +61,15 @@ namespace SpaghettiLizards
 		 * Date accpetedDate
 		 *
 		 */
-		Student(string,string,string,int,int,MailingAddress,Email,PhoneNumber,Date,Date);
+		Student(string="?",string="?",string="?",int=0,string="?",MailingAddress=NULL,Email=NULL,PhoneNumber=NULL,Date=NULL,Date=NULL);
 
 
 		 
 		/*
 		 * PRECONDITION: enters valid file path
-		 * POSTCONDITION: Returns the an instanciated stu object
+		 * POSTCONDITION: Returns the an instanciated stu object and true if file opened succesfully
 		 */
-		void getStuFromFile(string);
+		bool getStuFromFile(string);
 
 
 

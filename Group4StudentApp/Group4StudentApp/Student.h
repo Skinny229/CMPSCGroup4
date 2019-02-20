@@ -3,18 +3,18 @@
 #define STUDENT_H
 #include <string>
 #include <iostream>
+
 #include "MailingAddress.h"
 #include "Email.h"
 #include "PhoneNumber.h"
 #include "date.h"
 #include "Semester.h"
 
-
 using namespace std;
 
 namespace SpaghettiLizards 
 {
-	class Student 
+	class Student
 	{
 
 	private:
@@ -48,7 +48,7 @@ namespace SpaghettiLizards
 
 	public:
 
-		
+
 		string firstName;
 		string middleName;
 		string lastName;
@@ -57,27 +57,26 @@ namespace SpaghettiLizards
 		MailingAddress address;
 		Email mail;
 		PhoneNumber number;
-		Date bithDate;
-		Date accepetedDate;
-		
-		
-		Student(string,string,string,int,int,MailingAddress,Email,PhoneNumber,Date,Date);
+		Date birthDate;
+		Date accepetdDate;
 
-		 
+
+		Student(string, string, string, int, int, MailingAddress, Email, PhoneNumber, Date, Date);
+
+
 		/*
 		 * PRECONDITION: enters valid file path
 		 * POSTCONDITION: Returns the an instanciated stu object
 		 */
-		Student getStuFromFile(string);
+		void getStuFromFile(string);
 
 		/*
 		 * PRECONDITION: Enters valid ostream object
-		 * 
+		 *
 		 * POSTCONDITION: Prints all value content from the member variables
 		 *
 		 */
 		void printAllStuValues(ostream&);
-		
 
 		//GETTER and SETTERS by constructor order
 		string getFirstName() const;
@@ -126,7 +125,7 @@ namespace SpaghettiLizards
 		string getStatus() const;
 
 		void setStatus(string status);
-		
 
+	};
 }
 #endif

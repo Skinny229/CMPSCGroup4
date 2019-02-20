@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="date.cpp" />
+    <ClCompile Include="Email.cpp" />
     <ClCompile Include="Group4_Milestone1_Test.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Tester.cpp" />

@@ -2,7 +2,6 @@
 #ifndef PHONENUMBER_H
 #define PHONENUMBER_H
 #include <string>
-#include <ostream>
 
 using namespace std;
 
@@ -21,7 +20,5 @@ namespace SpaghettiLizards
 		string getNumber() const;
 		string getType() const;
 	};
-	
-	ostream& operator << (ostream& , const PhoneNumber&);
 }
 #endif

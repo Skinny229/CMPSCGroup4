@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include "Semester.h"
 #include <string>
-#include <ostream>
 using namespace std;
 
 
@@ -25,9 +24,5 @@ namespace SpaghettiLizards
 	string Semester::getSpringOrFall() const
 	{
 		return springOrFall;
-	}
-	ostream& operator << (ostream&, const Semester& s)
-	{
-		cout << s.getYear() << s.getSpringOrFall() << endl;
 	}
 }

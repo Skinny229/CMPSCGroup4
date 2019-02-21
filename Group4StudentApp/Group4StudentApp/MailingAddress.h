@@ -2,7 +2,6 @@
 #ifndef MAILINGADDRESS_H
 #define MAILINGADDRESS_H
 #include <string>
-#include <ostream>
 
 using namespace std;
 
@@ -25,6 +24,5 @@ namespace SpaghettiLizards
 		string getZip() const;
 		string getPermanentOrLocal() const;
 	};
-	ostream& operator << (ostream&, const MailingAddress&);
 }
 #endif

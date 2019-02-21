@@ -2,8 +2,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
-#include "Email.h"
-#include <ostream>
 
 using namespace std;
 namespace SpaghettiLizards
@@ -44,9 +42,5 @@ namespace SpaghettiLizards
 	string MailingAddress::getPermanentOrLocal() const
 	{
 		return permanentOrLocal;
-	}
-	ostream& operator << (ostream&, const MailingAddress& m)
-	{
-		cout << m.getAddress() << m.getCity() << m.getState() << m.getZip() << m.getPermanentOrLocal() << endl;
 	}
 }

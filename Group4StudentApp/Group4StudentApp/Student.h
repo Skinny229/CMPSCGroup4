@@ -3,18 +3,19 @@
 #define STUDENT_H
 #include <string>
 #include <iostream>
+#include <fstream>
+
 #include "MailingAddress.h"
 #include "Email.h"
 #include "PhoneNumber.h"
 #include "date.h"
 #include "Semester.h"
 
-
 using namespace std;
 
 namespace SpaghettiLizards 
 {
-	class Student 
+	class Student
 	{
 
 	private:
@@ -47,6 +48,7 @@ namespace SpaghettiLizards
 		string status;
 
 	public:
+		Student(string, string, string, int, int, MailingAddress, Email, PhoneNumber, Date, Date);
 
 		/*
 		 * string firstName
@@ -61,145 +63,83 @@ namespace SpaghettiLizards
 		 * Date accpetedDate
 		 *
 		 */
-		Student(string,string,string,int,int,MailingAddress,Email,PhoneNumber,Date,Date);
+		Student(string="?",string="?",string="?",int=0,string="?",MailingAddress=MailingAddress(),Email=Email(),PhoneNumber=PhoneNumber(),Date=Date(),Date=Date());
+
 
 		 
 		/*
 		 * PRECONDITION: enters valid file path
-		 * POSTCONDITION: Returns the an instanciated stu object
+		 * POSTCONDITION: Returns the an instanciated stu object and true if file opened succesfully
 		 */
-		void getStuFromFile(string);
+
+		bool getStuFromFile(string);
 
 		/*
 		 * PRECONDITION: Enters valid ostream object
-		 * 
+		 *
 		 * POSTCONDITION: Prints all value content from the member variables
 		 *
 		 */
-		void printAllStuValues(ostream&);
-		
+		void printAllStuValues(string);
 
-		//GETTER and SETTERS by constructor order
-		string getFirstName() const
-		{
-			return firstName;
-		}
 
-		void setFirstName(string firstName)
-		{
-			this->firstName = firstName;
-		}
+		int getId() const;
 
-		string getMiddleName() const
-		{
-			return middleName;
-		}
+		string getUserId() const;
 
-		void setMiddleName(string middleName)
-		{
-			this->middleName = middleName;
-		}
+		string getFirstName() const;
 
-		string getLastName() const
-		{
-			return lastName;
-		}
+		string getMiddleName() const;
 
-		void setLastName(string lastName)
-		{
-			this->lastName = lastName;
-		}
+		string getStatus() const;
 
-		int getId() const
-		{
-			return id;
-		}
+		string getLastName() const;
 
-		void setId1(int id)
-		{
-			this->id = id;
-		}
+		string getIntendedMajor() const;
 
-		string getUserId() const
-		{
-			return userId;
-		}
+		string getIntendedMinor() const;
 
-		void setUserId1(int userId)
-		{
-			this->userId = userId;
-		}
+		Semester getStartSemester() const;
 
-		string getIntendedMajor() const
-		{
-			return intendedMajor;
-		}
+		Date getAcceptedDate() const;
 
-		void setIntendedMajor(string intendedMajor)
-		{
-			this->intendedMajor = intendedMajor;
-		}
+		Date getBirthDate() const;
 
-		string getIntendedMinor() const
-		{
-			return intendedMinor;
-		}
+		MailingAddress getAddress() const;
 
-		void setIntendedMinor(string intendedMinor)
-		{
-			this->intendedMinor = intendedMinor;
-		}
+		Email getMail(int x) const;
 
-		MailingAddress getAddress() const
-		{
-			return address;
-		}
+		PhoneNumber getPhoneNumber(int x) const;
 
-		void setAddress(MailingAddress address)
-		{
-			this->address = address;
-		}
 
-		Date getBirthDate() const
-		{
-			return birthDate;
-		}
+		void setAddress(MailingAddress address);
 
-		void setBirthDate(Date birthDate)
-		{
-			this->birthDate = birthDate;
-		}
+		void setId1(int id);
 
-		Date getAcceptedDate() const
-		{
-			return acceptedDate;
-		}
+		void setUserId1(int userId);
 
-		void setAcceptedDate(Date acceptedDate)
-		{
-			this->acceptedDate = acceptedDate;
-		}
+		void setIntendedMajor(string intendedMajor);
 
-		Semester getStartSemester() const
-		{
-			return startSemester;
-		}
+		void setIntendedMinor(string intendedMinor);
 
-		void setStartSemester(Semester startSemester)
-		{
-			this->startSemester = startSemester;
-		}
+		void setBirthDate(Date birthDate);
 
-		string getStatus() const
-		{
-			return status;
-		}
+		void setAcceptedDate(Date acceptedDate);
 
-		void setStatus(string status)
-		{
-			this->status = status;
-		}
+		void setFirstName(string firstName);
+
+		void setMiddleName(string middleName);
+
+		void setLastName(string lastName);
+
+		void setStartSemester(Semester startSemester);
+
+		void setStatus(string status);
+
+		void setMail(Email mail[], int x);
+
+		void setPhoneNumber(PhoneNumber number[], int x);
+
 	};
-
 }
 #endif

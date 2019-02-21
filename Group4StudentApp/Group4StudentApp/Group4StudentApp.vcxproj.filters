@@ -41,10 +41,13 @@
     <ClCompile Include="Group4_Milestone1_Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tester.cpp">
+    <ClCompile Include="date.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="date.cpp">
+    <ClCompile Include="Email.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\CompSci_Projects\4.5\4.5\Chores.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

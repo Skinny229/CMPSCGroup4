@@ -1,12 +1,17 @@
 #include <iostream>
 #include <iomanip>
 #include "Student.h"
-
+#include "Tester.h"
 
 using namespace std;
 using namespace SpaghettiLizards;
+using namespace rlopez;
 
 int main()
 {
-	return 0;
+	Tester gui;
+
+	gui.addOptionMenu("Testing option");
+	gui.addOptionMenu("2");
+
 }

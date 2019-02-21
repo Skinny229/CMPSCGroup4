@@ -58,10 +58,6 @@ namespace SpaghettiLizards
 	{
 		return middleName;
 	}
-	string Student::getMiddleName() const
-	{
-		return middleName;
-	}
 	string Student::getLastName() const
 	{
 		return lastName;
@@ -158,7 +154,7 @@ namespace SpaghettiLizards
 	}
 	void Student::setPhoneNumber(PhoneNumber numberl)
 	{
-	  number = numberl;
+		number = numberl;
 	}
 
 	bool Student::getStuFromFile(string txtPath)

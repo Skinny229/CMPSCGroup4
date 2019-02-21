@@ -49,6 +49,11 @@ namespace rlopez
 	}
 
 
+	bool Tester::execOption(int, objectType &)
+	{
+		return false;
+	}
+
 	//Converts the string vector into a single string for cout
 	string Tester::vectorToString() 
 	{

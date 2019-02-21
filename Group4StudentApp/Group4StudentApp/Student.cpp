@@ -18,7 +18,7 @@ namespace SpaghettiLizards
 
   
   
-	Student::Student(string first, string middle, string last, int newId ,string newUserId, MailingAddress add,Email entry,PhoneNumber num,Date birth,Date accept)
+	Student::Student(string first, string middle, string last, int newId ,string newUserId)
 	{
 		firstName = first;
 
@@ -29,17 +29,6 @@ namespace SpaghettiLizards
 		id = newId;
 
 		userId = newUserId;
-
-		address = add;
-
-		mail[0] = entry;
-
-		phoneNumber[0] = num;
-
-		birthDate = birth;
-
-		acceptedDate = accept;
-
 	}
   
 	int Student::getId() const
@@ -150,11 +139,11 @@ namespace SpaghettiLizards
 	}
 	void Student::setMail(Email maill)
 	{
-		mail = maill;
+		//mail = maill;
 	}
 	void Student::setPhoneNumber(PhoneNumber numberl)
 	{
-		number = numberl;
+	  //number = numberl;
 	}
 
 	bool Student::getStuFromFile(string txtPath)
@@ -177,7 +166,8 @@ namespace SpaghettiLizards
 
 		return true;
   }
-	void Student::printAllStuValues(string fileName)
+
+	/*void Student::printAllStuValues(string fileName)
 	{
 		ofstream file;
 		file.open("StuData.txt");
@@ -188,5 +178,5 @@ namespace SpaghettiLizards
 		}
 		file << birthDate.getMonth() << "/" << birthDate.getDay() << "/" << birthDate.getYear() << " - " << acceptedDate.getMonth() << "/" << acceptedDate.getDay() << "/" << acceptedDate.getMonth() << endl;
 			
-	}
+	}*/
 }

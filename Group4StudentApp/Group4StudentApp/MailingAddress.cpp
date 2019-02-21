@@ -45,8 +45,4 @@ namespace SpaghettiLizards
 	{
 		return permanentOrLocal;
 	}
-	ostream& operator << (ostream&, const MailingAddress& m)
-	{
-		cout << m.getAddress() << m.getCity() << m.getState() << m.getZip() << m.getPermanentOrLocal() << endl;
-	}
 }

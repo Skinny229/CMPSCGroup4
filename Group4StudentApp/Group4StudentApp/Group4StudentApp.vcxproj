@@ -119,15 +119,19 @@
     <ClInclude Include="Email.h" />
     <ClInclude Include="MailingAddress.h" />
     <ClInclude Include="PhoneNumber.h" />
+    <ClInclude Include="Semester.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Tester.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\CompSci_Projects\112918\112918\inclassstuff.cpp" />
     <ClCompile Include="date.cpp" />
     <ClCompile Include="Email.cpp" />
     <ClCompile Include="Group4_Milestone1_Test.cpp" />
+    <ClCompile Include="MailingAddress.cpp" />
+    <ClCompile Include="phoneNumber.cpp" />
+    <ClCompile Include="Semester.cpp" />
     <ClCompile Include="Student.cpp" />
+    <ClCompile Include="Tester.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

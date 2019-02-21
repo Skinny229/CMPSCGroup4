@@ -2,8 +2,8 @@
 #ifndef SEMESTER_H
 #define SEMESTER_H
 #include <string>
-
 #include <ostream>
+
 using namespace std;
 
 namespace SpaghettiLizards
@@ -19,6 +19,5 @@ namespace SpaghettiLizards
 		int year;
 		string springOrFall;
 	};
-	ostream& operator << (ostream&, const Semester&);
 }
 #endif

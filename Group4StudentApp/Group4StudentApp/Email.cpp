@@ -25,9 +25,10 @@ namespace SpaghettiLizards
 	{
 		return universityOrPersonal;
 	}
-	ostream& operator << (ostream&, const Email& e)
+	ostream& operator << (ostream& out, const Email& e)
 	{
-		cout << e.getMail() << e.getUniversityOrPersonal() << endl;
+		out << e.getMail() << e.getUniversityOrPersonal() << endl;
+		return out;
 	}
 
 }

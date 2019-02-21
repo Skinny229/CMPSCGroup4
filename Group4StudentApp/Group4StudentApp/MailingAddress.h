@@ -25,6 +25,5 @@ namespace SpaghettiLizards
 		string getZip() const;
 		string getPermanentOrLocal() const;
 	};
-	ostream& operator << (ostream&, const MailingAddress&);
 }
 #endif

@@ -1,9 +1,7 @@
 #include <iostream>
-#include <iomanip>
 #include <cstdlib>
 #include <string>
 #include "Email.h"
-#include "PhoneNumber.h"
 #include <ostream>
 
 using namespace std;
@@ -27,9 +25,6 @@ namespace SpaghettiLizards
 	{
 		return universityOrPersonal;
 	}
-	ostream& operator << (ostream&, const Email& e)
-	{
-		cout << e.getMail() << e.getUniversityOrPersonal() << endl;
-	}
+
 
 }

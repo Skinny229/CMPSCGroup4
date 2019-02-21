@@ -1,6 +1,6 @@
 #include<iostream>
 #include <cstdlib>
-#include "phoneNumber.h"
+#include "PhoneNumber.h"
 #include <string>
 #include <ostream>
 using namespace std;
@@ -25,9 +25,5 @@ namespace SpaghettiLizards
 	string PhoneNumber::getType() const
 	{
 		return homeOrMobile;
-	}
-	ostream& operator << (ostream&, const PhoneNumber& p)
-	{
-		cout << p.getNumber() << p.getType() << endl;
 	}
 }

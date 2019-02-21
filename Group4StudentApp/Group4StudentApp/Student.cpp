@@ -16,7 +16,9 @@ using namespace std;
 namespace SpaghettiLizards
 {
 
-	Student::Student(string first, string middle, string last, int newId, string newUserId)
+
+  
+	Student::Student(string first, string middle, string last, int newId ,string newUserId)
 	{
 		firstName = first;
 
@@ -85,9 +87,10 @@ namespace SpaghettiLizards
 	{
 		return phoneNumber[x];
 	}
+  
+  
+  	void Student::setId1(int idl)
 
-
-	void Student::setId1(int idl)
 	{
 		id = idl;
 	}
@@ -179,5 +182,6 @@ namespace SpaghettiLizards
 
 		file.close();
 	}
+
 
 }

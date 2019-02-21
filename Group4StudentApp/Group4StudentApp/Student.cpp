@@ -58,10 +58,6 @@ namespace SpaghettiLizards
 	{
 		return middleName;
 	}
-	string Student::getMiddleName() const
-	{
-		return middleName;
-	}
 	string Student::getLastName() const
 	{
 		return lastName;

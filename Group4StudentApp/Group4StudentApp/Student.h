@@ -138,7 +138,7 @@ namespace SpaghettiLizards
 
 		void setMail(Email mail);
 
-		void setPhoneNumber(PhoneNumber number[]);
+		void setPhoneNumber(PhoneNumber number);
 
 	};
 }

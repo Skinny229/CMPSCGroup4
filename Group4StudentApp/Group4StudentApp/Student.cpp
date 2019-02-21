@@ -149,8 +149,7 @@ namespace SpaghettiLizards
 	bool Student::getStuFromFile(string txtPath)
 	{
 		//Open File
-		ifstream inFile;
-		inFile.open(txtPath);
+		ifstream inFile(txtPath);
 
 		if(!inFile.is_open())
 		{
@@ -160,10 +159,6 @@ namespace SpaghettiLizards
 
 		//Ignore first line
 		inFile.ignore(1, '\n');
-
-
-
-
 		return true;
   }
 

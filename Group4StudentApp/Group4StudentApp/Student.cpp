@@ -44,8 +44,12 @@ namespace SpaghettiLizards
 			return false;
 		}
 
+		//Ignore first line
+		inFile.ignore(1, '\n');
+
+
+
+
 		return true;
-
-
 	}
 }

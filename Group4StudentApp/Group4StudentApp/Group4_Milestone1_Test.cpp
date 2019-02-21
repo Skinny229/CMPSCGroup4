@@ -8,7 +8,9 @@ using namespace SpaghettiLizards;
 int main()
 {
 
+	Student stu;
 
+	
 
 
 

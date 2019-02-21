@@ -61,7 +61,7 @@ namespace SpaghettiLizards
 		 * Date accpetedDate
 		 *
 		 */
-		Student(string="?",string="?",string="?",int=0,string="?",MailingAddress=NULL,Email=NULL,PhoneNumber=NULL,Date=NULL,Date=NULL);
+		Student(string="?",string="?",string="?",int=0,string="?",MailingAddress=MailingAddress(),Email=Email(),PhoneNumber=PhoneNumber(),Date=Date(),Date=Date());
 
 
 		 
@@ -82,126 +82,6 @@ namespace SpaghettiLizards
 		void printAllStuValues(ostream&);
 		
 
-		//GETTER and SETTERS by constructor order
-		string getFirstName() const
-		{
-			return firstName;
-		}
-
-		void setFirstName(string firstName)
-		{
-			this->firstName = firstName;
-		}
-
-		string getMiddleName() const
-		{
-			return middleName;
-		}
-
-		void setMiddleName(string middleName)
-		{
-			this->middleName = middleName;
-		}
-
-		string getLastName() const
-		{
-			return lastName;
-		}
-
-		void setLastName(string lastName)
-		{
-			this->lastName = lastName;
-		}
-
-		int getId() const
-		{
-			return id;
-		}
-
-		void setId1(int id)
-		{
-			this->id = id;
-		}
-
-		int getUserId() const
-		{
-			return userId;
-		}
-
-		void setUserId1(int userId)
-		{
-			this->userId = userId;
-		}
-
-		string getIntendedMajor() const
-		{
-			return intendedMajor;
-		}
-
-		void setIntendedMajor(string intendedMajor)
-		{
-			this->intendedMajor = intendedMajor;
-		}
-
-		string getIntendedMinor() const
-		{
-			return intendedMinor;
-		}
-
-		void setIntendedMinor(string intendedMinor)
-		{
-			this->intendedMinor = intendedMinor;
-		}
-
-		MailingAddress getAddress() const
-		{
-			return address;
-		}
-
-		void setAddress(MailingAddress address)
-		{
-			this->address = address;
-		}
-
-		Date getBirthDate() const
-		{
-			return birthDate;
-		}
-
-		void setBirthDate(Date birthDate)
-		{
-			this->birthDate = birthDate;
-		}
-
-		Date getAcceptedDate() const
-		{
-			return acceptedDate;
-		}
-
-		void setAcceptedDate(Date acceptedDate)
-		{
-			this->acceptedDate = acceptedDate;
-		}
-
-		Semester getStartSemester() const
-		{
-			return startSemester;
-		}
-
-		void setStartSemester(Semester startSemester)
-		{
-			this->startSemester = startSemester;
-		}
-
-		string getStatus() const
-		{
-			return status;
-		}
-
-		void setStatus(string status)
-		{
-			this->status = status;
-		}
 	};
 
 }

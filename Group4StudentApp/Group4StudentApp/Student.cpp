@@ -2,7 +2,8 @@
 #include <cstdlib>
 #include <string>
 #include <fstream>
-
+#include <ostream>
+#include "Tester.h"
 #include "Student.h"
 #include "MailingAddress.h"
 #include "Email.h"
@@ -14,21 +15,20 @@ using namespace std;
 
 namespace SpaghettiLizards
 {
-	//constructor thing
-	Student::Student(string firstName1, string middleName1, string lastName1 , int id1, int userId1, MailingAddress address1, Email mail1[], PhoneNumber number1[], Date birthDate1, Date acceptedDate1)
-	{
-		firstName = firstName1;
-		middleName = middleName1;
-		lastName = lastName1;
-		id = id1;
-		userId = userId1;
-		address = address1;
-		mail[3] = mail1[3];
-		phoneNumber[3] = number1[3];
-		birthDate = birthDate1;
-		acceptedDate = acceptedDate1;
 
+	Student::Student(string first, string middle, string last, int newId, string newUserId)
+	{
+		firstName = first;
+
+		middleName = middle;
+
+		lastName = last;
+
+		id = newId;
+
+		userId = newUserId;
 	}
+
 	int Student::getId() const
 	{
 		return id;
@@ -40,10 +40,6 @@ namespace SpaghettiLizards
 	string Student::getFirstName() const
 	{
 		return firstName;
-	}
-	string Student::getMiddleName() const
-	{
-		return middleName;
 	}
 	string Student::getMiddleName() const
 	{
@@ -91,55 +87,55 @@ namespace SpaghettiLizards
 	}
 
 
-	void Student::setId1(int id)
+	void Student::setId1(int idl)
 	{
-		this->id = id;
+		id = idl;
 	}
-	void Student::setUserId1(int userId)
+	void Student::setUserId1(int userIdl)
 	{
-		this->userId = userId;
+		userId = userIdl;
 	}
 	void Student::setFirstName(string firstName1)
 	{
 		firstName = firstName1;
 	}
-	void Student::setMiddleName(string middleName)
+	void Student::setMiddleName(string middleNamel)
 	{
-		this->middleName = middleName;
+		middleName = middleNamel;
 	}
-	void Student::setLastName(string lastName)
+	void Student::setLastName(string lastNamel)
 	{
-		this->lastName = lastName;
+		lastName = lastNamel;
 	}
-	void Student::setIntendedMajor(string intendedMajor)
+	void Student::setIntendedMajor(string intendedMajorl)
 	{
-		this->intendedMajor = intendedMajor;
+		intendedMajor = intendedMajorl;
 	}
-	void Student::setIntendedMinor(string intendedMinor)
+	void Student::setIntendedMinor(string intendedMinorl)
 	{
-		this->intendedMinor = intendedMinor;
+		intendedMinor = intendedMinorl;
 	}
-	void Student::setAddress(MailingAddress address)
+	void Student::setAddress(MailingAddress addressl)
 	{
-		this->address = address;
+		address = addressl;
 	}
-	void Student::setBirthDate(Date birthDate)
+	void Student::setBirthDate(Date birthDatel)
 	{
-		this->birthDate = birthDate;
+		birthDate = birthDatel;
 	}
-	void Student::setAcceptedDate(Date acceptedDate)
+	void Student::setAcceptedDate(Date acceptedDatel)
 	{
-		this->acceptedDate = acceptedDate;
+		acceptedDate = acceptedDatel;
 	}
-	void Student::setStartSemester(Semester startSemester)
+	void Student::setStartSemester(Semester startSemesterl)
 	{
-		this->startSemester = startSemester;
+		startSemester = startSemesterl;
 	}
-	void Student::setStatus(string status)
+	void Student::setStatus(string statusl)
 	{
-		this->status = status;
+		status = statusl;
 	}
-	void Student::setMail(Email mail[], int x) 
+	void Student::setMail(Email mail[], int x)
 	{
 		this->mail[x] = mail[x];
 	}
@@ -149,6 +145,23 @@ namespace SpaghettiLizards
 	}
 
 
+	bool Student::getStuFromFile(string txtPath)
+	{
+		//Open File
+		ifstream inFile;
+		inFile.open(txtPath);
+
+		if (!inFile.is_open())
+		{
+			cout << "FILE NOT OPEN!";
+			return false;
+		}
+
+		//Ignore first line
+		inFile.ignore(1, '\n');
+
+		return true;
+	}
 	void Student::printAllStuValues(string fileName)
 	{
 		ofstream file;
@@ -163,7 +176,7 @@ namespace SpaghettiLizards
 			file << phoneNumber[i].getNumber() << " - " << phoneNumber[i].getType() << " - ";
 		}
 		file << birthDate.getMonth() << "/" << birthDate.getDay() << "/" << birthDate.getYear() << " - " << acceptedDate.getMonth() << "/" << acceptedDate.getDay() << "/" << acceptedDate.getMonth() << " - " << status << endl;
-		
+
 		file.close();
 	}
 

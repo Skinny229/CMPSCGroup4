@@ -4,7 +4,6 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-
 #include "MailingAddress.h"
 #include "Email.h"
 #include "PhoneNumber.h"
@@ -13,7 +12,7 @@
 
 using namespace std;
 
-namespace SpaghettiLizards 
+namespace SpaghettiLizards
 {
 	class Student
 	{
@@ -48,8 +47,6 @@ namespace SpaghettiLizards
 		string status;
 
 	public:
-		Student(string, string, string, int, int, MailingAddress, Email, PhoneNumber, Date, Date);
-
 		/*
 		 * string firstName
 		 * string middleName
@@ -63,10 +60,10 @@ namespace SpaghettiLizards
 		 * Date accpetedDate
 		 *
 		 */
-		Student(string="?",string="?",string="?",int=0,string="?",MailingAddress=MailingAddress(),Email=Email(),PhoneNumber=PhoneNumber(),Date=Date(),Date=Date());
+		Student(string = "?", string = "?", string = "?", int = 0, string = "?");
 
 
-		 
+
 		/*
 		 * PRECONDITION: enters valid file path
 		 * POSTCONDITION: Returns the an instanciated stu object and true if file opened succesfully
@@ -81,6 +78,7 @@ namespace SpaghettiLizards
 		 *
 		 */
 		void printAllStuValues(string);
+		//void printAllStuValues(string);
 
 
 		int getId() const;

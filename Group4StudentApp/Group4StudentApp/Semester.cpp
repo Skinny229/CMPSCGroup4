@@ -26,8 +26,4 @@ namespace SpaghettiLizards
 	{
 		return springOrFall;
 	}
-	ostream& operator << (ostream&, const Semester& s)
-	{
-		cout << s.getYear() << s.getSpringOrFall() << endl;
-	}
 }

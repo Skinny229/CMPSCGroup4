@@ -18,7 +18,7 @@ namespace SpaghettiLizards
 
   
   
-	Student::Student(string first, string middle, string last, int newId ,string newUserId, MailingAddress add,Email entry,PhoneNumber num,Date birth,Date accept)
+	Student::Student(string first, string middle, string last, int newId ,string newUserId)
 	{
 		firstName = first;
 
@@ -29,17 +29,6 @@ namespace SpaghettiLizards
 		id = newId;
 
 		userId = newUserId;
-
-		address = add;
-
-		mail[0] = entry;
-
-		phoneNumber[0] = num;
-
-		birthDate = birth;
-
-		acceptedDate = accept;
-
 	}
   
 	int Student::getId() const

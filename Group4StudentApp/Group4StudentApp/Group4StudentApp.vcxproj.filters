@@ -24,13 +24,16 @@
     <ClInclude Include="Email.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PhoneNumber.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Tester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Semester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="date.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PhoneNumber.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,7 +50,16 @@
     <ClCompile Include="Email.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\CompSci_Projects\112918\112918\inclassstuff.cpp">
+    <ClCompile Include="phoneNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MailingAddress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Semester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

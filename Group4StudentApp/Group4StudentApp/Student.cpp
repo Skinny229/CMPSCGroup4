@@ -144,7 +144,7 @@ namespace SpaghettiLizards
 		this->phoneNumber[x] = number[x];
 	}
 
-
+	
 	bool Student::getStuFromFile(string txtPath)
 	{
 		//Open File

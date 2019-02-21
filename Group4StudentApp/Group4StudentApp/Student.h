@@ -136,7 +136,7 @@ namespace SpaghettiLizards
 
 		void setStatus(string status);
 
-		void setMail(Email mail[]);
+		void setMail(Email mail);
 
 		void setPhoneNumber(PhoneNumber number[]);
 

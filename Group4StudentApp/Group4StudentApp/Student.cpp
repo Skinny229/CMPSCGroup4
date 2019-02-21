@@ -154,11 +154,11 @@ namespace SpaghettiLizards
 	}
 	void Student::setMail(Email maill)
 	{
-		mail = maill;
+		//mail = maill;
 	}
 	void Student::setPhoneNumber(PhoneNumber numberl)
 	{
-	  number = numberl;
+	  //number = numberl;
 	}
 
 	bool Student::getStuFromFile(string txtPath)
@@ -181,7 +181,8 @@ namespace SpaghettiLizards
 
 		return true;
   }
-	void Student::printAllStuValues(string fileName)
+
+	/*void Student::printAllStuValues(string fileName)
 	{
 		ofstream file;
 		file.open("StuData.txt");
@@ -192,5 +193,5 @@ namespace SpaghettiLizards
 		}
 		file << birthDate.getMonth() << "/" << birthDate.getDay() << "/" << birthDate.getYear() << " - " << acceptedDate.getMonth() << "/" << acceptedDate.getDay() << "/" << acceptedDate.getMonth() << endl;
 			
-	}
+	}*/
 }

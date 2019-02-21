@@ -23,7 +23,7 @@ namespace SpaghettiLizards
 
 	void Date::showDate()
 	{
-		cout << "The date is " << month << "/" << day << "/" << year << "\n";
+		cout << month << "/" << day << "/" << year << "\n";
 	}
 	int Date::getMonth()
 	{

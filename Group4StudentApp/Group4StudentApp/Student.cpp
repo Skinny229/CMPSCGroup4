@@ -1,6 +1,7 @@
 #include<iostream>
 #include <cstdlib>
 #include <string>
+#include <fstream>
 
 #include "Student.h"
 #include "MailingAddress.h"
@@ -23,131 +24,142 @@ namespace SpaghettiLizards
 		userId = userId1;
 		address = address1;
 		mail = mail1;
-		number = number1;
+		phoneNumber = number1;
 		birthDate = birthDate1;
 		acceptedDate = acceptedDate1;
 
 	}
-
-	string Student::getFirstName() const
-	{
-		return firstName;
-	}
-
-
-	void Student::setFirstName(string firstName1)
-	{
-		firstName = firstName1;
-	}
-
-	string Student::getMiddleName() const
-	{
-		return middleName;
-	}
-
-	void Student::setMiddleName(string middleName)
-	{
-		this->middleName = middleName;
-	}
-
-	string Student::getLastName() const
-		{
-		return lastName;
-	}
-
-	void Student::setLastName(string lastName)
-	{
-		this->lastName = lastName;
-	}
-
 	int Student::getId() const
 	{
 		return id;
 	}
+	string Student::getUserId() const
+	{
+		return userId;
+	}
+	string Student::getFirstName() const
+	{
+		return firstName;
+	}
+	string Student::getMiddleName() const
+	{
+		return middleName;
+	}
+	string Student::getMiddleName() const
+	{
+		return middleName;
+	}
+	string Student::getLastName() const
+	{
+		return lastName;
+	}
+	string Student::getIntendedMajor() const
+	{
+		return intendedMajor;
+	}
+	string Student::getIntendedMinor() const
+	{
+		return intendedMinor;
+	}
+	string Student::getStatus() const
+	{
+		return status;
+	}
+	MailingAddress Student::getAddress() const
+	{
+		return address;
+	}
+	Date Student::getBirthDate() const
+	{
+		return birthDate;
+	}
+	Date Student::getAcceptedDate() const
+	{
+		return acceptedDate;
+	}
+	Semester Student::getStartSemester() const
+	{
+		return startSemester;
+	}
+	Email Student::getMail(int x) const
+	{
+		return mail[x];
+	}
+	PhoneNumber Student::getPhoneNumber(int x) const
+	{
+		return phoneNumber[x];
+	}
+
 
 	void Student::setId1(int id)
 	{
 		this->id = id;
 	}
-
-	int Student::getUserId() const
-	{
-		return userId;
-	}
-
 	void Student::setUserId1(int userId)
 	{
 		this->userId = userId;
 	}
-
-	string Student::getIntendedMajor() const
+	void Student::setFirstName(string firstName1)
 	{
-		return intendedMajor;
+		firstName = firstName1;
 	}
-
+	void Student::setMiddleName(string middleName)
+	{
+		this->middleName = middleName;
+	}
+	void Student::setLastName(string lastName)
+	{
+		this->lastName = lastName;
+	}
 	void Student::setIntendedMajor(string intendedMajor)
 	{
 		this->intendedMajor = intendedMajor;
 	}
-
-	string Student::getIntendedMinor() const
-	{
-		return intendedMinor;
-	}
-
 	void Student::setIntendedMinor(string intendedMinor)
 	{
 		this->intendedMinor = intendedMinor;
 	}
-
-	MailingAddress Student::getAddress() const
-	{
-		return address;
-	}
-
 	void Student::setAddress(MailingAddress address)
 	{
 		this->address = address;
 	}
-
-	Date Student::getBirthDate() const
-	{
-		return birthDate;
-	}
-
 	void Student::setBirthDate(Date birthDate)
 	{
 		this->birthDate = birthDate;
 	}
-
-	Date Student::getAcceptedDate() const
-	{
-		return acceptedDate;
-	}
-
 	void Student::setAcceptedDate(Date acceptedDate)
 	{
 		this->acceptedDate = acceptedDate;
 	}
-
-	Semester Student::getStartSemester() const
-	{
-		return startSemester;
-	}
-
 	void Student::setStartSemester(Semester startSemester)
 	{
 		this->startSemester = startSemester;
 	}
-
-	string Student::getStatus() const
-		{
-		return status;
-	}
-
 	void Student::setStatus(string status)
 	{
 		this->status = status;
+	}
+	void Student::setMail(Email mail) const
+	{
+		this->mail = mail;
+	}
+	void Student::setPhoneNumber(PhoneNumber number) const
+	{
+		this->number = number;
+	}
+
+
+	void Student::printAllStuValues(string fileName)
+	{
+		ofstream file;
+		file.open("StuData.txt");
+		file << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " << address << " - " << mail << " - ";
+		for (int i = 0; i < 3; i++)
+		{
+			file << phoneNumber.getPhoneNumber(x) << " - "; 
+		}
+		file << birthDate.getMonth() << "/" << birthDate.getDay() << "/" << birthDate.getYear() << " - " << acceptedDate.getMonth() << "/" << acceptedDate.getDay() << "/" << acceptedDate.getMonth() << endl;
+			
 	}
 
 }

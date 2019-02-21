@@ -123,6 +123,7 @@
     <ClInclude Include="Tester.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\CompSci_Projects\112918\112918\inclassstuff.cpp" />
     <ClCompile Include="date.cpp" />
     <ClCompile Include="Email.cpp" />
     <ClCompile Include="Group4_Milestone1_Test.cpp" />

@@ -3,6 +3,7 @@
 #define STUDENT_H
 #include <string>
 #include <iostream>
+#include <fstream>
 
 #include "MailingAddress.h"
 #include "Email.h"
@@ -47,22 +48,7 @@ namespace SpaghettiLizards
 		string status;
 
 	public:
-
-
-		string firstName;
-		string middleName;
-		string lastName;
-		int id;
-		int userId;
-		MailingAddress address;
-		Email mail;
-		PhoneNumber number;
-		Date birthDate;
-		Date accepetdDate;
-
-
 		Student(string, string, string, int, int, MailingAddress, Email, PhoneNumber, Date, Date);
-
 
 		/*
 		 * PRECONDITION: enters valid file path
@@ -76,55 +62,66 @@ namespace SpaghettiLizards
 		 * POSTCONDITION: Prints all value content from the member variables
 		 *
 		 */
-		void printAllStuValues(ostream&);
+		void printAllStuValues(string);
 
 		//GETTER and SETTERS by constructor order
-		string getFirstName() const;
-		void setFirstName(string firstName);
-
-		string getMiddleName() const;
-
-		void setMiddleName(string middleName);
-
-		string getLastName() const;
-
-		void setLastName(string lastName);
 
 		int getId() const;
 
-		void setId1(int id);
+		string getUserId() const;
 
-		int getUserId() const;
+		string getFirstName() const;
 
-		void setUserId1(int userId);
+		string getMiddleName() const;
+
+		string getStatus() const;
+
+		string getLastName() const;
 
 		string getIntendedMajor() const;
 
-		void setIntendedMajor(string intendedMajor);
-
 		string getIntendedMinor() const;
-
-		void setIntendedMinor(string intendedMinor);
-
-
-		MailingAddress getAddress() const;
-
-		void setAddress(MailingAddress address);
-
-		Date getBirthDate() const;
-
-		void setBirthDate(Date birthDate);
-
-		Date getAcceptedDate() const;
-
-		void setAcceptedDate(Date acceptedDate);
 
 		Semester getStartSemester() const;
 
+		Date getAcceptedDate() const;
+
+		Date getBirthDate() const;
+
+		MailingAddress getAddress() const;
+
+		Email getMail(int x) const;
+
+		PhoneNumber getPhoneNumber(int x) const;
+
+
+		void setAddress(MailingAddress address);
+
+		void setId1(int id);
+
+		void setUserId1(int userId);
+
+		void setIntendedMajor(string intendedMajor);
+
+		void setIntendedMinor(string intendedMinor);
+
+		void setBirthDate(Date birthDate);
+
+		void setAcceptedDate(Date acceptedDate);
+
+		void setFirstName(string firstName);
+
+		void setMiddleName(string middleName);
+
+		void setLastName(string lastName);
+
 		void setStartSemester(Semester startSemester);
-		string getStatus() const;
 
 		void setStatus(string status);
+
+		void setMail(Email mail[]);
+
+		void setPhoneNumber(PhoneNumber number[]);
 
 	};
 }

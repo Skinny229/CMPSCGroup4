@@ -51,10 +51,28 @@ namespace SpaghettiLizards
 		Student(string, string, string, int, int, MailingAddress, Email, PhoneNumber, Date, Date);
 
 		/*
-		 * PRECONDITION: enters valid file path
-		 * POSTCONDITION: Returns the an instanciated stu object
+		 * string firstName
+		 * string middleName
+		 * string lastName
+		 * int id
+		 * int userId
+		 * MailingAddress address
+		 * Email mail
+		 * PhoneNumber number
+		 * Date bithDate
+		 * Date accpetedDate
+		 *
 		 */
-		void getStuFromFile(string);
+		Student(string="?",string="?",string="?",int=0,string="?",MailingAddress=MailingAddress(),Email=Email(),PhoneNumber=PhoneNumber(),Date=Date(),Date=Date());
+
+
+		 
+		/*
+		 * PRECONDITION: enters valid file path
+		 * POSTCONDITION: Returns the an instanciated stu object and true if file opened succesfully
+		 */
+
+		bool getStuFromFile(string);
 
 		/*
 		 * PRECONDITION: Enters valid ostream object
@@ -64,7 +82,6 @@ namespace SpaghettiLizards
 		 */
 		void printAllStuValues(string);
 
-		//GETTER and SETTERS by constructor order
 
 		int getId() const;
 

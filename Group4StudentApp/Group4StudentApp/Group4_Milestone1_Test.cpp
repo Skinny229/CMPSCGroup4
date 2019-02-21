@@ -8,7 +8,6 @@ using namespace std;
 using namespace SpaghettiLizards;
 
 int main()
-{
 
 	Tester gui;
 

@@ -22,6 +22,6 @@ namespace SpaghettiLizards
 		string getUniversityOrPersonal() const;
 
 	};
-	ostream& operator << (ostream&, const Email&);
+
 }
 #endif

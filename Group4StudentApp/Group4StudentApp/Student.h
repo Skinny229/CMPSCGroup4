@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace SpaghettiLizards 
+namespace SpaghettiLizards
 {
 	class Student
 	{
@@ -60,10 +60,8 @@ namespace SpaghettiLizards
 		 * Date accpetedDate
 		 *
 		 */
-		Student(string="?",string="?",string="?",int=0,string="?");
+		Student(string = "?", string = "?", string = "?", int = 0, string = "?");
 
-
-		 
 		/*
 		 * PRECONDITION: enters valid file path
 		 * POSTCONDITION: Returns the an instanciated stu object and true if file opened succesfully
@@ -77,7 +75,7 @@ namespace SpaghettiLizards
 		 * POSTCONDITION: Prints all value content from the member variables
 		 *
 		 */
-		//void printAllStuValues(string);
+		void printAllStuValues(string);
 
 
 		int getId() const;
@@ -133,9 +131,9 @@ namespace SpaghettiLizards
 
 		void setStatus(string status);
 
-		void setMail(Email mail);
+		void setMail(Email mail[], int x);
 
-		void setPhoneNumber(PhoneNumber number);
+		void setPhoneNumber(PhoneNumber number[], int x);
 
 	};
 }

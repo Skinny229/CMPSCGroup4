@@ -75,6 +75,32 @@ namespace Group4UnitTest
 
 			Assert::AreEqual(expected, actual);
 		}
+		
+		TEST_METHOD(ID_TEST)
+		{
+			int expected = 1;
+			
+			Student stu;
+			
+			stu.getStuFromFile(FILE_PATH);
+			
+			int actual = stu.getId();
+			
+			Assert::AreEqual(expected,actual);
+		}
+		
+		TEST_METHOD(USERID_TEST)
+		{
+			string expected = "12345";
+			
+			Student stu;
+			
+			stu.getStuFromFile(FILE_PATH);
+			
+			int actual = stu.getUserId();
+			
+			Assert::AreEqual(expected,actual);
+		}
 
 		
 

@@ -156,10 +156,55 @@ namespace SpaghettiLizards
 			cout << "FILE NOT OPEN!";
 			return false;
 		}
+		string address1;
+		string mail1;
+		string mailType1;
+		string phoneNumber1;
+		string numberType1;
+		string birthDate1;
+		string acceptanceDate1;
+		string startSemester1;
+		string startSemesterYear1;
 
 		//Ignore first line
 		inFile.ignore(1, '\n');
+		inFile >> firstName >> middleName >> lastName;
+		inFile.ignore(1, '-');
+		inFile >> id;
+		inFile.ignore(1, '-');  
+		inFile >> userId;
+		inFile.ignore(1, '-');
+		inFile >> address1;
+		inFile.ignore(1, '-');
+		inFile >> mail1;
+		inFile.ignore(1, '-');
+		inFile >> mailType1;
+		inFile.ignore(1, '-');
+		inFile >> phoneNumber1;
+		inFile.ignore(1, '-');
+		inFile >> numberType1;
+		inFile.ignore(1, '-');
+		inFile >> birthDate1;
+		inFile.ignore(1, '-');
+		inFile >> acceptanceDate1;
+		inFile.ignore(1, '-');
+		inFile >> intendedMajor;
+		inFile.ignore(1, '-');
+		inFile >> intendedMinor;
+		inFile.ignore(1, '-');
+		inFile >> startSemester1;
+		inFile.ignore(1, '-');
+		inFile >> startSemesterYear1;
+		inFile.ignore(1, '-');
+		inFile >> status;
 
+		//address.setAddress(address1);
+		mail[1].setEmail(mail1, mailType1);
+		phoneNumber[1].setPhoneNumber(phoneNumber1, numberType1);
+		//birthDate.setDate();
+		//acceptedDate.setDate();
+
+		
 		return true;
 	}
 	void Student::printAllStuValues(string fileName)

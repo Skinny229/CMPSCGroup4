@@ -47,7 +47,13 @@
     <ClCompile Include="Email.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\CompSci_Projects\4.5\4.5\Chores.cpp">
+    <ClCompile Include="phoneNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MailingAddress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Semester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

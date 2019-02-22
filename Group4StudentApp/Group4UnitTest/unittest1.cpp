@@ -97,7 +97,7 @@ namespace Group4UnitTest
 			
 			stu.getStuFromFile(FILE_PATH);
 			
-			int actual = stu.getUserId();
+			string actual = stu.getUserId();
 			
 			Assert::AreEqual(expected,actual);
 		}

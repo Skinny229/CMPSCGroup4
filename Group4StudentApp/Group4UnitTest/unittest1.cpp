@@ -24,7 +24,7 @@ namespace Group4UnitTest
 	{
 	public:
 
-		std::string FILE_PATH = "C:/Dev/CMPSCGroup4/Group4StudentApp/StuData.txt";
+		std::string FILE_PATH = "C:/github/CMPSCGroup4/Group4StudentApp/Group4StudentApp/StuData.txt";
 
 		TEST_METHOD(TXTOpenFileTest)
 		{
@@ -37,18 +37,44 @@ namespace Group4UnitTest
 			Assert::AreEqual(expected, actual);
 
 		}
-
-		
-
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(FirstNameFull)
 		{
-			
-			Assert::AreEqual(1, 1);
+			string expected = "Bob";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+			string actual = stu.getFirstName();
+
+			Assert::AreEqual(expected, actual);
+
+		}
+		TEST_METHOD(MiddleNameFull)
+		{
+			string expected = "Jennifer";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+			string actual = stu.getMiddleName();
+
+			Assert::AreEqual(expected, actual);
+
 		}
 
-		TEST_METHOD(FullNameFirst)
+		TEST_METHOD(LastNameFull)
 		{
-			Assert::AreEqual(1, 1);
+			string expected = "Pao";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+			string actual = stu.getLastName();
+
+			Assert::AreEqual(expected, actual);
 		}
 
 	};

@@ -24,4 +24,5 @@ namespace SpaghettiLizards
 	{
 		return universityOrPersonal;
 	}
+
 }

@@ -3,6 +3,8 @@
 #define SEMESTER_H
 //#include <string>
 
+#include <string>
+
 using namespace std;
 
 namespace SpaghettiLizards

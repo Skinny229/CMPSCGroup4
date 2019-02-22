@@ -132,6 +132,8 @@
     <ClCompile Include="phoneNumber.cpp" />
     <ClCompile Include="Semester.cpp" />
     <ClCompile Include="Student.cpp" />
+    <ClCompile Include="Tester.cpp" />
+    <ClCompile Include="TesterBehavior.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

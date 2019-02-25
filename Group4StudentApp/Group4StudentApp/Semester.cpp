@@ -13,7 +13,7 @@ namespace SpaghettiLizards
 		springOrFall = springOrFall1;
 	}
 	void Semester::setSemester(string springOrFall1)
-	{
+	{ 
 		
 		springOrFall = springOrFall1;
 	}

@@ -71,6 +71,7 @@ namespace rlopez
 			stu.setAddress(address1);
 			/*stu[1].setEmail(mail1, mailType1);
 			phoneNumber[1].setPhoneNumber(phoneNumber1, numberType1);*/
+
 			stu.setBirthDate(birthDate1);
 			stu.setAcceptedDate.setDate(acceptedDate1);
 			stu.setStartSemester.setSemester(startSemester1);

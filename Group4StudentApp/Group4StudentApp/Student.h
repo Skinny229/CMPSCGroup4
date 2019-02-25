@@ -24,7 +24,7 @@ namespace SpaghettiLizards
 		//ID's
 		int id;
 		string userId;
-		//Major and Minor
+		//Major and Minor 
 		string intendedMajor;
 		string intendedMinor;
 		//Current Status
@@ -60,6 +60,7 @@ namespace SpaghettiLizards
 		 * Date accpetedDate
 		 *
 		 */
+
 		Student(string = "?", string = "?", string = "?", int = 1, string = "?", string = "?");
 
 		/*

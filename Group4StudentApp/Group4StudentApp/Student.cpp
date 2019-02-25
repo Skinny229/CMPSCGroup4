@@ -139,10 +139,10 @@ namespace SpaghettiLizards
 	void Student::setStatus(string statusl)
 	{
 		status = statusl;
-	}
+	} 
 	void Student::setMail(Email mail[], int x)
 	{
-		this->mail = mail;
+		this->mail[x] = mail[x];
 	}
 	void Student::setPhoneNumber(PhoneNumber number[], int x)
 	{
@@ -216,7 +216,7 @@ namespace SpaghettiLizards
 		return true;
   }
   
-	void Student::printAllStuValues(ostream& out ,string fileName)
+	void Student::printAllStuValues(ostream& out, string fileName)
 	{
 		//ofstream file;
 
@@ -225,7 +225,7 @@ namespace SpaghettiLizards
 
 		for (int i = 0; i < 3; i++)
 		{
-		
+
 			out << mail[i].getMail() << " - " << mail[i].getUniversityOrPersonal() << " - ";
 		}
 		for (int i = 0; i < 3; i++)
@@ -236,5 +236,4 @@ namespace SpaghettiLizards
 
 		//file.close();
 	}
-
 }

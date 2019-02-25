@@ -76,6 +76,102 @@ namespace Group4UnitTest
 			Assert::AreEqual(expected, actual);
 		}
 
+		TEST_METHOD(ID_TEST)
+		{
+			int expected = 1;
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+			int actual = stu.getId();
+
+			Assert::AreEqual(expected, actual);
+		}
+
+		TEST_METHOD(USERID_TEST)
+		{
+			string expected = "12345";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+			string actual = stu.getUserId();
+
+			Assert::AreEqual(expected, actual);
+		}
+
+		TEST_METHOD(Address_Test)
+		{
+			string expected = "629 Spruce St.";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+			string actual = /*stu.getAddress() IMPLEMENT NEW METHOD*/ "FAIL";
+
+			Assert::AreEqual(expected, actual);
+		}
+
+		TEST_METHOD(Email_Test)
+		{
+			string expected = "Bpao@aol.com";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+			string actual = stu.getMail(0).getMail();
+
+			Assert::AreEqual(expected, actual);
+		}
+
+
+		TEST_METHOD(PhoneNumber_Test)
+		{
+			string expected = "6105589781";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+			string actual = stu.getPhoneNumber(0).getNumber();
+
+			Assert::AreEqual(expected, actual);
+		}
+
+		TEST_METHOD(BirthDate_Test)
+		{
+			string expected = "12/12/1935";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+
+			string actual = /*Implement new method here*/"fail";
+
+
+			Assert::AreEqual(expected, actual);
+		}
+
+		TEST_METHOD(AcceptanceDate_Test)
+		{
+			string expected = "2/11/2019";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+
+			string actual = /*ToBe Implmented*/ "Fail";
+
+			Assert::AreEqual(expected, actual);
+		}
+
+
 		
 
 

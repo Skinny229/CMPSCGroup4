@@ -17,7 +17,7 @@ namespace rlopez
 		/*
 			Set the type to be used while testing
 		*/
-		typedef SpaghettiLizards::Student objectType;
+		typedef vector<SpaghettiLizards::Student> objectType;
 
 		objectType object;
 
@@ -50,7 +50,7 @@ namespace rlopez
 		/*
 			PRECONDITION:
 		*/
-		void setObj(objectType obj) { object = obj; }
+		void setObj(objectType& obj) { object = obj; }
 		void addOptionMenu(string);
 		bool next();
 		void test();

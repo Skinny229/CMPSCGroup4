@@ -8,8 +8,15 @@ using namespace SpaghettiLizards;
 
 namespace rlopez
 {
-	bool Tester::execOption(int, objectType&)
+	bool Tester::execOption(int sel, objectType& obj)
 	{
-		return false;
+
+		switch(sel)
+		{
+		case 1:
+			break;
+
+		}
+		return true;
 	}
 }

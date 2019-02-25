@@ -2,6 +2,7 @@
 #include <iomanip>
 #include "Student.h"
 #include "Tester.h"
+#include <vector>
 
 using namespace std;
 using namespace SpaghettiLizards;

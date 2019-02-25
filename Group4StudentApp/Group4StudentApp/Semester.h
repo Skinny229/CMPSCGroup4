@@ -1,8 +1,6 @@
 #pragma once
 #ifndef SEMESTER_H
 #define SEMESTER_H
-//#include <string>
-
 #include <string>
 
 using namespace std;
@@ -12,12 +10,13 @@ namespace SpaghettiLizards
 	class Semester
 	{
 	public:
-		Semester(int = 0, string = " ");
-		void setSemester(int, string);
-		int getYear() const ;
+		Semester(string = " ", string = " ");
+		void setSemester(string springOrFall); 
+		void setYear(string year);
+		string getYear() const ;
 		string getSpringOrFall() const;
 	private:
-		int year;
+		string year;
 		string springOrFall;
 	};
 }

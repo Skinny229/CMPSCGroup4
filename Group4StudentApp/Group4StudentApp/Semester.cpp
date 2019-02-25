@@ -7,17 +7,21 @@ using namespace std;
 
 namespace SpaghettiLizards
 {
-	Semester::Semester(int year1,string springOrFall1)
+	Semester::Semester(string year1,string springOrFall1)
 	{
 		year = year1;
 		springOrFall = springOrFall1;
 	}
-	void Semester::setSemester(int year1, string springOrFall1)
+	void Semester::setSemester(string springOrFall1)
 	{
-		year = year1;
+		
 		springOrFall = springOrFall1;
 	}
-	int Semester::getYear() const
+	void Semester::setYear(string year1)
+	{
+		year = year1;
+	}
+	string Semester::getYear() const
 	{
 		return year;
 	}

@@ -18,6 +18,7 @@ namespace SpaghettiLizards
 	public:
 		MailingAddress(string = " ", string = " ", string = " ", string = " ", string = " ");
 		void setMailingAddress(string, string, string, string, string);
+		void setAddress(string);
 		string getAddress() const; 
 		string getCity() const;
 		string getState() const;

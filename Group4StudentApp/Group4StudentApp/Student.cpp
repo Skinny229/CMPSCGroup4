@@ -18,7 +18,7 @@ namespace SpaghettiLizards
 
 
   
-	Student::Student(string first, string middle, string last, int newId ,string newUserId)
+	Student::Student(string first, string middle, string last, int newId ,string newUserId, string newStatus)
 	{
 		firstName = first;
 
@@ -29,6 +29,8 @@ namespace SpaghettiLizards
 		id = newId;
 
 		userId = newUserId;
+
+		status = newStatus;
 	}
 
 	int Student::getId() const
@@ -94,7 +96,7 @@ namespace SpaghettiLizards
 	{
 		id = idl;
 	}
-	void Student::setUserId1(int userIdl)
+	void Student::setUserId1(string userIdl)
 	{
 		userId = userIdl;
 	}
@@ -165,7 +167,7 @@ namespace SpaghettiLizards
 		string phoneNumber1;
 		string numberType1;
 		string birthDate1;
-		string acceptanceDate1;
+		string acceptedDate1;
 		string startSemester1;
 		string startSemesterYear1;
 
@@ -173,41 +175,42 @@ namespace SpaghettiLizards
 		getline(inFile, firstName);
 
 		inFile >> firstName >> middleName >> lastName;
-		inFile.ignore(0, '-');
+		inFile.ignore(15, '-');
 		inFile >> id;
-		inFile.ignore(0, '-');
+		inFile.ignore(16, '-');
 		inFile >> userId;
-		inFile.ignore(0, '-');
+		inFile.ignore(17, '-');
 		inFile >> address1;
-		inFile.ignore(0, '-');
+		inFile.ignore(18, '-');
 		inFile >> mail1;
-		inFile.ignore(1, '-');
+		inFile.ignore(19, '-');
 		inFile >> mailType1;
-		inFile.ignore(0, '-');
+		inFile.ignore(20, '-');
 		inFile >> phoneNumber1;
-		inFile.ignore(0, '-');
+		inFile.ignore(21, '-');
 		inFile >> numberType1;
-		inFile.ignore(0, '-');
+		inFile.ignore(22, '-');
 		inFile >> birthDate1;
-		inFile.ignore(0, '-');
-		inFile >> acceptanceDate1;
-		inFile.ignore(0, '-');
+		inFile.ignore(23, '-');
+		inFile >> acceptedDate1;
+		inFile.ignore(24, '-');
 		inFile >> intendedMajor;
-		inFile.ignore(0, '-');
+		inFile.ignore(25, '-');
 		inFile >> intendedMinor;
-		inFile.ignore(0, '-');
+		inFile.ignore(26, '-');
 		inFile >> startSemester1;
-		inFile.ignore(0, '-');
+		inFile.ignore(27, '-');
 		inFile >> startSemesterYear1;
-		inFile.ignore(0, '-');
+		inFile.ignore(28, '-');
 		inFile >> status;
 
-		//address.setAddress(address1);
+		address.setAddress(address1);
 		mail[1].setEmail(mail1, mailType1);
 		phoneNumber[1].setPhoneNumber(phoneNumber1, numberType1);
-		//birthDate.setDate();
-		//acceptedDate.setDate();
-
+		birthDate.setDate(birthDate1);
+		acceptedDate.setDate(acceptedDate1);
+		startSemester.setSemester(startSemester1);
+		startSemester.setYear(startSemesterYear1);
 
 		return true;
   }
@@ -217,7 +220,7 @@ namespace SpaghettiLizards
 		ofstream file;
 
 		file.open("StuData.txt");
-		file << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " /*<< address*/ << " - ";
+		file << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " << address.getAddress() << " - ";
 		for (int i = 0; i < 3; i++)
 		{
 			file << mail[i].getMail() << " - " << mail[i].getUniversityOrPersonal() << " - ";
@@ -226,10 +229,10 @@ namespace SpaghettiLizards
 		{
 			file << phoneNumber[i].getNumber() << " - " << phoneNumber[i].getType() << " - ";
 		}
-		file << birthDate.getMonth() << "/" << birthDate.getDay() << "/" << birthDate.getYear() << " - " << acceptedDate.getMonth() << "/" << acceptedDate.getDay() << "/" << acceptedDate.getMonth() << " - " << status << endl;
+		file << birthDate.getDate() << " - " << acceptedDate.getDate() << " - " << status << endl;
 
 		file.close();
 	}
-
+	
 
 }

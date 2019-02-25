@@ -27,6 +27,8 @@ namespace SpaghettiLizards
 		//Major and Minor
 		string intendedMajor;
 		string intendedMinor;
+		//Current Status
+		string status;
 
 		//Address
 		MailingAddress address;
@@ -42,9 +44,7 @@ namespace SpaghettiLizards
 
 		//Semester
 		Semester startSemester;
-
-		//Current Status
-		string status;
+		Semester startYear;
 
 	public:
 		/*
@@ -60,7 +60,7 @@ namespace SpaghettiLizards
 		 * Date accpetedDate
 		 *
 		 */
-		Student(string = "?", string = "?", string = "?", int = 0, string = "?");
+		Student(string = "?", string = "?", string = "?", int = 1, string = "?", string = "?");
 
 		/*
 		 * PRECONDITION: enters valid file path
@@ -95,7 +95,7 @@ namespace SpaghettiLizards
 		string getIntendedMinor() const;
 
 		Semester getStartSemester() const;
-
+ 
 		Date getAcceptedDate() const;
 
 		Date getBirthDate() const;
@@ -111,7 +111,7 @@ namespace SpaghettiLizards
 
 		void setId1(int id);
 
-		void setUserId1(int userId);
+		void setUserId1(string userId);
 
 		void setIntendedMajor(string intendedMajor);
 

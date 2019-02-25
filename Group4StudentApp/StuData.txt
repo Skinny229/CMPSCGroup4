@@ -1,4 +1,6 @@
-Bob Jennifer Pao - 1 - 12345 - 629 Spruce St.  - BPao@aol.com - 6105589781 - 12/12/1935 - 2/11/2019
+StudentName - ID - userID - address - email - emailtype - phonenumber - phonenumber(type)  - Birthdate - Acceptance date - intendedMajor - intendedMinor - startSemester - startSemester(year) - status
+
+Bob Jennifer Pao - 1 - 12345 - 629 Spruce St.  - BPao@aol.com - personal - 6105589781 - home - 12/12/1935 - 2/11/2019 - Computer Science - gaming - Fall - 2020 - enrolled
 
 Shelly Shelby Dunderknuckles - 2 - 13122 - 72 lalaland Av. - ILikePonies@gmail.com - 6103251235 - 11/18/99 - 2/8/2018
 
@@ -7,4 +9,3 @@ Juan Ramirez Johnson - 3 - 17824 - 221B Baker Street  - tacos420@comcast.net - 5
 Xin Chen Zhao - 4 -19412  - 742 Evergreen Terrace - woaini@gmail.com - 6102621633 - 7/32/2000 - 4/22/2018
 
 Tristana Regal Boom - 5 - 12623 - 7 Mountain Drive, Gotham - iwishiwasbatman@gmail.com - 231222 - 2/9/1987 - 7/15/2008
-END STU

@@ -24,7 +24,7 @@ namespace Group4UnitTest
 	{
 	public:
 
-		std::string FILE_PATH = "C:/Dev/CMPSCGroup4/Group4StudentApp/Group4StudentApp/StuData.txt";
+		std::string FILE_PATH = "C:/github/CMPSCGroup4/Group4StudentApp/StuData.txt";
 
 		TEST_METHOD(TXTOpenFileTest)
 		{

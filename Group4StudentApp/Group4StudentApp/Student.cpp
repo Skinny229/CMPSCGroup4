@@ -216,7 +216,7 @@ namespace SpaghettiLizards
 	{
 		ofstream file;
 		file.open("StuData.txt");
-		file << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " << address << " - ";
+		file << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " /*<< address*/ << " - ";
 		for (int i = 0; i < 3; i++)
 		{
 			file << mail[i].getMail() << " - " << mail[i].getUniversityOrPersonal() << " - ";

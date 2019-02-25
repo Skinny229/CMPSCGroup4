@@ -25,6 +25,10 @@ namespace SpaghettiLizards
 		zip = zip1;
 		permanentOrLocal = permanentOrLocal1;
 	}
+	void MailingAddress::setAddress(string address1)
+	{
+		address = address1;
+	}
 	string MailingAddress::getAddress() const
 	{
 		return address;

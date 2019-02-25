@@ -215,25 +215,25 @@ namespace SpaghettiLizards
 
 		return true;
   }
-	 
-	void Student::printAllStuValues(string fileName)
+  
+	void Student::printAllStuValues(ostream& out ,string fileName)
 	{
-		ofstream file;
+		//ofstream file;
 
-		file.open("StuData.txt");
-		file << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " << address.getAddress() << " - ";
+		//file.open("StuData.txt");
+		out << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " << address.getAddress() << " - ";
+
 		for (int i = 0; i < 3; i++)
 		{
-			file << mail[i].getMail() << " - " << mail[i].getUniversityOrPersonal() << " - ";
+			out << mail[i].getMail() << " - " << mail[i].getUniversityOrPersonal() << " - ";
 		}
 		for (int i = 0; i < 3; i++)
 		{
-			file << phoneNumber[i].getNumber() << " - " << phoneNumber[i].getType() << " - ";
+			out << phoneNumber[i].getNumber() << " - " << phoneNumber[i].getType() << " - ";
 		}
-		file << birthDate.getDate() << " - " << acceptedDate.getDate() << " - " << status << endl;
+		out << birthDate.getDate() << " - " << acceptedDate.getDate() << " - " << status << endl;
 
-		file.close();
+		//file.close();
 	}
-	
 
 }

@@ -86,10 +86,9 @@ namespace Group4UnitTest
 
 			stu.getStuFromFile(FILE_PATH);
 
-			string actual = stu.getFirstName();
+			int actual = stu.getId();
 
 			Assert::AreEqual(expected, actual);
-
 		}
 
 		TEST_METHOD(USERID_TEST)
@@ -107,6 +106,7 @@ namespace Group4UnitTest
 
 		TEST_METHOD(Address_Test)
 		{
+
 			string expected = "629_Spruce_St.";
 
 			Student stu;
@@ -120,8 +120,8 @@ namespace Group4UnitTest
 
 		TEST_METHOD(Email_Test)
 		{
-			string expected = "BPao@aol.com";
 
+			string expected = "BPao@aol.com";
 			Student stu;
 
 			stu.getStuFromFile(FILE_PATH);
@@ -130,6 +130,7 @@ namespace Group4UnitTest
 
 			Assert::AreEqual(expected, actual);
 		}
+    
 		TEST_METHOD(EmailType_Test)
 		{
 			string expected = "personal";
@@ -157,6 +158,7 @@ namespace Group4UnitTest
 			Assert::AreEqual(expected, actual);
 		}
 
+
 		TEST_METHOD(PhoneNumberType_Test)
 		{
 			string expected = "home";
@@ -170,6 +172,7 @@ namespace Group4UnitTest
 			Assert::AreEqual(expected, actual);
 		}
 
+
 		TEST_METHOD(BirthDate_Test)
 		{
 			string expected = "12/12/1935";
@@ -178,9 +181,7 @@ namespace Group4UnitTest
 
 			stu.getStuFromFile(FILE_PATH);
 
-
 			string actual = stu.getBirthDate().getDate();
-
 
 			Assert::AreEqual(expected, actual);
 		}
@@ -192,7 +193,6 @@ namespace Group4UnitTest
 			Student stu;
 
 			stu.getStuFromFile(FILE_PATH);
-
 
 			string actual = stu.getAcceptedDate().getDate();
 

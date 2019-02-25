@@ -11,6 +11,8 @@ namespace rlopez
 	bool Tester::execOption(int sel, objectType& studentList)
 	{
 	
+		string txtName;
+		Student newStu;
 		switch(sel)
 		{
 			
@@ -39,6 +41,12 @@ namespace rlopez
 		case 7:
 			break;
 		case 8:
+			{
+				cout << "Please enter the student Data file txt name: ";
+				cin >> txtName;
+				newStu.getStuFromFile(txtName);
+				studentList.push_back(newStu);
+			}
 			break;
 		case 9:
 			return false;

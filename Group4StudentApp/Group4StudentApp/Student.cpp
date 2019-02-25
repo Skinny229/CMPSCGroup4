@@ -216,7 +216,7 @@ namespace SpaghettiLizards
 		return true;
   }
   
-	void Student::printAllStuValues(ostream& out ,string fileName)
+	void Student::printAllStuValues(ostream& out)
 	{
 		//ofstream file;
 

@@ -8,11 +8,12 @@ using namespace SpaghettiLizards;
 
 namespace rlopez
 {
-	bool Tester::execOption(int sel, objectType& obj)
+	bool Tester::execOption(int sel, objectType& studentList)
 	{
-
+	
 		switch(sel)
 		{
+			
 		case 1:
 			break;
 		case 2:
@@ -24,6 +25,16 @@ namespace rlopez
 		case 5:
 			break;
 		case 6:
+			{
+				if(studentList.empty())
+				{
+					cout << "No Students Exist!";
+					return true;
+				}
+
+				for (Student stu : studentList)
+					stu.printAllStuValues(cout);
+			}
 			break;
 		case 7:
 			break;
@@ -31,7 +42,6 @@ namespace rlopez
 			break;
 		case 9:
 			return false;
-
 		}
 		return true;
 	}

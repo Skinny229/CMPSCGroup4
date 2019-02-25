@@ -20,7 +20,7 @@ int main()
 	gui.addOptionMenu("Display partial listing of values of student");
 	gui.addOptionMenu("Display all students all values in console");
 	gui.addOptionMenu("Write Student to file");
-	gui.addOptionMenu("Read students from file");
+	gui.addOptionMenu("Read student from file");
 	gui.addOptionMenu("Exit");
 
 	vector<Student> studentList;

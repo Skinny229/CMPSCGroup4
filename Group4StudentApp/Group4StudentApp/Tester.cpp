@@ -47,8 +47,8 @@ namespace rlopez
 	//Same as next, but this will run until the execOption returns false
 	void Tester::test() 
 	{
-		while (next());
-		
+		while (next())
+		cout << endl;
 	}
 
 	//Converts the string vector into a single string for cout

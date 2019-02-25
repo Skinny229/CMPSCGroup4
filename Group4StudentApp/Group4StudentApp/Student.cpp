@@ -18,7 +18,7 @@ namespace SpaghettiLizards
 
 
   
-	Student::Student(string first, string middle, string last, int newId ,string newUserId, string newStatus)
+	Student::Student(string first, string middle, string last, int newId ,string newUserId, string newStatus, string newIntendedMajor, string newIntendedMinor)
 	{
 		firstName = first;
 
@@ -31,6 +31,10 @@ namespace SpaghettiLizards
 		userId = newUserId;
 
 		status = newStatus;
+
+		intendedMajor = newIntendedMajor;
+
+		intendedMinor = newIntendedMinor;
 	}
 
 	int Student::getId() const
@@ -91,12 +95,12 @@ namespace SpaghettiLizards
 	}
   
   
-  	void Student::setId1(int idl)
+  	void Student::setId(int idl)
 
 	{
 		id = idl;
 	}
-	void Student::setUserId1(string userIdl)
+	void Student::setUserId(string userIdl)
 	{
 		userId = userIdl;
 	}
@@ -210,8 +214,7 @@ namespace SpaghettiLizards
 		phoneNumber[1].setPhoneNumber(phoneNumber1, numberType1);
 		birthDate.setDate(birthDate1);
 		acceptedDate.setDate(acceptedDate1);
-		startSemester.setSemester(startSemester1);
-		startSemester.setYear(startSemesterYear1);
+		startSemester.setSemester(startSemester1, startSemesterYear1);
 
 		return true;
   }

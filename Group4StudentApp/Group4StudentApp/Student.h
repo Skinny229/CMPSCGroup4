@@ -61,7 +61,7 @@ namespace SpaghettiLizards
 		 *
 		 */
 
-		Student(string = "?", string = "?", string = "?", int = 1, string = "?", string = "?");
+		Student(string = "?", string = "?", string = "?", int = 1, string = "?", string = "?", string = "?", string = "?");
 
 		/*
 		 * PRECONDITION: enters valid file path
@@ -110,9 +110,9 @@ namespace SpaghettiLizards
 
 		void setAddress(MailingAddress address);
 
-		void setId1(int id);
+		void setId(int id);
 
-		void setUserId1(string userId);
+		void setUserId(string userId);
 
 		void setIntendedMajor(string intendedMajor);
 

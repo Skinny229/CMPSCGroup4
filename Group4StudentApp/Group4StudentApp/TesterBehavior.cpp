@@ -29,6 +29,7 @@ namespace rlopez
 		string acceptedDate1;
 		string startSemester1;
 		string startSemesterYear1;
+		Semester newSem;
 
 		switch(sel)
 		{
@@ -68,14 +69,24 @@ namespace rlopez
 			cout << "Status(Enrolled, not enrolled, etc): " << endl;
 			cin >> status;
 
-			stu.setAddress(address1);
+			stu.setFirstName(firstName);
+			stu.setMiddleName(middleName);
+			stu.setLastName(lastName);
+			stu.setId(id);
+			stu.setUserId(userId);
+			stu.setStatus(status);
+			stu.setIntendedMajor(intendedMajor);
+			stu.setIntendedMinor(intendedMinor);
+
 			/*stu[1].setEmail(mail1, mailType1);
 			phoneNumber[1].setPhoneNumber(phoneNumber1, numberType1);*/
 
+			stu.setAddress(address1);
 			stu.setBirthDate(birthDate1);
-			stu.setAcceptedDate.setDate(acceptedDate1);
-			stu.setStartSemester.setSemester(startSemester1);
-			stu.setStartSemester.setYear(startSemesterYear1);
+			stu.setAcceptedDate(acceptedDate1);
+
+			newSem.setSpringOrFall(startSemester1);
+			newSem.setYear(startSemesterYear1);
 
 			studentList.push_back(stu);
 			break;

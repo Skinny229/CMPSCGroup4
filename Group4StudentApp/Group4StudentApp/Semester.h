@@ -11,8 +11,9 @@ namespace SpaghettiLizards
 	{
 	public:
 		Semester(string = " ", string = " ");
-		void setSemester(string springOrFall); 
-		void setYear(string year);
+		void setSemester(string, string);
+		void setSpringOrFall(string);
+		void setYear(string);
 		string getYear() const ;
 		string getSpringOrFall() const;
 	private:

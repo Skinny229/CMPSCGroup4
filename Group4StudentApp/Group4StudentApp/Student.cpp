@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <string>
 #include <fstream>
-
+#include <ostream>
 #include "Tester.h"
 #include "Student.h"
 #include "MailingAddress.h"
@@ -170,17 +170,18 @@ namespace SpaghettiLizards
 		string startSemesterYear1;
 
 		//Ignore first line
-		inFile.ignore(0, '\n');
+		getline(inFile, firstName);
+
 		inFile >> firstName >> middleName >> lastName;
 		inFile.ignore(0, '-');
 		inFile >> id;
-		inFile.ignore(0, '-');  
+		inFile.ignore(0, '-');
 		inFile >> userId;
 		inFile.ignore(0, '-');
 		inFile >> address1;
 		inFile.ignore(0, '-');
 		inFile >> mail1;
-		inFile.ignore(0, '-');
+		inFile.ignore(1, '-');
 		inFile >> mailType1;
 		inFile.ignore(0, '-');
 		inFile >> phoneNumber1;
@@ -207,14 +208,16 @@ namespace SpaghettiLizards
 		//birthDate.setDate();
 		//acceptedDate.setDate();
 
-		
+
 		return true;
-	}
+  }
+	 
 	void Student::printAllStuValues(string fileName)
 	{
 		ofstream file;
+
 		file.open("StuData.txt");
-		file << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " << address.getAddress() << " - ";
+		file << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " /*<< address*/ << " - ";
 		for (int i = 0; i < 3; i++)
 		{
 			file << mail[i].getMail() << " - " << mail[i].getUniversityOrPersonal() << " - ";
@@ -227,4 +230,6 @@ namespace SpaghettiLizards
 
 		file.close();
 	}
+
+
 }

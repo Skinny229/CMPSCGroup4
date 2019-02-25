@@ -142,7 +142,7 @@ namespace SpaghettiLizards
 	}
 	void Student::setMail(Email mail[], int x)
 	{
-		this->mail[x] = mail[x];
+		this->mail = mail;
 	}
 	void Student::setPhoneNumber(PhoneNumber number[], int x)
 	{
@@ -225,6 +225,7 @@ namespace SpaghettiLizards
 
 		for (int i = 0; i < 3; i++)
 		{
+		
 			out << mail[i].getMail() << " - " << mail[i].getUniversityOrPersonal() << " - ";
 		}
 		for (int i = 0; i < 3; i++)

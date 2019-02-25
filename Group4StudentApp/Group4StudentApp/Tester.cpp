@@ -3,6 +3,9 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <locale>
+#include <cstdlib>
+
 
 using namespace std;
 

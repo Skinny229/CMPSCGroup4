@@ -212,23 +212,23 @@ namespace SpaghettiLizards
 		return true;
   }
 
-	void Student::printAllStuValues(string fileName)
+	void Student::printAllStuValues(ostream& out ,string fileName)
 	{
-		ofstream file;
-		file.open("StuData.txt");
-		file << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " << address << " - ";
-		for (int i = 0; i < 3; i++)
-		{
-			file << mail[i].getMail() << " - " << mail[i].getUniversityOrPersonal() << " - ";
-		}
-		for (int i = 0; i < 3; i++)
-		{
-			file << phoneNumber[i].getNumber() << " - " << phoneNumber[i].getType() << " - ";
-		}
-		file << birthDate.getMonth() << "/" << birthDate.getDay() << "/" << birthDate.getYear() << " - " << acceptedDate.getMonth() << "/" << acceptedDate.getDay() << "/" << acceptedDate.getMonth() << " - " << status << endl;
+		//ofstream file;
 
-		file.close();
+		//file.open("StuData.txt");
+		out << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " << address.getAddress() << " - ";
+		for (int i = 0; i < 3; i++)
+		{
+			out << mail[i].getMail() << " - " << mail[i].getUniversityOrPersonal() << " - ";
+		}
+		for (int i = 0; i < 3; i++)
+		{
+			out << phoneNumber[i].getNumber() << " - " << phoneNumber[i].getType() << " - ";
+		}
+		out << birthDate.getDate() << " - " << acceptedDate.getDate() << " - " << status << endl;
+
+		//file.close();
 	}
-
 
 }

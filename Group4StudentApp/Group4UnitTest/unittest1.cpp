@@ -111,6 +111,7 @@ namespace Group4UnitTest
 			stu.getStuFromFile(FILE_PATH);
 
 			string actual = /*stu.getAddress() IMPLEMENT NEW METHOD*/ "FAIL";
+							
 
 			Assert::AreEqual(expected, actual);
 		}

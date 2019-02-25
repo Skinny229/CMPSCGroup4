@@ -3,6 +3,7 @@
 #include "Student.h"
 #include "Tester.h"
 #include <vector>
+#include <cstdlib>
 
 using namespace std;
 using namespace SpaghettiLizards;
@@ -22,8 +23,15 @@ int main()
 	gui.addOptionMenu("Read students from file");
 	gui.addOptionMenu("Exit");
 
+	vector<Student> studentList;
+
+	gui.setObj(studentList);
 
 
+	gui.test();
+	
 
 
+	std::system("pause");
+	return 0;
 }

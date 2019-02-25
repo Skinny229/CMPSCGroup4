@@ -21,7 +21,7 @@ namespace rlopez
 	{
 		spacer = "----------------------------------";
 		optionCount = 0;
-	}
+	} 
 
 	//Takes in the next selection and then executes
 	bool Tester::next() 

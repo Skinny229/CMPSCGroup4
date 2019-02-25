@@ -175,6 +175,7 @@ namespace SpaghettiLizards
 		getline(inFile, firstName);
 
 		inFile >> firstName >> middleName >> lastName;
+
 		inFile.ignore(15, '-');
 		inFile >> id;
 		inFile.ignore(16, '-');

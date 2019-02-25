@@ -38,9 +38,10 @@ namespace Group4UnitTest
 
 		}
 		TEST_METHOD(FirstNameFull)
-		{
+    {
+      
 			string expected = "Bob";
-
+      
 			Student stu;
 
 			stu.getStuFromFile(FILE_PATH);
@@ -85,9 +86,10 @@ namespace Group4UnitTest
 
 			stu.getStuFromFile(FILE_PATH);
 
-			int actual = stu.getId();
+			string actual = stu.getFirstName();
 
 			Assert::AreEqual(expected, actual);
+
 		}
 
 		TEST_METHOD(USERID_TEST)

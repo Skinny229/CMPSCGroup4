@@ -75,7 +75,7 @@ namespace SpaghettiLizards
 		 * POSTCONDITION: Prints all value content from the member variables
 		 *
 		 */
-		void printAllStuValues(string);
+		void printAllStuValues(ostream&,string);
 
 
 		int getId() const;

@@ -36,7 +36,19 @@ namespace rlopez
 			break;
 		case 5:
 			{
-				
+				if (studentList.empty())
+				{
+					cout << "No Students Exist!";
+					return true;
+				}
+
+				for (Student stu : studentList) 
+				{
+					cout << "Name: " << stu.getFirstName() << " " << stu.getLastName() << endl;
+					cout << "ID: " << stu.getId() << endl;
+					cout << "Email: " << "(" << stu.getMail(1).getUniversityOrPersonal() << ") " << stu.getMail(1).getMail() << endl;
+					cout << "Number: " << stu.getPhoneNumber(1).getNumber() << endl << endl;
+				}
 			}
 			break;
 		case 6:
@@ -53,7 +65,7 @@ namespace rlopez
 			break;
 		case 7:
 			{
-				//Testing 	
+				 	
 			}
 			break;
 		case 8:

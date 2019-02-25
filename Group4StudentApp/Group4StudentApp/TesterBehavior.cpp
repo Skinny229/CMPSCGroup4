@@ -26,6 +26,24 @@ namespace rlopez
 			break;
 		case 3:
 			{
+				if (studentList.empty())
+				{
+					cout << "No Students Exist!";
+				}
+				else
+				{
+					cout << "Please select a student: ";
+					for (auto i = 0; i < studentList.size(); i++)
+					{
+						cout << i + 1 << ") " << studentList.at(i).getFirstName() << " " << studentList.at(i).getLastName() << endl;
+					}
+				do
+				{
+					cout << "Selection: ";
+					cin >> input;
+				} while (input < 1 && input >= studentList.size());
+				studentList.erase(studentList.begin()+(input-1));
+			}
 				
 			}
 			break;
@@ -43,7 +61,7 @@ namespace rlopez
 				else
 				{
 					cout << "Please select a student: ";
-					for (auto i = 0; i < studentList.size(); i++) 
+					for (auto i = 0; i < studentList.size(); i++)
 					{
 						cout << i + 1 << ") " << studentList.at(i).getFirstName() << " " << studentList.at(i).getLastName() << endl;
 					}
@@ -52,9 +70,8 @@ namespace rlopez
 						cout << "Selection: ";
 						cin >> input;
 					} while (input < 1 || input >= studentList.size());
-					studentList.at(input).printAllStuValues(cout);
+					studentList.at(input-1).printAllStuValues(cout);
 				}
-				return true;
 
 			}
 			break;

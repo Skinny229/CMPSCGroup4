@@ -2,8 +2,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
-#include "Email.h"
-#include <ostream>
 
 using namespace std;
 namespace SpaghettiLizards

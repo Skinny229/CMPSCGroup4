@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include <string>
 #include "Email.h"
-#include <ostream>
 
 using namespace std;
 namespace SpaghettiLizards
@@ -25,6 +24,5 @@ namespace SpaghettiLizards
 	{
 		return universityOrPersonal;
 	}
-
 
 }

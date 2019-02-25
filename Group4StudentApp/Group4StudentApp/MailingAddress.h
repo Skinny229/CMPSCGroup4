@@ -2,7 +2,6 @@
 #ifndef MAILINGADDRESS_H
 #define MAILINGADDRESS_H
 #include <string>
-#include <ostream>
 
 using namespace std;
 

@@ -1,20 +1,19 @@
+#pragma once
 #ifndef DATE_H
 #define DATE_H
+#include <string>
+
+using namespace std;
 namespace SpaghettiLizards
 {
 	class Date
 	{
 	private:
-		int month;
-		int day;
-		int year;
+		string date;
 	public:
-		Date(int = 7, int = 4, int = 94);  // constructor
-		void setDate(int, int, int); // member function to assign a date
-		void showDate();            // member function to display a date
-		int getMonth();
-		int getDay();
-		int getYear();
+		Date(string = " ");  // constructor
+		void setDate(string); // member function to assign a date
+		string getDate() const;
 	};
 }
 #endif

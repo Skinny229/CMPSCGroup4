@@ -1,40 +1,22 @@
 #include<iostream>
 #include <cstdlib>
+#include <string>
 #include "date.h"
 using namespace std;
 
-
 namespace SpaghettiLizards
 {
-	Date::Date(int mm, int dd, int yy)
+	Date::Date(string date1)
 	{
-		month = mm;
-		day = dd;
-		year = yy;
+		date = date1;
 	}
-	void Date::setDate(int mm, int dd, int yy)
+	void Date::setDate(string date1)
 	{
-		//precondition: Values passed for month, day and year must be of type integer
-		//postcondition: The date has been set
-		month = mm;
-		day = dd;
-		year = yy;
+		date = date1;
+	}
+	string Date::getDate() const
+	{
+		return date;
 	}
 
-	void Date::showDate()
-	{
-		cout << month << "/" << day << "/" << year << "\n";
-	}
-	int Date::getMonth()
-	{
-		return month;
-	}
-	int Date::getDay()
-	{
-		return day;
-	}
-	int Date::getYear()
-	{
-		return year;
-	}
 }

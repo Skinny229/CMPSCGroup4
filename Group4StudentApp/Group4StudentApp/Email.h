@@ -2,7 +2,6 @@
 #ifndef EMAIL_H
 #define EMAIL_H
 #include <string>
-#include <ostream>
 
 using namespace std;
 
@@ -22,6 +21,5 @@ namespace SpaghettiLizards
 		string getUniversityOrPersonal() const;
 
 	};
-
 }
 #endif

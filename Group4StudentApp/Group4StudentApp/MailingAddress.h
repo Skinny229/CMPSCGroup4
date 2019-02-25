@@ -2,7 +2,6 @@
 #ifndef MAILINGADDRESS_H
 #define MAILINGADDRESS_H
 #include <string>
-#include <ostream>
 
 using namespace std;
 
@@ -19,6 +18,7 @@ namespace SpaghettiLizards
 	public:
 		MailingAddress(string = " ", string = " ", string = " ", string = " ", string = " ");
 		void setMailingAddress(string, string, string, string, string);
+		void setAddress(string);
 		string getAddress() const; 
 		string getCity() const;
 		string getState() const;

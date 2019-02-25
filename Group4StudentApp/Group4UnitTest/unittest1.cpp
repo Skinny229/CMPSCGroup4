@@ -24,7 +24,7 @@ namespace Group4UnitTest
 	{
 	public:
 
-		std::string FILE_PATH = "C:/Dev/CMPSCGroup4/Group4StudentApp/Group4StudentApp/StuData.txt";
+		std::string FILE_PATH = "C:/github/CMPSCGroup4/Group4StudentApp/StuData.txt";
 
 		TEST_METHOD(TXTOpenFileTest)
 		{
@@ -38,9 +38,10 @@ namespace Group4UnitTest
 
 		}
 		TEST_METHOD(FirstNameFull)
-		{
+    {
+      
 			string expected = "Bob";
-
+      
 			Student stu;
 
 			stu.getStuFromFile(FILE_PATH);
@@ -63,6 +64,7 @@ namespace Group4UnitTest
 			Assert::AreEqual(expected, actual);
 
 		}
+
 		TEST_METHOD(LastNameFull)
 		{
 			string expected = "Pao";
@@ -104,31 +106,44 @@ namespace Group4UnitTest
 
 		TEST_METHOD(Address_Test)
 		{
-			string expected = "629 Spruce St.";
+
+			string expected = "629_Spruce_St.";
 
 			Student stu;
 
 			stu.getStuFromFile(FILE_PATH);
 
-			string actual = /*stu.getAddress() IMPLEMENT NEW METHOD*/ "FAIL";
-							
+			string actual = stu.getAddress().getAddress();
 
 			Assert::AreEqual(expected, actual);
 		}
 
 		TEST_METHOD(Email_Test)
 		{
-			string expected = "Bpao@aol.com";
+
+			string expected = "BPao@aol.com";
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+			string actual = stu.getMail(1).getMail();
+
+			Assert::AreEqual(expected, actual);
+		}
+    
+		TEST_METHOD(EmailType_Test)
+		{
+			string expected = "personal";
 
 			Student stu;
 
 			stu.getStuFromFile(FILE_PATH);
 
-			string actual = stu.getMail(0).getMail();
+
+			string actual = stu.getMail(1).getUniversityOrPersonal();
 
 			Assert::AreEqual(expected, actual);
 		}
-
 
 		TEST_METHOD(PhoneNumber_Test)
 		{
@@ -138,10 +153,25 @@ namespace Group4UnitTest
 
 			stu.getStuFromFile(FILE_PATH);
 
-			string actual = stu.getPhoneNumber(0).getNumber();
+			string actual = stu.getPhoneNumber(1).getNumber();
 
 			Assert::AreEqual(expected, actual);
 		}
+
+
+		TEST_METHOD(PhoneNumberType_Test)
+		{
+			string expected = "home";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+			string actual = stu.getPhoneNumber(1).getType();
+
+			Assert::AreEqual(expected, actual);
+		}
+
 
 		TEST_METHOD(BirthDate_Test)
 		{
@@ -151,9 +181,7 @@ namespace Group4UnitTest
 
 			stu.getStuFromFile(FILE_PATH);
 
-
-			string actual = /*Implement new method here*/"fail";
-
+			string actual = stu.getBirthDate().getDate();
 
 			Assert::AreEqual(expected, actual);
 		}
@@ -166,15 +194,75 @@ namespace Group4UnitTest
 
 			stu.getStuFromFile(FILE_PATH);
 
-
-			string actual = /*ToBe Implmented*/ "Fail";
+			string actual = stu.getAcceptedDate().getDate();
 
 			Assert::AreEqual(expected, actual);
 		}
 
+		TEST_METHOD(IntendedMajor_Test)
+		{
+			string expected = "Computer_Science";
 
-		
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
 
 
+			string actual = stu.getIntendedMajor();
+
+			Assert::AreEqual(expected, actual);
+		}
+		TEST_METHOD(IntendedMinor_Test)
+		{
+			string expected = "gaming";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+
+			string actual = stu.getIntendedMinor();
+
+			Assert::AreEqual(expected, actual);
+		}
+		TEST_METHOD(StartSemester_Test)
+		{
+			string expected = "Fall";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+
+			string actual = stu.getStartSemester().getSpringOrFall();
+
+			Assert::AreEqual(expected, actual);
+		}
+		TEST_METHOD(StartYear_Test)
+		{
+			string expected = "2020";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+
+			string actual = stu.getStartSemester().getYear();
+
+			Assert::AreEqual(expected, actual);
+		}
+		TEST_METHOD(Status_Test)
+		{
+			string expected = "enrolled";
+
+			Student stu;
+
+			stu.getStuFromFile(FILE_PATH);
+
+
+			string actual = stu.getStatus();
+
+			Assert::AreEqual(expected, actual);
+		}
 	};
 }

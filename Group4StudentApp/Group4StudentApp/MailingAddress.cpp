@@ -2,8 +2,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
-#include "Email.h"
-#include <ostream>
 
 using namespace std;
 namespace SpaghettiLizards
@@ -24,6 +22,10 @@ namespace SpaghettiLizards
 		state = state1;
 		zip = zip1;
 		permanentOrLocal = permanentOrLocal1;
+	}
+	void MailingAddress::setAddress(string address1)
+	{
+		address = address1;
 	}
 	string MailingAddress::getAddress() const
 	{

@@ -16,7 +16,7 @@ using namespace std;
 namespace SpaghettiLizards
 {
 
-  
+
   
 	Student::Student(string first, string middle, string last, int newId ,string newUserId)
 	{
@@ -30,7 +30,7 @@ namespace SpaghettiLizards
 
 		userId = newUserId;
 	}
-  
+
 	int Student::getId() const
 	{
 		return id;
@@ -90,6 +90,7 @@ namespace SpaghettiLizards
   
   
   	void Student::setId1(int idl)
+
 	{
 		id = idl;
 	}
@@ -137,21 +138,23 @@ namespace SpaghettiLizards
 	{
 		status = statusl;
 	}
-	void Student::setMail(Email maill)
+	void Student::setMail(Email mail[], int x)
 	{
-		//mail = maill;
+		this->mail[x] = mail[x];
 	}
-	void Student::setPhoneNumber(PhoneNumber numberl)
+	void Student::setPhoneNumber(PhoneNumber number[], int x)
 	{
-	  //number = numberl;
+		this->phoneNumber[x] = number[x];
 	}
 
+	
 	bool Student::getStuFromFile(string txtPath)
 	{
 		//Open File
-		ifstream inFile(txtPath);
+		ifstream inFile;
+		inFile.open(txtPath);
 
-		if(!inFile.is_open())
+		if (!inFile.is_open())
 		{
 			cout << "FILE NOT OPEN!";
 			return false;
@@ -209,16 +212,23 @@ namespace SpaghettiLizards
 		return true;
   }
 
-	/*void Student::printAllStuValues(string fileName)
+	void Student::printAllStuValues(string fileName)
 	{
 		ofstream file;
 		file.open("StuData.txt");
-		file << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " << address << " - " << mail << " - ";
+		file << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " << address << " - ";
 		for (int i = 0; i < 3; i++)
 		{
-			file << phoneNumber.getPhoneNumber(x) << " - "; 
+			file << mail[i].getMail() << " - " << mail[i].getUniversityOrPersonal() << " - ";
 		}
-		file << birthDate.getMonth() << "/" << birthDate.getDay() << "/" << birthDate.getYear() << " - " << acceptedDate.getMonth() << "/" << acceptedDate.getDay() << "/" << acceptedDate.getMonth() << endl;
-			
-	}*/
+		for (int i = 0; i < 3; i++)
+		{
+			file << phoneNumber[i].getNumber() << " - " << phoneNumber[i].getType() << " - ";
+		}
+		file << birthDate.getMonth() << "/" << birthDate.getDay() << "/" << birthDate.getYear() << " - " << acceptedDate.getMonth() << "/" << acceptedDate.getDay() << "/" << acceptedDate.getMonth() << " - " << status << endl;
+
+		file.close();
+	}
+
+
 }

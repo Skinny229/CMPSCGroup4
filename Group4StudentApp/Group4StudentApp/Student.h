@@ -34,17 +34,18 @@ namespace SpaghettiLizards
 		MailingAddress address;
 
 		//Email
-		Email mail[3];
+		int usedMail = -1;
+		Email mailOfStu[3];
 
 		//Important dates
 		Date birthDate;
 		Date acceptedDate;
 		//Phone number
+		int usedPhoneNumber = -1;
 		PhoneNumber phoneNumber[3];
 
 		//Semester
 		Semester startSemester;
-		Semester startYear;
 
 	public:
 		/*
@@ -132,9 +133,9 @@ namespace SpaghettiLizards
 
 		void setStatus(string status);
 
-		void setMail(Email mail[], int x);
+		void addMail(Email mail);
 
-		void setPhoneNumber(PhoneNumber number[], int x);
+		void addPhoneNumber(PhoneNumber number);
 
 	};
 }

@@ -30,6 +30,7 @@ namespace rlopez
 		string startSemester1;
 		string startSemesterYear1;
 		Semester newSem;
+		PhoneNumber newNum;
 
 		string txtName;
 		Student newStu;
@@ -82,8 +83,9 @@ namespace rlopez
 			stu.setIntendedMajor(intendedMajor);
 			stu.setIntendedMinor(intendedMinor);
 
-			/*stu[1].setEmail(mail1, mailType1);
-			phoneNumber[1].setPhoneNumber(phoneNumber1, numberType1);*/
+			stu.addMail(mail1);
+			newNum.setNumber(phoneNumber1);
+			newNum.setNumberType(numberType1);
 
 			stu.setAddress(address1);
 			stu.setBirthDate(birthDate1);

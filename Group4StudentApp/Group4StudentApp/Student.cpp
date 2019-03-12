@@ -144,13 +144,19 @@ namespace SpaghettiLizards
 	{
 		status = statusl;
 	} 
-	void Student::setMail(Email mail[], int x)
+	void Student::addMail(Email mail)
 	{
-		this->mail[x] = mail[x];
+		if (usedMail < 3)
+			return;
+		mailOfStu[usedMail+1] = mail;
+		usedMail++;
 	}
-	void Student::setPhoneNumber(PhoneNumber number[], int x)
+	void Student::addPhoneNumber(PhoneNumber number)
 	{
-		this->phoneNumber[x] = number[x];
+		if (usedPhoneNumber < 3)
+			return;
+		phoneNumber[usedPhoneNumber + 1] = phoneNumber;
+		usedPhoneNumber++;
 	}
 
 	

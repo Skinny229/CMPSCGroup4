@@ -16,7 +16,8 @@ namespace SpaghettiLizards
 
 	public:
 		PhoneNumber(string = " ", string = " ");
-		void setPhoneNumber(string, string);
+		void setNumber(string);
+		void setNumberType(string);
 		string getNumber() const;
 		string getType() const;
 	};

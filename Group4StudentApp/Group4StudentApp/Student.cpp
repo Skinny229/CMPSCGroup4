@@ -171,6 +171,7 @@ namespace SpaghettiLizards
 			cout << "FILE NOT OPEN!";
 			return false;
 		}
+		string idString;
 		string address1;
 		string mail1;
 		string mailType1;
@@ -183,7 +184,13 @@ namespace SpaghettiLizards
 
 		//Ignore first line
 		getline(inFile, firstName);
+		getline(inFile, firstName);
+		getline(inFile, middleName);
+		getline(inFile, lastName);
+		getline(inFile, idString);
+		getline(inFile, userId);
 
+		/*
 		inFile >> firstName >> middleName >> lastName;
 
 		inFile.ignore(15, '-');
@@ -214,6 +221,7 @@ namespace SpaghettiLizards
 		inFile >> startSemesterYear1;
 		inFile.ignore(28, '-');
 		inFile >> status;
+		
 
 		Email newMail(mail1, mailType1);
 		addMail(newMail);
@@ -226,6 +234,8 @@ namespace SpaghettiLizards
 		//acceptedDate.setDate(acceptedDate1);
 
 		startSemester.setSemester(startSemester1, startSemesterYear1);
+		*/
+		id = stoi(idString);
 		return true;
   }
   

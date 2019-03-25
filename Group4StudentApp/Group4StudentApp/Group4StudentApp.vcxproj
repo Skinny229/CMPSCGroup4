@@ -117,7 +117,9 @@
   <ItemGroup>
     <ClInclude Include="date.h" />
     <ClInclude Include="Email.h" />
+    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="MailingAddress.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="PhoneNumber.h" />
     <ClInclude Include="Semester.h" />
     <ClInclude Include="Student.h" />
@@ -127,6 +129,7 @@
     <ClCompile Include="date.cpp" />
     <ClCompile Include="Email.cpp" />
     <ClCompile Include="Group4_Milestone1_Test.cpp" />
+    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="MailingAddress.cpp" />
     <ClCompile Include="phoneNumber.cpp" />
     <ClCompile Include="Semester.cpp" />
@@ -136,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="StuData.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Node.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

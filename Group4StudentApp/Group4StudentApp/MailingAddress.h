@@ -12,14 +12,13 @@ namespace SpaghettiLizards
 	
 	private:
 		//address
-		string address, city, state, zip, permanentOrLocal;
+		string streetAddress, city, state, zip, permanentOrLocal;
 		
 
 	public:
 		MailingAddress(string = " ", string = " ", string = " ", string = " ", string = " ");
 		void setMailingAddress(string, string, string, string, string);
-		void setAddress(string);
-		string getAddress() const; 
+		string getStreetAddress() const; 
 		string getCity() const;
 		string getState() const;
 		string getZip() const;

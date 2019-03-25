@@ -87,7 +87,7 @@ namespace SpaghettiLizards
 	}
 	Email Student::getMail(int x) const
 	{
-		return mail[x];
+		return mailOfStu[x];
 	}
 	PhoneNumber Student::getPhoneNumber(int x) const
 	{
@@ -146,16 +146,16 @@ namespace SpaghettiLizards
 	} 
 	void Student::addMail(Email mail)
 	{
-		if (usedMail < 3)
+		if (usedMail <= 3)
 			return;
-		mailOfStu[usedMail+1] = mail;
+		mailOfStu[usedMail] = mail;
 		usedMail++;
 	}
 	void Student::addPhoneNumber(PhoneNumber number)
 	{
-		if (usedPhoneNumber < 3)
+		if (usedPhoneNumber <= 3)
 			return;
-		phoneNumber[usedPhoneNumber + 1] = phoneNumber;
+		phoneNumber[usedPhoneNumber] = number;
 		usedPhoneNumber++;
 	}
 
@@ -215,13 +215,17 @@ namespace SpaghettiLizards
 		inFile.ignore(28, '-');
 		inFile >> status;
 
-		address.setAddress(address1);
-		mail[1].setEmail(mail1, mailType1);
-		phoneNumber[1].setPhoneNumber(phoneNumber1, numberType1);
-		birthDate.setDate(birthDate1);
-		acceptedDate.setDate(acceptedDate1);
-		startSemester.setSemester(startSemester1, startSemesterYear1);
+		Email newMail(mail1, mailType1);
+		addMail(newMail);
 
+		PhoneNumber newNum(phoneNumber1, numberType1);
+		addPhoneNumber(newNum);
+
+		//address.setAddress(address1);
+		//birthDate.setDate(birthDate1);
+		//acceptedDate.setDate(acceptedDate1);
+
+		startSemester.setSemester(startSemester1, startSemesterYear1);
 		return true;
   }
   
@@ -230,18 +234,19 @@ namespace SpaghettiLizards
 		//ofstream file;
 
 		//file.open("StuData.txt");
-		out << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " << address.getAddress() << " - ";
+		out << firstName << " " << middleName << " " << lastName << " - " << id << " - " << userId << " - " << address.getStreetAddress() 
+			<< " - " << address.getCity() << " - " << address.getState() << " - " << address.getZip() << " - " << address.getPermanentOrLocal() << " - ";
 
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < usedMail; i++)
 		{
-
-			out << mail[i].getMail() << " - " << mail[i].getUniversityOrPersonal() << " - ";
+			out << mailOfStu[i].getMail() << " - " << mailOfStu[i].getUniversityOrPersonal() << " - ";
 		}
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < usedPhoneNumber; i++)
 		{
 			out << phoneNumber[i].getNumber() << " - " << phoneNumber[i].getType() << " - ";
 		}
-		out << birthDate.getDate() << " - " << acceptedDate.getDate() << " - " << status << endl;
+		out << birthDate.getDay() << " - " << birthDate.getMonth() << " - " << birthDate.getYear() << " - " << acceptedDate.getDay() << " - "
+			<< acceptedDate.getMonth() << " - " << acceptedDate.getYear() << " - " << status << endl;
 
 		//file.close();
 	}

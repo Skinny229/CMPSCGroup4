@@ -34,14 +34,14 @@ namespace SpaghettiLizards
 		MailingAddress address;
 
 		//Email
-		int usedMail = -1;
+		int usedMail = 0;
 		Email mailOfStu[3];
 
 		//Important dates
 		Date birthDate;
 		Date acceptedDate;
 		//Phone number
-		int usedPhoneNumber = -1;
+		int usedPhoneNumber = 0;
 		PhoneNumber phoneNumber[3];
 
 		//Semester

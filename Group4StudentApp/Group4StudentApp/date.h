@@ -13,7 +13,7 @@ namespace SpaghettiLizards
 		int month;
 		int year;
 	public:
-		Date(int, int, int);  // constructor
+		Date(int = 0, int = 0, int = 0);  // constructor
 		void setDay(int); // member function to assign a date
 		void setMonth(int);
 		void setYear(int);

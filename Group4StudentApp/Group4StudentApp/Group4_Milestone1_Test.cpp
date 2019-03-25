@@ -2,7 +2,7 @@
 #include <iomanip>
 #include "Student.h"
 #include "Tester.h"
-#include <vector>
+#include "LinkedList.h"
 #include <cstdlib>
 
 using namespace std;
@@ -23,7 +23,7 @@ int main()
 	gui.addOptionMenu("Read student from file");
 	gui.addOptionMenu("Exit");
 
-	vector<Student> studentList;
+	LinkedList<Student> studentList;
 
 	gui.setObj(studentList);
 

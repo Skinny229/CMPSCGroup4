@@ -16,11 +16,15 @@ namespace SpaghettiLizards
 		Node<ListType>* head_ptr;
 		size_t count;
 		Node<ListType>* getTail();
+		void headInsert(ListType&);
 	public:
 		LinkedList();
+		Node<ListType>* at(size_t);
+		void erase(size_t);
 		void push_back(ListType&);
 		void push_front(ListType&);
 		size_t size();
+		bool empty();
 	};
 }
 

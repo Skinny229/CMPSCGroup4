@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{90E5C16E-6739-472D-9668-6BF31C48810A}</ProjectGuid>
     <RootNamespace>Group4StudentApp</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -117,7 +117,9 @@
   <ItemGroup>
     <ClInclude Include="date.h" />
     <ClInclude Include="Email.h" />
+    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="MailingAddress.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="PhoneNumber.h" />
     <ClInclude Include="Semester.h" />
     <ClInclude Include="Student.h" />
@@ -127,6 +129,7 @@
     <ClCompile Include="date.cpp" />
     <ClCompile Include="Email.cpp" />
     <ClCompile Include="Group4_Milestone1_Test.cpp" />
+    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="MailingAddress.cpp" />
     <ClCompile Include="phoneNumber.cpp" />
     <ClCompile Include="Semester.cpp" />
@@ -136,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="StuData.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Node.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

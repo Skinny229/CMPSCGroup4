@@ -31,8 +31,9 @@ namespace SpaghettiLizards
 		string status;
 
 		//Address
-		MailingAddress address;
-
+		int usedAddress = 0;
+		MailingAddress address[3];
+		
 		//Email
 		int usedMail = 0;
 		Email mailOfStu[3];
@@ -102,14 +103,14 @@ namespace SpaghettiLizards
 
 		Date getBirthDate() const;
 
-		MailingAddress getAddress() const;
+		MailingAddress getAddress(int x) const;
 
 		Email getMail(int x) const;
 
 		PhoneNumber getPhoneNumber(int x) const;
 
 
-		void setAddress(MailingAddress address);
+		void addAddress(MailingAddress address);
 
 		void setId(int id);
 

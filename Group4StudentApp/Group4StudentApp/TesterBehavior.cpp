@@ -41,12 +41,12 @@ namespace rlopez
 		string startSemester1;
 		string startSemesterYear1;
 
-		MailingAddress newMailingAddress;
+		MailingAddress newMailingAddress(streetAddress, city, state, zip, permanentOrLocal);
 		Email newMail(mail1, mailType1);
 		Date newBirthDate;
 		Date newAcceptedDate;
 		Semester newSem;
-		PhoneNumber newNum;
+		PhoneNumber newNum(phoneNumber1, numberType1);
 
 		string txtName;
 		Student newStu;
@@ -122,18 +122,21 @@ namespace rlopez
 			
 			stu.addMail(newMail);
 
-			newMailingAddress.setMailingAddress(streetAddress, city, state, zip, permanentOrLocal);
+			stu.addAddress(newMailingAddress);
 
-			newNum.setNumber(phoneNumber1);
-			newNum.setNumberType(numberType1);
+			stu.addPhoneNumber(newNum);
 
 			newBirthDate.setDay(birthDay);
 			newBirthDate.setDay(birthMonth);
 			newBirthDate.setDay(birthYear);
 
+			stu.setBirthDate(newBirthDate);
+
 			newAcceptedDate.setDay(acceptedDay);
 			newAcceptedDate.setDay(acceptedMonth);
 			newAcceptedDate.setDay(acceptedYear);
+
+			stu.setAcceptedDAte(newAcceptedDate);
 
 			newSem.setSpringOrFall(startSemester1);
 			newSem.setYear(startSemesterYear1);

@@ -2,10 +2,12 @@
 #define	TESTER_H
 #include <string>
 #include <vector>
+#include "LinkedList.h"
 #include "Student.h"
 
 
 using namespace std;
+using namespace SpaghettiLizards;
 
 namespace rlopez
 {
@@ -17,7 +19,7 @@ namespace rlopez
 		/*
 			Set the type to be used while testing
 		*/
-		typedef vector<SpaghettiLizards::Student> objectType;
+		typedef LinkedList<SpaghettiLizards::Student> objectType;
 
 		objectType object;
 

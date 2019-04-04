@@ -136,7 +136,7 @@ namespace rlopez
 			newAcceptedDate.setDay(acceptedMonth);
 			newAcceptedDate.setDay(acceptedYear);
 
-			stu.setAcceptedDAte(newAcceptedDate);
+			stu.setAcceptedDate(newAcceptedDate);
 
 			newSem.setSpringOrFall(startSemester1);
 			newSem.setYear(startSemesterYear1);

@@ -175,9 +175,11 @@ namespace SpaghettiLizards
 			return false;
 		}
 		string idString;
-		string address1;
-		string mail1;
-		string mailType1;
+		string mailStreetAddress;
+		string mailCity;
+		string mailState;
+		string mailZip;
+		string mailType;
 		string phoneNumber1;
 		string numberType1;
 		string birthDate1;
@@ -185,14 +187,30 @@ namespace SpaghettiLizards
 		string startSemester1;
 		string startSemesterYear1;
 
+
 		//Ignore first line
 		getline(inFile, firstName);
 		getline(inFile, firstName);
 		getline(inFile, middleName);
 		getline(inFile, lastName);
 		getline(inFile, idString);
+		setId(stoi(idString));
 		getline(inFile, userId);
-		
+
+		do
+		{
+			getline(inFile, mailStreetAddress);
+			getline(inFile, mailCity);
+			getline(inFile, mailState);
+			getline(inFile, mailZip);
+			getline(inFile, mailType);
+
+			MailingAddress newMailingAddress(mailStreetAddress, mailCity, mailState, mailZip, mailType);
+			addAddress(newMailingAddress);
+
+			getline(inFile, phoneNumber1);
+		} while (phoneNumber1 == "-");
+
 		/*
 		inFile >> firstName >> middleName >> lastName;
 
@@ -238,7 +256,6 @@ namespace SpaghettiLizards
 
 		startSemester.setSemester(startSemester1, startSemesterYear1);
 		*/
-		id = stoi(idString);
 		return true;
   }
   

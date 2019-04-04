@@ -1,6 +1,5 @@
 #include "LinkedList.h"
 #include <cstdlib>
-#include "Node.h"
 
 using namespace std;
 
@@ -19,12 +18,16 @@ namespace SpaghettiLizards
 	{
 		if (count == 0) 
 		{
-			head_ptr->setData(entry);
-			head_ptr->setPrev = NULL;
+			head_ptr->link = NULL;
+			head_ptr->data = entry;
+			head_ptr->prev = NULL;
 		}
 		else
 		{
-			Node<ListType>* newHead = new Node<ListType>(entry, head_ptr,NULL);
+			Node* newHead = new Node;
+			newHead->data = entry;
+			newHead->prev = NULL;
+			newHead->link = head_ptr;
 			head_ptr->setPrev(newHead);
 			head_ptr = newHead;
 		}
@@ -36,43 +39,71 @@ namespace SpaghettiLizards
 	{
 		if(empty())
 		{
-			push_front(entry);
+			headInsert(entry);
 			return;
 		}
-
-		Node<ListType>* tail = getTail();
-		Node<ListType>* newTail = new Node<ListType>(entry,NULL,tail);
+		Node* tail = getTail();
+		Node* newTail = new Node;
+		newTail->setPrev(tail);
+		newTail->setLink(NULL);
 		tail->setLink(newTail);
 		count++;
 	}
 
 	template<class ListType>
-	void LinkedList<ListType>::push_front(ListType &entry)
-	{
-		headInsert(entry);
-		count++;
-	}
-
-	template<class ListType>
-	Node<ListType>* LinkedList<ListType>::at(size_t elem)
+	ListType LinkedList<ListType>::at(size_t elem)
 	{
 		
-		Node<ListType>* item = NULL;
+		Node* item = NULL;
 		size_t loopCounter = 0;
 
-		for (Node<ListType>* cursor = head_ptr; loopCounter < elem && cursor != NULL; cursor = cursor->getLink()) 
+		for (Node* cursor = head_ptr; loopCounter < elem && cursor != NULL; cursor = cursor->link) 
 		{
+			if (elem == loopCounter)
+			{
+				item = cursor;
+				break;
+			}
 
 		}
-
-
-		return item;
+		return item->data;
 	}
 
 	template<class ListType>
 	void LinkedList<ListType>::erase(size_t elem)
 	{
+		if (elem >= count)
+			return;
+		else if (elem == 0) 
+		{
+			Node* oldHead = head_ptr;
+			Node* newHead = head_ptr->link;
+			newHead->prev = NULL;
+			oldHead = NULL;
+			head_ptr = newHead;
 
+		}
+		else
+		{
+			Node* before = NULL;
+			Node* toDelete = NULL;
+			Node* after = NULL;
+			size_t i = 0;
+			for (Node* cursor = head_ptr; i < count && cursor != NULL; cursor = cursor->link)
+			{
+				if (i == elem - 1)
+				{
+					before = cursor;
+					toDelete = cursor->link;
+					after = toDelete->link;
+					break;
+				}
+				i++;
+			}
+			before->link = after;
+			after->prev = before;
+			toDelete = NULL;
+		}
 	}
 
 	template<class ListType>
@@ -88,12 +119,12 @@ namespace SpaghettiLizards
 	}
 
 	template<class ListType>
-	Node<ListType>* LinkedList<ListType>::getTail()
+	void LinkedList<ListType>::getTail()
 	{
-		Node<ListType>* cursor;
-		for (cursor = head_ptr; cursor != NULL; cursor = cursor->getLink());
-		return cursor;
+		Node asd;
+		return nullptr;
 	}
+
 
 
 

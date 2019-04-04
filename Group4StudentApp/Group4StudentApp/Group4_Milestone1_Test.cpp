@@ -3,6 +3,7 @@
 #include "Student.h"
 #include "Tester.h"
 #include "LinkedList.h"
+#include "LinkedList.cpp"
 #include <cstdlib>
 
 using namespace std;

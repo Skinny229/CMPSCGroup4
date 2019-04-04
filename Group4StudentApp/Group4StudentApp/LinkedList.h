@@ -3,7 +3,6 @@
 #define LinkedList_H
 
 #include <cstdlib>
-#include "Node.h"
 
 using namespace std;
 
@@ -12,19 +11,27 @@ namespace SpaghettiLizards
 	template<class ListType>
 	class LinkedList 
 	{
-	private:
-		Node<ListType>* head_ptr;
-		size_t count;
-		Node<ListType>* getTail();
-		void headInsert(ListType&);
+	
 	public:
+
+		struct Node
+		{
+			Node* link;
+			ListType data;
+			Node* prev;
+		};
 		LinkedList();
-		Node<ListType>* at(size_t);
+		ListType at(size_t);
 		void erase(size_t);
 		void push_back(ListType&);
-		void push_front(ListType&);
 		size_t size();
 		bool empty();
+		void getTail();
+
+	private:
+		Node* head_ptr;
+		size_t count;
+		void headInsert(ListType&);
 	};
 }
 

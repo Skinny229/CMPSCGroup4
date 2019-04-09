@@ -1,26 +1,38 @@
-FirstName MiddleName LastName ID userID address email emailtype phonenumber phonenumber(type) BirthDay BirthMonth BirthYear AcceptanceDay AcceptanceMonth AcceptanceYear intendedMajor intendedMinor startSemester startSemester(year) status
+FirstName MiddleName LastName ID userID address phonenumber phonenumber(type) email emailtype BirthDay BirthMonth BirthYear AcceptanceDay AcceptanceMonth AcceptanceYear intendedMajor intendedMinor startSemester startSemester(year) status
 Bob
-Jennifer 
-Pao 
+Jennifer
+Pao
 1
-12345 
-629 Spruce St. 
-BPao@aol.com 
-personal 
-6105589781 
-home 
-12 
-12 
-1935 
-11 
-2 
-2019 
-Computer Science 
-Gaming 
-Fall 
-2020 
+12345
+629 Spruce St.
+Thornton
+PA
+19283
+Permanent
+-
+25 bubble rd.
+Best city
+PA
+12421
+Local
+6105589781
+home
+-
+6102341234
+local
+BPao@aol.com
+personal
+12
+12
+1935
+11
+2
+2019
+Computer Science
+Gaming
+Fall
+2020
 enrolled
-
 
 
 

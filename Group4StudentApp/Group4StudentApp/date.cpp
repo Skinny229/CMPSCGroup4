@@ -18,11 +18,11 @@ namespace SpaghettiLizards
 	}
 	void Date::setMonth(int m)
 	{
-		day = m;
+		month = m;
 	}
 	void Date::setYear(int y)
 	{
-		day = y;
+		year = y;
 	}
 	int Date::getDay() const
 	{

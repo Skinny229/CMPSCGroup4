@@ -142,21 +142,21 @@ namespace SpaghettiLizards
 	} 
 	void Student::addAddress(MailingAddress addressl)
 	{
-		if (usedAddress <= 3)
+		if (usedAddress >= 3)
 			return;
 		address[usedAddress] = addressl;
 		usedAddress++;
 	}
 	void Student::addMail(Email mail)
 	{
-		if (usedMail <= 3)
+		if (usedMail >= 3)
 			return;
 		mailOfStu[usedMail] = mail;
 		usedMail++;
 	}
 	void Student::addPhoneNumber(PhoneNumber number)
 	{
-		if (usedPhoneNumber <= 3)
+		if (usedPhoneNumber >= 3)
 			return;
 		phoneNumber[usedPhoneNumber] = number;
 		usedPhoneNumber++;
@@ -182,7 +182,11 @@ namespace SpaghettiLizards
 		string mailType;
 		string phoneNumber1;
 		string numberType1;
-		string birthDate1;
+		string email;
+		string emailType;
+		string birthDayString;
+		string birthMonthString;
+		string birthYearString;
 		string acceptedDate1;
 		string startSemester1;
 		string startSemesterYear1;
@@ -210,80 +214,79 @@ namespace SpaghettiLizards
 
 			getline(inFile, phoneNumber1);
 		} while (phoneNumber1 == "-");
+		do
+		{
+			if (email == "-")
+			{
+				getline(inFile, phoneNumber1);
+			}
+			getline(inFile, numberType1);
 
-		/*
-		inFile >> firstName >> middleName >> lastName;
 
-		inFile.ignore(15, '-');
-		inFile >> id;
-		inFile.ignore(16, '-');
-		inFile >> userId;
-		inFile.ignore(17, '-');
-		inFile >> address1;
-		inFile.ignore(18, '-');
-		inFile >> mail1;
-		inFile.ignore(19, '-');
-		inFile >> mailType1;
-		inFile.ignore(20, '-');
-		inFile >> phoneNumber1;
-		inFile.ignore(21, '-');
-		inFile >> numberType1;
-		inFile.ignore(22, '-');
-		inFile >> birthDate1;
-		inFile.ignore(23, '-');
-		inFile >> acceptedDate1;
-		inFile.ignore(24, '-');
-		inFile >> intendedMajor;
-		inFile.ignore(25, '-');
-		inFile >> intendedMinor;
-		inFile.ignore(26, '-');
-		inFile >> startSemester1;
-		inFile.ignore(27, '-');
-		inFile >> startSemesterYear1;
-		inFile.ignore(28, '-');
-		inFile >> status;
-		
+			PhoneNumber newPhoneNumber(phoneNumber1, numberType1);
+			addPhoneNumber(newPhoneNumber);
 
-		Email newMail(mail1, mailType1);
-		addMail(newMail);
+			getline(inFile, email);
+		} while (email == "-");
+		do
+		{
+			if (birthDayString == "-")
+			{
+				getline(inFile, email);
+			}
+			getline(inFile, emailType);
 
-		PhoneNumber newNum(phoneNumber1, numberType1);
-		addPhoneNumber(newNum);
 
-		//address.setAddress(address1);
-		//birthDate.setDate(birthDate1);
-		//acceptedDate.setDate(acceptedDate1);
+			Email newEmail(email, emailType);
+			addMail(newEmail);
+
+			getline(inFile, birthDayString);
+		} while (birthDayString == "-");
+		getline(inFile, birthMonthString);
+		getline(inFile, birthYearString);
+
+		Date newBirthDate(stoi(birthDayString), stoi(birthMonthString), stoi(birthYearString));
+		setBirthDate(newBirthDate);
+
+		getline(inFile, birthDayString);
+		getline(inFile, birthMonthString);
+		getline(inFile, birthYearString);
+
+		Date newAcceptanceDate(stoi(birthDayString), stoi(birthMonthString), stoi(birthYearString));
+		setAcceptedDate(newAcceptanceDate);
+
+		getline(inFile, intendedMajor);
+		getline(inFile, intendedMinor);
+
+		getline(inFile, startSemester1);
+		getline(inFile, startSemesterYear1);
 
 		startSemester.setSemester(startSemester1, startSemesterYear1);
-		*/
+
+		getline(inFile, status);
+
 		return true;
   }
   
 	void Student::printAllStuValues(ostream& out)
 	{
-		//ofstream file;
+		out << "Name: "<< firstName << " " << middleName << " " << lastName << "\nId: " << id << "\nUser Id: " << userId << "\n";
 
-		//file.open("StuData.txt");
-		out << firstName << " " << middleName << " " << lastName << " " << id << " " << userId << " ";
+		for (int i = 0; i < usedAddress; i++)
+		{
+			out << "Address " << i+1 << ": " << address[i].getStreetAddress() << " " << address[i].getCity() << " " << address[i].getState() << " " << address[i].getZip() << " " << address[i].getPermanentOrLocal() << "\n";
+		}
+		for (int i = 0; i < usedMail; i++)
+		{
+			out << "Mail " << i + 1 << ": " << mailOfStu[i].getMail() << " " << mailOfStu[i].getUniversityOrPersonal() << "\n";
+		}
+		for (int i = 0; i < usedPhoneNumber; i++)
+		{
+			out << "Phone Number " << i + 1 << ": " << phoneNumber[i].getNumber() << " " << phoneNumber[i].getType() << "\n";
+		}
 
-		for (int i = 0; i <= usedAddress; i++)
-		{
-			out << address[i].getStreetAddress() << " " << address[i].getCity() << " " << address[i].getState() << " " << address[i].getZip() << " " << address[i].getPermanentOrLocal() << " ";
-		}
-		out << "*";
-		for (int i = 0; i <= usedMail; i++)
-		{
-			out << mailOfStu[i].getMail() << " " << mailOfStu[i].getUniversityOrPersonal() << " ";
-		}
-		out << "*";
-		for (int i = 0; i <= usedPhoneNumber; i++)
-		{
-			out << phoneNumber[i].getNumber() << " " << phoneNumber[i].getType() << " ";
-		}
-		out << "*";
-		out << birthDate.getDay() << " " << birthDate.getMonth() << " " << birthDate.getYear() << " " << acceptedDate.getDay() << " "
-			<< acceptedDate.getMonth() << " " << acceptedDate.getYear() << " " << status << endl;
+		out << "Birth Day: "<< birthDate.getMonth() << "/" << birthDate.getDay() << "/" << birthDate.getYear() << "\nAcceptance Date: " << acceptedDate.getMonth() << "/"
+			<< acceptedDate.getDay() << "/" << acceptedDate.getYear() << "\nStatus: " << status << endl;
 
-		//file.close();
 	}
 }

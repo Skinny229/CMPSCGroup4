@@ -24,7 +24,7 @@ namespace Group4UnitTest
 	{
 	public:
 
-		std::string FILE_PATH = "C:\dev\CMPSCGroup4\Group4StudentApp\Group4StudentApp\StuData.txt";
+		std::string FILE_PATH = "C:/github/CMPSCGroup4/Group4StudentApp/Group4StudentApp/StuData.txt";
 		
 	
 		TEST_METHOD(FirstNameFull)
@@ -151,7 +151,7 @@ namespace Group4UnitTest
 			Assert::AreEqual(expected, actual);
 		}
 
-		TEST_METHOD(Address_1_Steet_Test)
+		TEST_METHOD(Address_1_Street_Test)
 		{
 
 			Student stu;
@@ -171,7 +171,7 @@ namespace Group4UnitTest
 			stu.getStuFromFile(FILE_PATH);
 			string expected = "Best city";
 
-			string actual = stu.getAddress(0).getCity();
+			string actual = stu.getAddress(1).getCity();
 
 			Assert::AreEqual(expected, actual);
 		}
@@ -183,7 +183,7 @@ namespace Group4UnitTest
 			stu.getStuFromFile(FILE_PATH);
 			string expected = "PA";
 
-			string actual = stu.getAddress(0).getState();
+			string actual = stu.getAddress(1).getState();
 
 			Assert::AreEqual(expected, actual);
 		}
@@ -195,7 +195,7 @@ namespace Group4UnitTest
 			stu.getStuFromFile(FILE_PATH);
 			string expected = "12421";
 
-			string actual = stu.getAddress(0).getZip();
+			string actual = stu.getAddress(1).getZip();
 
 			Assert::AreEqual(expected, actual);
 		}
@@ -207,7 +207,7 @@ namespace Group4UnitTest
 			stu.getStuFromFile(FILE_PATH);
 			string expected = "Local";
 
-			string actual = stu.getAddress(0).getPermanentOrLocal();
+			string actual = stu.getAddress(1).getPermanentOrLocal();
 
 			Assert::AreEqual(expected, actual);
 		}
@@ -306,7 +306,7 @@ namespace Group4UnitTest
 
 			Student stu;
 			stu.getStuFromFile(FILE_PATH);
-			int expected = 1935;
+			int expected = 12;
 
 			int actual = stu.getBirthDate().getDay();
 
@@ -318,7 +318,7 @@ namespace Group4UnitTest
 
 			Student stu;
 			stu.getStuFromFile(FILE_PATH);
-			int expected = 1935;
+			int expected = 12;
 
 			int actual = stu.getBirthDate().getMonth();
 
@@ -332,7 +332,7 @@ namespace Group4UnitTest
 
 			Student stu;
 			stu.getStuFromFile(FILE_PATH);
-			int expected = 1935;
+			int expected = 2019;
 
 			int actual = stu.getAcceptedDate().getYear();
 
@@ -344,7 +344,7 @@ namespace Group4UnitTest
 
 			Student stu;
 			stu.getStuFromFile(FILE_PATH);
-			int expected = 1935;
+			int expected = 11;
 
 			int actual = stu.getAcceptedDate().getDay();
 
@@ -356,7 +356,7 @@ namespace Group4UnitTest
 
 			Student stu;
 			stu.getStuFromFile(FILE_PATH);
-			int expected = 1935;
+			int expected = 2;
 
 			int actual = stu.getAcceptedDate().getMonth();
 

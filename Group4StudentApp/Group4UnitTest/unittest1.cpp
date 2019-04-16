@@ -8,8 +8,6 @@
 #include "../Group4StudentApp/date.cpp"
 #include "../Group4StudentApp/PhoneNumber.h"
 #include "../Group4StudentApp/phoneNumber.cpp"
-#include "../Group4StudentApp/Node.h"
-#include "../Group4StudentApp/Node.cpp"
 #include "../Group4StudentApp/LinkedList.h"
 #include "../Group4StudentApp/LinkedList.cpp"
 #include "../Group4StudentApp/Email.h"

@@ -13,7 +13,7 @@ namespace SpaghettiLizards
 	{
 	
 	public:
-
+		
 		struct Node
 		{
 			Node* link;
@@ -26,7 +26,6 @@ namespace SpaghettiLizards
 		void push_back(ListType&);
 		size_t size();
 		bool empty();
-		void getTail();
 
 	private:
 		Node* head_ptr;

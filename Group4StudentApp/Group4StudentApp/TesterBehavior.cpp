@@ -3,8 +3,6 @@
 #include <string>
 #include "LinkedList.h"
 #include "LinkedList.cpp"
-#include "Node.h"
-#include "Node.cpp"
 #include <iostream>
 #include <cstdlib>
 
@@ -16,7 +14,6 @@ namespace rlopez
 	bool Tester::execOption(int sel, objectType& studentList)
 	{
 		 Student stu;
-		 Student* stuptr;
 		string firstName;
 		string middleName;
 		string lastName;
@@ -114,7 +111,7 @@ namespace rlopez
 				{
 					cout << "Please select a student: ";
 					for (std::size_t i = 0; i < studentList.size(); i++) {
-						stu = studentList.at(i)->getData();
+						stu = studentList.at(i);
 						cout << i + 1 << ") " << stu.getFirstName() << " " << stu.getLastName() << endl;
 					}
 				do
@@ -136,13 +133,13 @@ namespace rlopez
 				else if (studentList.size() == 1)
 				{
 					cout << "Only one student exist!\n";
-					studentList.at(0)->getData().printAllStuValues(cout);
+					studentList.at(0).printAllStuValues(cout);
 				}	
 				else
 				{
 					cout << "Please select a student: ";
 					for (std::size_t i = 0; i < studentList.size(); i++) {
-						stu = studentList.at(i)->getData();
+						stu = studentList.at(i);
 						cout << i + 1 << ") " << stu.getFirstName() << " " << stu.getLastName() << endl;
 					}
 					do
@@ -150,7 +147,7 @@ namespace rlopez
 						cout << "Selection: ";
 						cin >> input;
 					} while (input < 1 || input >= studentList.size());
-					studentList.at(input-1)->getData().printAllStuValues(cout);
+					studentList.at(input - 1).printAllStuValues(cout);
 				}
 
 			}
@@ -164,7 +161,7 @@ namespace rlopez
 				}
 
 				for (std::size_t i = 0; i < studentList.size(); i++){
-					stu = studentList.at(i)->getData();
+					stu = studentList.at(i);
 					cout << "Name: " << stu.getFirstName() << " " << stu.getLastName() << endl;
 					cout << "ID: " << stu.getId() << endl;
 					cout << "Email: " << "(" << stu.getMail(1).getUniversityOrPersonal() << ") " << stu.getMail(1).getMail() << endl;
@@ -182,7 +179,7 @@ namespace rlopez
 
 
 				for (std::size_t i = 0; i < studentList.size(); i++)
-					studentList.at(i)->getData().printAllStuValues(cout);
+					studentList.at(i).printAllStuValues(cout);
 			}
 			break;
 		case 7:
@@ -196,6 +193,7 @@ namespace rlopez
 				cin >> txtName;
 				newStu.getStuFromFile(txtName);
 				studentList.push_back(newStu);
+
 			}
 			break;
 		case 9:

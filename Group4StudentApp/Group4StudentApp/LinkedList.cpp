@@ -1,5 +1,6 @@
 #include "LinkedList.h"
 #include <cstdlib>
+#include <iostream>
 
 using namespace std;
 
@@ -16,8 +17,10 @@ namespace SpaghettiLizards
 	template <class ListType>
 	void LinkedList<ListType>::headInsert(ListType& entry) 
 	{
+		
 		if (count == 0) 
 		{
+			head_ptr = new Node;
 			head_ptr->link = NULL;
 			head_ptr->data = entry;
 			head_ptr->prev = NULL;
@@ -28,7 +31,7 @@ namespace SpaghettiLizards
 			newHead->data = entry;
 			newHead->prev = NULL;
 			newHead->link = head_ptr;
-			head_ptr->setPrev(newHead);
+			head_ptr->prev = newHead;
 			head_ptr = newHead;
 		}
 
@@ -40,14 +43,21 @@ namespace SpaghettiLizards
 		if(empty())
 		{
 			headInsert(entry);
-			return;
 		}
-		Node* tail = getTail();
-		Node* newTail = new Node;
-		newTail->setPrev(tail);
-		newTail->setLink(NULL);
-		tail->setLink(newTail);
+		else {
+			Node* cursor;
+
+			for (cursor = head_ptr; cursor->link != NULL; cursor = cursor->link);
+
+			Node* newTail = new Node;
+			newTail->prev = cursor;
+			newTail->data = entry;
+			newTail->link = NULL;
+			cursor->link = newTail;
+		}
+		cout << "Got Here";
 		count++;
+
 	}
 
 	template<class ListType>
@@ -57,7 +67,7 @@ namespace SpaghettiLizards
 		Node* item = NULL;
 		size_t loopCounter = 0;
 
-		for (Node* cursor = head_ptr; loopCounter < elem && cursor != NULL; cursor = cursor->link) 
+		for (Node* cursor = head_ptr; loopCounter <= elem && cursor != NULL; cursor = cursor->link) 
 		{
 			if (elem == loopCounter)
 			{
@@ -116,13 +126,6 @@ namespace SpaghettiLizards
 	bool LinkedList<ListType>::empty() 
 	{
 		return count == 0;
-	}
-
-	template<class ListType>
-	void LinkedList<ListType>::getTail()
-	{
-		Node asd;
-		return nullptr;
 	}
 
 

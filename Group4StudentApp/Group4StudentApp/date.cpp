@@ -6,17 +6,35 @@ using namespace std;
 
 namespace SpaghettiLizards
 {
-	Date::Date(string date1)
+	Date::Date(int d, int m, int y)
 	{
-		date = date1;
+		day = d;
+		month = m;
+		year = y;
 	}
-	void Date::setDate(string date1)
+	void Date::setDay(int d)
 	{
-		date = date1;
+		day = d;
 	}
-	string Date::getDate() const
+	void Date::setMonth(int m)
 	{
-		return date;
+		month = m;
+	}
+	void Date::setYear(int y)
+	{
+		year = y;
+	}
+	int Date::getDay() const
+	{
+		return day;
+	}
+	int Date::getMonth() const
+	{
+		return month;
+	}
+	int Date::getYear() const
+	{
+		return year;
 	}
 
 }

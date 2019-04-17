@@ -9,11 +9,17 @@ namespace SpaghettiLizards
 	class Date
 	{
 	private:
-		string date;
+		int day;
+		int month;
+		int year;
 	public:
-		Date(string = " ");  // constructor
-		void setDate(string); // member function to assign a date
-		string getDate() const;
+		Date(int = 0, int = 0, int = 0);  // constructor
+		void setDay(int); // member function to assign a date
+		void setMonth(int);
+		void setYear(int);
+		int getDay() const;
+		int getMonth() const;
+		int getYear() const;
 	};
 }
 #endif

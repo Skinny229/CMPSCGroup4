@@ -12,9 +12,12 @@ namespace SpaghettiLizards
 		number = number1;
 		homeOrMobile = homeOrMobile1;
 	}
-	void PhoneNumber::setPhoneNumber(string number1, string homeOrMobile1)
+	void PhoneNumber::setNumber(string number1)
 	{
 		number = number1;
+	}
+	void PhoneNumber::setNumberType(string homeOrMobile1)
+	{
 		homeOrMobile = homeOrMobile1;
 	}
 	string PhoneNumber::getNumber() const

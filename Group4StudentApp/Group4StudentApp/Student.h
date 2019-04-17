@@ -31,20 +31,22 @@ namespace SpaghettiLizards
 		string status;
 
 		//Address
-		MailingAddress address;
-
+		int usedAddress = 0;
+		MailingAddress address[3];
+		
 		//Email
-		Email mail[3];
+		int usedMail = 0;
+		Email mailOfStu[3];
 
 		//Important dates
 		Date birthDate;
 		Date acceptedDate;
 		//Phone number
+		int usedPhoneNumber = 0;
 		PhoneNumber phoneNumber[3];
 
 		//Semester
 		Semester startSemester;
-		Semester startYear;
 
 	public:
 		/*
@@ -101,14 +103,14 @@ namespace SpaghettiLizards
 
 		Date getBirthDate() const;
 
-		MailingAddress getAddress() const;
+		MailingAddress getAddress(int x) const;
 
 		Email getMail(int x) const;
 
 		PhoneNumber getPhoneNumber(int x) const;
 
 
-		void setAddress(MailingAddress address);
+		void addAddress(MailingAddress address);
 
 		void setId(int id);
 
@@ -132,9 +134,9 @@ namespace SpaghettiLizards
 
 		void setStatus(string status);
 
-		void setMail(Email mail[], int x);
+		void addMail(Email mail);
 
-		void setPhoneNumber(PhoneNumber number[], int x);
+		void addPhoneNumber(PhoneNumber number);
 
 	};
 }

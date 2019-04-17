@@ -17,21 +17,39 @@ namespace rlopez
 		string firstName;
 		string middleName;
 		string lastName;
-		string address1;
 		int id;
 		string userId;
 		string intendedMajor;
 		string intendedMinor;
 		string status;
+
+		string streetAddress;
+		string city;
+		string state;
+		string zip;
+		string permanentOrLocal;
+
+	
 		string mail1;
 		string mailType1;
 		string phoneNumber1;
 		string numberType1;
-		string birthDate1;
-		string acceptedDate1;
+		int birthYear = 0;
+		int birthMonth = 0;
+		int birthDay = 0;
+		int acceptedYear = 0;
+		int acceptedMonth = 0;
+		int acceptedDay = 0;
 		string startSemester1;
 		string startSemesterYear1;
+		string s;
+
+		MailingAddress newMailingAddress(streetAddress, city, state, zip, permanentOrLocal);
+		Email newMail(mail1, mailType1);
+		Date newBirthDate(birthDay,birthMonth, birthYear);
+		Date newAcceptedDate(birthDay, birthMonth, birthYear);
 		Semester newSem;
+		PhoneNumber newNum(phoneNumber1, numberType1);
 
 		string txtName;
 		Student newStu;
@@ -41,39 +59,85 @@ namespace rlopez
 			
 		case 1:
 			cout << "First Name: " << endl;
-			cin >> firstName;
+			cin.ignore(100, '\n');
+			getline(cin, firstName);
 			cout << "Middle Name: " << endl;
-			cin >> middleName;
+			getline(cin, middleName);
 			cout << "Last Name: " << endl;
-			cin >> lastName;
+			getline(cin, lastName);
 			cout << "Id #: " << endl;
 			cin >> id;
 			cout << "User Id: " << endl;
-			cin >> userId;
-			cout << "Address: " << endl;
-			cin >> address1;
+			cin.ignore(100, '\n');
+			getline(cin, userId);
+
+			do
+			{
+				cout << "Street address: " << endl;
+				if (s == "+")
+				{
+					cin.ignore(100, '\n');
+				}
+				getline(cin, streetAddress);
+				cout << "City: " << endl;
+				getline(cin, city);
+				cout << "State: " << endl;
+				getline(cin, state);
+				cout << "Zip1: " << endl;
+				getline(cin, zip);
+				cout << "Permanent or local: " << endl;
+				getline(cin, permanentOrLocal);
+
+				stu.addAddress(newMailingAddress);
+
+				cout << "Type + to add another address: " << endl;
+				cin >> s;
+			}while (s == "+");
+
+			/*cout << "Street address: " << endl;
+			getline(cin, streetAddress);
+			cout << "City: " << endl;
+			getline(cin, city);
+			cout << "State: " << endl;
+			getline(cin, state);
+			cout << "Zip1: " << endl;
+			getline(cin, zip);
+			cout << "Permanent or local: " << endl;
+			getline(cin, permanentOrLocal);*/
+
 			cout << "Email: " << endl;
-			cin >> mail1;
+			getline(cin, mail1);
 			cout << "Mail type: " << endl;
-			cin >> mailType1;
+			getline(cin, mailType1);
 			cout << "Phone Number: " << endl;
-			cin >> phoneNumber1;
+			getline(cin, phoneNumber1);
 			cout << "Phone Number type: " << endl;
-			cin >> numberType1;
-			cout << "Birth Date: " << endl;
-			cin >> birthDate1;			
-			cout << "Acceptance Date: " << endl;
-			cin >> acceptedDate1;
+			getline(cin, numberType1);
+
+			cout << "Birth Date(year): " << endl;
+			cin >> birthYear;	
+			cout << "Birth Date(month): " << endl;
+			cin >> birthMonth;
+			cout << "Birth Date(day): " << endl;
+			cin >> birthDay;
+			cout << "Acceptance Date(year): " << endl;
+			cin >> acceptedYear;
+			cout << "Acceptance Date(month): " << endl;
+			cin >> acceptedMonth;
+			cout << "Acceptance Date(day): " << endl;
+			cin >> acceptedDay;
+
 			cout << "Intended Major: " << endl;
-			cin >> intendedMajor;
+			cin.ignore(100, '\n');
+			getline(cin, intendedMajor);
 			cout << "Intended Minor: " << endl;
-			cin >> intendedMinor;
+			getline(cin, intendedMinor);
 			cout << "Starting Semester(Spring or Fall): " << endl;
-			cin >> startSemester1;
+			getline(cin, startSemester1);
 			cout << "Starting year: " << endl;
-			cin >> startSemesterYear1;
+			getline(cin, startSemesterYear1);
 			cout << "Status(Enrolled, not enrolled, etc): " << endl;
-			cin >> status;
+			getline(cin, status);
 
 			stu.setFirstName(firstName);
 			stu.setMiddleName(middleName);
@@ -84,12 +148,24 @@ namespace rlopez
 			stu.setIntendedMajor(intendedMajor);
 			stu.setIntendedMinor(intendedMinor);
 
-			/*stu[1].setEmail(mail1, mailType1);
-			phoneNumber[1].setPhoneNumber(phoneNumber1, numberType1);*/
+			
+			stu.addMail(newMail);
 
-			stu.setAddress(address1);
-			stu.setBirthDate(birthDate1);
-			stu.setAcceptedDate(acceptedDate1);
+			stu.addAddress(newMailingAddress);
+
+			stu.addPhoneNumber(newNum);
+
+			newBirthDate.setDay(birthDay);
+			newBirthDate.setMonth(birthMonth);
+			newBirthDate.setYear(birthYear);
+
+			stu.setBirthDate(newBirthDate);
+
+			newAcceptedDate.setDay(acceptedDay);
+			newAcceptedDate.setMonth(acceptedMonth);
+			newAcceptedDate.setYear(acceptedYear);
+
+			stu.setAcceptedDate(newAcceptedDate);
 
 			newSem.setSpringOrFall(startSemester1);
 			newSem.setYear(startSemesterYear1);
@@ -98,7 +174,19 @@ namespace rlopez
 			break;
 		case 2:
 			{
-				
+			stu.printAllStuValues(cout);
+			cout << "Select the data you want to edit: " << endl
+				<< "1. Names(first, middle, last)" << endl
+				<< "2. Id" << endl
+				<< "3. User Id" << endl
+				<< "4. Address" << endl
+				<< "5. Email" << endl
+				<< "6. Phone Number" << endl
+				<< "7. Birth Day" << endl
+				<< "8. Acceptance Date" << endl
+				<< "9. Status" << endl
+				<< "10. End" << endl;
+
 			}
 			break;
 		case 3:

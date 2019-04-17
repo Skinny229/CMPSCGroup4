@@ -83,6 +83,12 @@ namespace SpaghettiLizards
 
 		int getId() const;
 
+		int getUsedAddress();
+
+		int getUsedMail();
+
+		int getUsedPhoneNumber();
+
 		string getUserId() const;
 
 		string getFirstName() const;
@@ -112,6 +118,12 @@ namespace SpaghettiLizards
 
 		void addAddress(MailingAddress address);
 
+		void editAddress(int x, MailingAddress addressEdit);
+
+		void editMail(int x, Email mailEdit);
+
+		void editPhoneNumber(int x, PhoneNumber numberEdit);
+
 		void setId(int id);
 
 		void setUserId(string userId);
@@ -137,6 +149,8 @@ namespace SpaghettiLizards
 		void addMail(Email mail);
 
 		void addPhoneNumber(PhoneNumber number);
+
+
 
 	};
 }

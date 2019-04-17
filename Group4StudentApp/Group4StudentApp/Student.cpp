@@ -41,6 +41,18 @@ namespace SpaghettiLizards
 	{
 		return id;
 	}
+	int Student::getUsedAddress()
+	{
+		return usedAddress;
+	}
+	int Student::getUsedMail()
+	{
+		return usedMail;
+	}
+	int Student::getUsedPhoneNumber()
+	{
+		return usedPhoneNumber;
+	}
 	string Student::getUserId() const
 	{
 		return userId;
@@ -160,6 +172,18 @@ namespace SpaghettiLizards
 			return;
 		phoneNumber[usedPhoneNumber] = number;
 		usedPhoneNumber++;
+	}
+	void Student::editAddress(int x, MailingAddress addressEdit)
+	{
+		address[x] = addressEdit;
+	}
+	void Student::editMail(int x, Email mailEdit)
+	{
+		mailOfStu[x] = mailEdit;
+	}
+	void Student::editPhoneNumber(int x, PhoneNumber numberEdit)
+	{
+		phoneNumber[x] = numberEdit;
 	}
 
 	
@@ -286,7 +310,8 @@ namespace SpaghettiLizards
 		}
 
 		out << "Birth Day: "<< birthDate.getMonth() << "/" << birthDate.getDay() << "/" << birthDate.getYear() << "\nAcceptance Date: " << acceptedDate.getMonth() << "/"
-			<< acceptedDate.getDay() << "/" << acceptedDate.getYear() << "\nStatus: " << status << endl;
+			<< acceptedDate.getDay() << "/" << acceptedDate.getYear() << "\nIntended Major: " << intendedMajor << "\nIntended Minor: " << intendedMinor << "\nStarting Semester: "
+			<< startSemester.getSpringOrFall() << " " << startSemester.getYear() <<  "\nStatus: " << status << endl;
 
 	}
 }

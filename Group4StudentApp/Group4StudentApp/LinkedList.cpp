@@ -74,6 +74,7 @@ namespace SpaghettiLizards
 				item = cursor;
 				break;
 			}
+			loopCounter++;
 
 		}
 		return item->data;
@@ -90,6 +91,7 @@ namespace SpaghettiLizards
 			Node* newHead = head_ptr->link;
 			newHead->prev = NULL;
 			oldHead = NULL;
+			delete oldHead;
 			head_ptr = newHead;
 
 		}

@@ -109,7 +109,7 @@ namespace rlopez
 				}
 				else
 				{
-					cout << "Please select a student: ";
+					cout << "Please select a student: \n";
 					for (std::size_t i = 0; i < studentList.size(); i++) {
 						stu = studentList.at(i);
 						cout << i + 1 << ") " << stu.getFirstName() << " " << stu.getLastName() << endl;
@@ -118,7 +118,7 @@ namespace rlopez
 				{
 					cout << "Selection: ";
 					cin >> input;
-				} while (input < 1 && input >= studentList.size());
+				} while (input < 1 || input > studentList.size());
 				studentList.erase(input-1);
 			}
 				
@@ -146,7 +146,7 @@ namespace rlopez
 					{
 						cout << "Selection: ";
 						cin >> input;
-					} while (input < 1 || input >= studentList.size());
+					} while (input < 1 || input > studentList.size());
 					studentList.at(input - 1).printAllStuValues(cout);
 				}
 

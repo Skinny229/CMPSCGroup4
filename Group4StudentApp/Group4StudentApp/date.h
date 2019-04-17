@@ -17,7 +17,7 @@ namespace SpaghettiLizards
 		void setDay(int); // member function to assign a date
 		void setMonth(int);
 		void setYear(int);
-		int getDay() const;
+		int getDay() const; 
 		int getMonth() const;
 		int getYear() const;
 	};

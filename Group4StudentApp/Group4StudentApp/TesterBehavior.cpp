@@ -1,7 +1,10 @@
 #include "Tester.h"
 #include "Student.h"
 #include <string>
+#include "LinkedList.h"
+#include "LinkedList.cpp"
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 using namespace SpaghettiLizards;
@@ -10,8 +13,7 @@ namespace rlopez
 {
 	bool Tester::execOption(int sel, objectType& studentList)
 	{
-    Student stu;
-    
+		 Student stu;
 		string firstName;
 		string middleName;
 		string lastName;
@@ -195,17 +197,17 @@ namespace rlopez
 				}
 				else
 				{
-					cout << "Please select a student: ";
-					for (auto i = 0; i < studentList.size(); i++)
-					{
-						cout << i + 1 << ") " << studentList.at(i).getFirstName() << " " << studentList.at(i).getLastName() << endl;
+					cout << "Please select a student: \n";
+					for (std::size_t i = 0; i < studentList.size(); i++) {
+						stu = studentList.at(i);
+						cout << i + 1 << ") " << stu.getFirstName() << " " << stu.getLastName() << endl;
 					}
 				do
 				{
 					cout << "Selection: ";
 					cin >> input;
-				} while (input < 1 && input >= studentList.size());
-				studentList.erase(studentList.begin()+(input-1));
+				} while (input < 1 || input > studentList.size());
+				studentList.erase(input-1);
 			}
 				
 			}
@@ -224,30 +226,30 @@ namespace rlopez
 				else
 				{
 					cout << "Please select a student: ";
-					for (auto i = 0; i < studentList.size(); i++)
-					{
-						cout << i + 1 << ") " << studentList.at(i).getFirstName() << " " << studentList.at(i).getLastName() << endl;
+					for (std::size_t i = 0; i < studentList.size(); i++) {
+						stu = studentList.at(i);
+						cout << i + 1 << ") " << stu.getFirstName() << " " << stu.getLastName() << endl;
 					}
 					do
 					{
 						cout << "Selection: ";
 						cin >> input;
-					} while (input < 1 || input >= studentList.size());
-					studentList.at(input-1).printAllStuValues(cout);
+					} while (input < 1 || input > studentList.size());
+					studentList.at(input - 1).printAllStuValues(cout);
 				}
 
 			}
 			break;
 		case 5:
-			{
+			{	
 				if (studentList.empty())
 				{
 					cout << "No Students Exist!";
 					return true;
 				}
 
-				for (Student stu : studentList) 
-				{
+				for (std::size_t i = 0; i < studentList.size(); i++){
+					stu = studentList.at(i);
 					cout << "Name: " << stu.getFirstName() << " " << stu.getLastName() << endl;
 					cout << "ID: " << stu.getId() << endl;
 					cout << "Email: " << "(" << stu.getMail(1).getUniversityOrPersonal() << ") " << stu.getMail(1).getMail() << endl;
@@ -263,8 +265,9 @@ namespace rlopez
 					return true;
 				}
 
-				for (Student stu : studentList)
-					stu.printAllStuValues(cout);
+
+				for (std::size_t i = 0; i < studentList.size(); i++)
+					studentList.at(i).printAllStuValues(cout);
 			}
 			break;
 		case 7:
@@ -278,6 +281,7 @@ namespace rlopez
 				cin >> txtName;
 				newStu.getStuFromFile(txtName);
 				studentList.push_back(newStu);
+
 			}
 			break;
 		case 9:

@@ -19,7 +19,7 @@ namespace rlopez
 		/*
 			Set the type to be used while testing
 		*/
-		typedef vector<SpaghettiLizards::Student> objectType;
+		typedef LinkedList<Student> objectType;
 
 		objectType object;
 

@@ -4,6 +4,7 @@
 #include "Tester.h"
 #include <vector>
 #include "LinkedList.h"
+#include "LinkedList.cpp"
 #include <cstdlib>
 
 using namespace std;

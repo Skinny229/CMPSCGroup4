@@ -403,7 +403,6 @@ namespace rlopez
 					break;
 				}
 			}
-//<<<<<<< HEAD
 		}
 		break;
 		case 3:
@@ -416,32 +415,15 @@ namespace rlopez
 			{
 				cout << "Please select a student: \n";
 				for (auto i = 0; i < studentList.size(); i++)
-/*=======
-			break;
-		case 5:
-			{	
-				if (studentList.empty())
->>>>>>> f8ae682c0aedf6b2b17f0ab7f7877aaf9c2237b7*/
 				{
 					cout << i + 1 << ") " << studentList.at(i).getFirstName() << " " << studentList.at(i).getLastName() << endl;
 				}
-//<<<<<<< HEAD
 				do
 				{
 					cout << "Selection: ";
 					cin >> input;
-				} while (input < 1 && input > studentList.size());
+				} while (input < 1 || input > studentList.size());
 				studentList.erase((input - 1));
-/*=======
-
-				for (std::size_t i = 0; i < studentList.size(); i++){
-					stu = studentList.at(i);
-					cout << "Name: " << stu.getFirstName() << " " << stu.getLastName() << endl;
-					cout << "ID: " << stu.getId() << endl;
-					cout << "Email: " << "(" << stu.getMail(1).getUniversityOrPersonal() << ") " << stu.getMail(1).getMail() << endl;
-					cout << "Number: " << stu.getPhoneNumber(1).getNumber() << endl << endl;
-				}
->>>>>>> f8ae682c0aedf6b2b17f0ab7f7877aaf9c2237b7*/
 			}
 
 		}
@@ -471,8 +453,6 @@ namespace rlopez
 				} while (input < 1 || input > studentList.size());
 				studentList.at(input - 1).printAllStuValues(cout);
 			}
-
-//<<<<<<< HEAD
 		}
 		break;
 		case 5:
@@ -481,11 +461,6 @@ namespace rlopez
 			{
 				cout << "No Students Exist!";
 				return true;
-/*=======
-
-				for (std::size_t i = 0; i < studentList.size(); i++)
-					studentList.at(i).printAllStuValues(cout);
->>>>>>> f8ae682c0aedf6b2b17f0ab7f7877aaf9c2237b7*/
 			}
 
 			cout << "Please select a student: ";
@@ -508,12 +483,12 @@ namespace rlopez
 			}
 
 			cout << "Please select a student: ";
-				for (auto i = 0; i < studentList.size(); i++)
-				{
-					stu = studentList.at(0);
-					stu.printAllStuValues(cout);
-				}
-				
+			for (auto i = 0; i < studentList.size(); i++)
+			{
+				stu = studentList.at(0);
+				stu.printAllStuValues(cout);
+			}
+
 		}
 		break;
 		case 7:
@@ -530,16 +505,7 @@ namespace rlopez
 
 			if (studentList.empty())
 			{
-//<<<<<<< HEAD
 				cout << "No Students Exist!";
-/*
-=======
-				cout << "Please enter the student Data file txt name: ";
-				cin >> txtName;
-				newStu.getStuFromFile(txtName);
-				studentList.push_back(newStu);
-
->>>>>>> f8ae682c0aedf6b2b17f0ab7f7877aaf9c2237b7*/
 			}
 			else if (studentList.size() == 1)
 			{
@@ -562,7 +528,7 @@ namespace rlopez
 				cout << "Data was written to " << txtName << endl;
 			}
 		}
-			break;
+		break;
 		case 8:
 		{
 			cout << "Please enter the student Data file txt name: ";
@@ -575,5 +541,5 @@ namespace rlopez
 			return false;
 		}
 		return true;
-		}
 	}
+}

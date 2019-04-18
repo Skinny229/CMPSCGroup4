@@ -18,9 +18,9 @@ namespace SpaghettiLizards
 	public:
 		Course(int = 0, string = "?", string = "?", string = "?", string = "?");
 
+		//read and write to file
 		void getCourseFromFile(string);
 		void writeCourseToFile(ostream&);
-
 
 		void setCourseNum(int);
 		void setCourseDef(string);
@@ -33,6 +33,7 @@ namespace SpaghettiLizards
 		string getSemesterTaken() const;
 		string getCurrentStatus() const;
 		string getLetterGrade() const;
+
 	};
 }
 #endif

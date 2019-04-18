@@ -16,6 +16,11 @@ namespace SpaghettiLizards
 		string currentStatus;
 		string letterGade;
 	public:
+		Course(int = 0, string = "?", string = "?", string = "?", string = "?");
+
+		void getCourseFromFile(string);
+		void writeCourseToFile(ostream&);
+
 		void setCourseNum(int);
 		void setCourseDef(string);
 		void setSemesterTaken(string);

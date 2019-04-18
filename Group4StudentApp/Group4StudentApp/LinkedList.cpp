@@ -89,7 +89,9 @@ namespace SpaghettiLizards
 		{
 			Node* oldHead = head_ptr;
 			Node* newHead = head_ptr->link;
-			newHead->prev = NULL;
+			if (newHead != NULL) {
+				newHead->prev = NULL;
+			}
 			oldHead = NULL;
 			delete oldHead;
 			head_ptr = newHead;
@@ -103,7 +105,7 @@ namespace SpaghettiLizards
 			size_t i = 0;
 			for (Node* cursor = head_ptr; i < count && cursor != NULL; cursor = cursor->link)
 			{
-				if (i == elem - 1)
+				if (i == elem)
 				{
 					before = cursor;
 					toDelete = cursor->link;
@@ -116,6 +118,7 @@ namespace SpaghettiLizards
 			after->prev = before;
 			toDelete = NULL;
 		}
+		count--;
 	}
 
 	template<class ListType>

@@ -422,7 +422,7 @@ namespace rlopez
 				{
 					cout << "Selection: ";
 					cin >> input;
-				} while (input < 1 && input > studentList.size());
+				} while (input < 1 || input > studentList.size());
 				studentList.erase((input - 1));
 			}
 

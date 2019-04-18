@@ -107,15 +107,16 @@ namespace SpaghettiLizards
 			{
 				if (i == elem)
 				{
-					before = cursor;
-					toDelete = cursor->link;
+					before = cursor->prev;
+					toDelete = cursor;
 					after = toDelete->link;
 					break;
 				}
 				i++;
 			}
 			before->link = after;
-			after->prev = before;
+			if(after != NULL)
+				after->prev = before;
 			toDelete = NULL;
 		}
 		count--;

@@ -414,7 +414,7 @@ namespace rlopez
 			}
 			else
 			{
-				cout << "Please select a student: ";
+				cout << "Please select a student: \n";
 				for (auto i = 0; i < studentList.size(); i++)
 /*=======
 			break;
@@ -430,8 +430,8 @@ namespace rlopez
 				{
 					cout << "Selection: ";
 					cin >> input;
-				} while (input < 1 && input >= studentList.size());
-				studentList.erase(studentList.begin() + (input - 1));
+				} while (input < 1 && input > studentList.size());
+				studentList.erase((input - 1));
 /*=======
 
 				for (std::size_t i = 0; i < studentList.size(); i++){
@@ -459,7 +459,7 @@ namespace rlopez
 			}
 			else
 			{
-				cout << "Please select a student: ";
+				cout << "Please select a student: \n";
 				for (auto i = 0; i < studentList.size(); i++)
 				{
 					cout << i + 1 << ") " << studentList.at(i).getFirstName() << " " << studentList.at(i).getLastName() << endl;
@@ -468,7 +468,7 @@ namespace rlopez
 				{
 					cout << "Selection: ";
 					cin >> input;
-				} while (input < 1 || input >= studentList.size());
+				} while (input < 1 || input > studentList.size());
 				studentList.at(input - 1).printAllStuValues(cout);
 			}
 
@@ -488,8 +488,10 @@ namespace rlopez
 >>>>>>> f8ae682c0aedf6b2b17f0ab7f7877aaf9c2237b7*/
 			}
 
-			for (Student stu : studentList)
+			cout << "Please select a student: ";
+			for (auto i = 0; i < studentList.size(); i++)
 			{
+				stu = studentList.at(i);
 				cout << "Name: " << stu.getFirstName() << " " << stu.getLastName() << endl;
 				cout << "ID: " << stu.getId() << endl;
 				cout << "Email: " << "(" << stu.getMail(0).getUniversityOrPersonal() << ") " << stu.getMail(0).getMail() << endl;
@@ -505,8 +507,13 @@ namespace rlopez
 				return true;
 			}
 
-			for (Student stu : studentList)
-				stu.printAllStuValues(cout);
+			cout << "Please select a student: ";
+				for (auto i = 0; i < studentList.size(); i++)
+				{
+					stu = studentList.at(0);
+					stu.printAllStuValues(cout);
+				}
+				
 		}
 		break;
 		case 7:
@@ -541,7 +548,7 @@ namespace rlopez
 			}
 			else
 			{
-				cout << "Please select a student: ";
+				cout << "Please select a student: \n";
 				for (auto i = 0; i < studentList.size(); i++)
 				{
 					cout << i + 1 << ") " << studentList.at(i).getFirstName() << " " << studentList.at(i).getLastName() << endl;
@@ -550,7 +557,7 @@ namespace rlopez
 				{
 					cout << "Selection: ";
 					cin >> input;
-				} while (input < 1 || input >= studentList.size());
+				} while (input < 1 || input > studentList.size());
 				studentList.at(input - 1).printAllStuValues(inFile);
 				cout << "Data was written to " << txtName << endl;
 			}

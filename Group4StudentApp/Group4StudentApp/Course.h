@@ -14,7 +14,8 @@ namespace SpaghettiLizards
 		string courseDef;
 		string semesterTaken;
 		string currentStatus;
-		string letterGade;
+		string letterGrade;
+
 	public:
 		Course(int = 0, string = "?", string = "?", string = "?", string = "?");
 
@@ -24,7 +25,7 @@ namespace SpaghettiLizards
 		void setCourseNum(int);
 		void setCourseDef(string);
 		void setSemesterTaken(string);
-		void currentStatus(string);
+		void setCurrentStatus(string);
 		void setLetterGrade(string);
 
 		int getCourseNum() const;

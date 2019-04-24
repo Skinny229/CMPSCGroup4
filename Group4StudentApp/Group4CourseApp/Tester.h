@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include "LinkedList.h"
-#include "Student.h"
+#include "Course.h"
 
 
 using namespace std;
@@ -19,7 +19,7 @@ namespace rlopez
 		/*
 			Set the type to be used while testing
 		*/
-		typedef LinkedList<Student> objectType;
+		typedef LinkedList<Course> objectType;
 
 		objectType object;
 

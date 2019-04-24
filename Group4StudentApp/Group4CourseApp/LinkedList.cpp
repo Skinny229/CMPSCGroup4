@@ -133,8 +133,4 @@ namespace SpaghettiLizards
 	{
 		return count == 0;
 	}
-
-
-
-
 }

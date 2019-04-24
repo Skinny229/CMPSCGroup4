@@ -1,7 +1,7 @@
 #pragma once
-#include <string>
 #ifndef COURSE_H
-#define COURSEs_H
+#define COURSE_H
+#include <string>
 
 using namespace std;
 
@@ -19,8 +19,8 @@ namespace SpaghettiLizards
 	public:
 		Course(int = 0, string = "?", string = "?", string = "?", string = "?");
 
-		void getCourseFromFile(string);
-		void writeCourseToFile(ostream&);
+		//void getCourseFromFile(string);
+		//void writeCourseToFile(ostream&);
 
 		void print(ostream&);
 

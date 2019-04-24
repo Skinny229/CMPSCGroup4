@@ -1,5 +1,4 @@
 #include "Tester.h"
-#include "Student.h"
 #include <string>
 #include "LinkedList.h"
 #include "LinkedList.cpp"
@@ -81,7 +80,7 @@ namespace rlopez
 				c = studentList.at(input - 1);
 				choice = 0;
 			}
-			while (choice < 12)
+			while (choice < 6)
 			{
 				cout << "Select the data you want to edit: " << endl
 					<< "1. Course number" << endl

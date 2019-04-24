@@ -22,6 +22,8 @@ namespace SpaghettiLizards
 		void getCourseFromFile(string);
 		void writeCourseToFile(ostream&);
 
+		void print(ostream&);
+
 		void setCourseNum(int);
 		void setCourseDef(string);
 		void setSemesterTaken(string);

@@ -1,5 +1,6 @@
 #include "LinkedList.h"
 #include "Tester.h"
+#include "Course.h"
 #include <cstdlib>
 #include <iostream>
 

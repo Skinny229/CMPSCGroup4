@@ -3,7 +3,6 @@
 #define STUDENT_H
 #include <string>
 #include <iostream>
-#include <fstream>
 #include "MailingAddress.h"
 #include "Email.h"
 #include "PhoneNumber.h"
@@ -18,7 +17,6 @@ namespace SpaghettiLizards
 	{
 
 	private:
-
 		//Name of the Student
 		string firstName, middleName, lastName;
 		//ID's

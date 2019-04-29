@@ -492,7 +492,7 @@ namespace rlopez
 
 		}
 		break;
-		case 7:
+		case 11:
 		{
 			cout << "File name: " << endl;
 			cin >> txtName;
@@ -530,7 +530,7 @@ namespace rlopez
 			}
 		}
 		break;
-		case 8:
+		case 12:
 		{
 			cout << "Please enter the student Data file txt name: ";
 			cin >> txtName;
@@ -538,7 +538,7 @@ namespace rlopez
 			studentList.push_back(newStu);
 		}
 		break;
-		case 9:
+		case 13:
 			return false;
 		}
 		return true;

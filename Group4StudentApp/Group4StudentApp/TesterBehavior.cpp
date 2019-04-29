@@ -217,7 +217,7 @@ namespace rlopez
 			}
 			else if (studentList.size() == 1)
 			{
-				cout << "Only one student exist!\n";
+				cout << "Only one student exists!\n";
 				studentList.at(0).printAllStuValues(cout);
 
 				input = 1;
@@ -226,7 +226,7 @@ namespace rlopez
 			}
 			else
 			{
-				cout << "Please select a student: ";
+				cout << "Please select a student: \n";
 				for (auto i = 0; i < studentList.size(); i++)
 				{
 					cout << i + 1 << ") " << studentList.at(i).getFirstName() << " " << studentList.at(i).getLastName() << endl;
@@ -241,7 +241,7 @@ namespace rlopez
 				stu = studentList.at(input - 1);
 				choice = 0;
 			}
-			while (choice < 12)
+			while (choice < 13)
 			{
 				cout << "Select the data you want to edit: " << endl
 					<< "1. Names(first, middle, last)" << endl
@@ -255,7 +255,8 @@ namespace rlopez
 					<< "9. Major/Minor" << endl
 					<< "10. Starting Semester" << endl
 					<< "11. Status" << endl
-					<< "12. End" << endl;
+					<< "12. Courses" << endl
+					<< "13. End" << endl;
 				cin >> choice;
 
 				switch (choice)
@@ -404,6 +405,28 @@ namespace rlopez
 					studentList.at(input - 1).setStatus(status);
 					break;
 				case 12:
+				{
+					LinkedList<Course> courses = studentList.at(input - 1).getCourseList();
+					size_t courseSize = courses.size();
+					if (courseSize == 0)
+					{
+						cout << "No Courses Exist for this student! Exiting...";
+						break;
+					}
+					cout << "Select a course:\n";
+					for (size_t i = 0; i < courseSize; i++)
+						cout << i + 1 << ") " << courses.at(i).getCourseNum() << " " << courses.at(i).getCourseDef() << endl;
+					do
+					{
+						cout << "Selection: ";
+						cin >> input;
+					} while (input < 1 || input > courseSize);
+
+
+
+				}
+					break;
+				case 13:
 					break;
 				}
 			}
@@ -496,6 +519,11 @@ namespace rlopez
 				stu.printAllStuValues(cout);
 			}
 
+		}
+		break;
+		
+		case 7: 
+		{
 		}
 		break;
 

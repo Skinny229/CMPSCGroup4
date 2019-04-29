@@ -22,6 +22,13 @@ namespace SpaghettiLizards
 
 		letterGrade = letterGrade1;
 	}
+
+	void Course::print(ostream& out)
+	{
+		out << courseDef << " " << courseNum << endl;
+		out << semesterTaken << endl << "Status: " << currentStatus << endl << "Grade: " << letterGrade << endl;
+	}
+
 	int Course::getCourseNum() const
 	{
 		return courseNum;

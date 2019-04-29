@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
+#include <iostream>
 #include "../Group4StudentApp/Student.h"
 #include "../Group4StudentApp/Student.cpp"
 #include "../Group4StudentApp/MailingAddress.h"
@@ -8,14 +9,17 @@
 #include "../Group4StudentApp/date.cpp"
 #include "../Group4StudentApp/PhoneNumber.h"
 #include "../Group4StudentApp/phoneNumber.cpp"
+#include "../Group4StudentApp/Course.h"
+#include "../Group4StudentApp/Course.cpp"
 #include "../Group4StudentApp/LinkedList.h"
-#include "../Group4StudentApp/LinkedList.cpp"
 #include "../Group4StudentApp/Email.h"
 #include "../Group4StudentApp/Email.cpp"
 #include "../Group4StudentApp/Semester.h"
 #include "../Group4StudentApp/Semester.cpp"
 #include <string>
 
+
+#define FILE_PATH "C:/dev/cmpscgroup4/Group4StudentApp/Group4StudentApp/StuData.txt"
 
 using namespace SpaghettiLizards;
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -26,7 +30,6 @@ namespace Group4UnitTest
 	{
 	public:
 
-		std::string FILE_PATH = "C:/github/CMPSCGroup4/Group4StudentApp/Group4StudentApp/StuData.txt";
 		
 	
 		TEST_METHOD(FirstNameFull)

@@ -7,6 +7,9 @@
 #include "Student.h"
 #include "MailingAddress.h"
 #include "Email.h"
+#include "LinkedList.h"
+#include "LinkedList.cpp"//<- This should not be here, but wont work otherise
+#include "Course.h"
 #include "PhoneNumber.h"
 #include "date.h"
 #include "Semester.h"
@@ -104,6 +107,11 @@ namespace SpaghettiLizards
 	PhoneNumber Student::getPhoneNumber(int x) const
 	{
 		return phoneNumber[x];
+	}
+
+	LinkedList<Course> Student::getCourseList() const 
+	{
+		return courseList;
 	}
   
   
@@ -313,5 +321,7 @@ namespace SpaghettiLizards
 			<< acceptedDate.getDay() << "/" << acceptedDate.getYear() << "\nIntended Major: " << intendedMajor << "\nIntended Minor: " << intendedMinor << "\nStarting Semester: "
 			<< startSemester.getSpringOrFall() << " " << startSemester.getYear() <<  "\nStatus: " << status << endl;
 
+		for (size_t i = 0; i < courseList.size(); i++)
+			courseList.at(i).print(cout);
 	}
 }

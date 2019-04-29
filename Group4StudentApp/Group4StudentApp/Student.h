@@ -4,6 +4,8 @@
 #include <string>
 #include <iostream>
 #include "MailingAddress.h"
+#include "Course.h"
+#include "LinkedList.h"
 #include "Email.h"
 #include "PhoneNumber.h"
 #include "date.h"
@@ -45,6 +47,8 @@ namespace SpaghettiLizards
 
 		//Semester
 		Semester startSemester;
+
+		LinkedList<Course> courseList;
 
 	public:
 		/*
@@ -113,6 +117,7 @@ namespace SpaghettiLizards
 
 		PhoneNumber getPhoneNumber(int x) const;
 
+		LinkedList<Course> getCourseList() const;
 
 		void addAddress(MailingAddress address);
 

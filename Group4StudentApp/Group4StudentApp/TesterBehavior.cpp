@@ -57,12 +57,14 @@ namespace rlopez
 		ofstream inFile;
 		string txtName;
 		Student newStu;
+		string inputString;
 		int input;
 		int choice;
 		switch (sel)
 		{
 
 		case 1:
+		{
 			cout << "First Name: " << endl;
 			cin.ignore(100, '\n');
 			getline(cin, firstName);
@@ -204,6 +206,7 @@ namespace rlopez
 			stu.setStartSemester(newSem);
 
 			studentList.push_back(stu);
+		}
 			break;
 		case 2:
 		{
@@ -456,6 +459,8 @@ namespace rlopez
 			}
 		}
 		break;
+
+
 		case 5:
 		{
 			if (studentList.empty())
@@ -475,6 +480,7 @@ namespace rlopez
 			}
 		}
 		break;
+
 		case 6:
 		{
 			if (studentList.empty())
@@ -492,6 +498,47 @@ namespace rlopez
 
 		}
 		break;
+
+		case 8:
+		{
+			cout << "Please type in the major: ";
+			cin >> inputString;
+			cout << "----------------\n";
+			for (size_t i = 0; i < studentList.size(); i++)
+				if (studentList.at(i).getIntendedMajor() == inputString) {
+					studentList.at(i).printAllStuValues(cout);
+					cout << "----------------";
+				}
+			cout << "End of List";
+		}
+		break;
+		case 9:
+		{
+			cout << "Please type in the minor: ";
+			cin >> inputString;
+			cout << "----------------\n";
+			for (size_t i = 0; i < studentList.size(); i++)
+				if (studentList.at(i).getIntendedMinor() == inputString) {
+					studentList.at(i).printAllStuValues(cout);
+					cout << "----------------";
+				}
+			cout << "End of List";
+		}
+		break;
+		case 10:
+		{
+			cout << "Please type in the status: ";
+			cin >> inputString;
+			cout << "----------------\n";
+			for (size_t i = 0; i < studentList.size(); i++)
+				if (studentList.at(i).getStatus() == inputString) {
+					studentList.at(i).printAllStuValues(cout);
+					cout << "----------------";
+				}
+			cout << "End of List";
+		}
+		break;
+
 		case 11:
 		{
 			cout << "File name: " << endl;

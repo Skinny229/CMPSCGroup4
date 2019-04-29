@@ -55,7 +55,6 @@ namespace SpaghettiLizards
 			newTail->link = NULL;
 			cursor->link = newTail;
 		}
-		cout << "Got Here";
 		count++;
 
 	}

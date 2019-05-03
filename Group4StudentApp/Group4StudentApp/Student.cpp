@@ -206,6 +206,8 @@ namespace SpaghettiLizards
 			cout << "FILE NOT OPEN!";
 			return false;
 		}
+	
+
 		string idString;
 		string mailStreetAddress;
 		string mailCity;
@@ -222,6 +224,8 @@ namespace SpaghettiLizards
 		string acceptedDate1;
 		string startSemester1;
 		string startSemesterYear1;
+		string inputString;
+		string courseNum;
 
 
 		//Ignore first line
@@ -260,9 +264,10 @@ namespace SpaghettiLizards
 
 			getline(inFile, email);
 		} while (email == "-");
+
 		do
 		{
-			if (birthDayString == "-")
+			if (courseNum == "-")
 			{
 				getline(inFile, email);
 			}
@@ -272,8 +277,43 @@ namespace SpaghettiLizards
 			Email newEmail(email, emailType);
 			addMail(newEmail);
 
+			getline(inFile, courseNum);
+		} while (inputString == "-");
+
+		do
+		{
+			Course c;
+
+			if (birthDayString == "-")
+			{
+				getline(inFile, courseNum);
+
+			}
+
+			c.setCourseNum(stoi(courseNum));
+
+			getline(inFile, inputString);
+
+			c.setCourseDef(inputString);
+
+			getline(inFile, inputString);
+
+			c.setSemesterTaken(inputString);
+
+			getline(inFile, inputString);
+
+			c.setCurrentStatus(inputString);
+
+			getline(inFile, inputString);
+
+			c.setLetterGrade(inputString);
+
+			courseList.push_back(c);
+
 			getline(inFile, birthDayString);
 		} while (birthDayString == "-");
+
+		
 		getline(inFile, birthMonthString);
 		getline(inFile, birthYearString);
 
@@ -296,6 +336,7 @@ namespace SpaghettiLizards
 		startSemester.setSemester(startSemester1, startSemesterYear1);
 
 		getline(inFile, status);
+
 
 		return true;
   }

@@ -19,7 +19,7 @@
 #include <string>
 
 
-#define FILE_PATH "C:/dev/cmpscgroup4/Group4StudentApp/Group4StudentApp/StuData.txt"
+#define FILE_PATH "C:/github/CMPSCGroup4/Group4StudentApp/StuData.txt"
 
 using namespace SpaghettiLizards;
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;

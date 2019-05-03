@@ -1,5 +1,6 @@
 #include "Tester.h"
 #include "Student.h"
+#include "Course.h"
 #include <string>
 #include "LinkedList.h"
 #include "LinkedList.cpp"
@@ -65,35 +66,35 @@ namespace rlopez
 
 		case 1:
 		{
-			cout << "First Name: " << endl;
+			cout << "First Name: ";
 			cin.ignore(100, '\n');
 			getline(cin, firstName);
-			cout << "Middle Name: " << endl;
+			cout << "Middle Name: ";
 			getline(cin, middleName);
-			cout << "Last Name: " << endl;
+			cout << "Last Name: ";
 			getline(cin, lastName);
-			cout << "Id #: " << endl;
+			cout << "Id #: ";
 			cin >> id;
-			cout << "User Id: " << endl;
+			cout << "User Id: ";
 			cin.ignore(100, '\n');
 			getline(cin, userId);
 
 			do
 			{
-				cout << "Street address: " << endl;
+				cout << "Street address: ";
 				if (s == "+")
 				{
 					cin.ignore(100, '\n');
 				}
 
 				getline(cin, streetAddress);
-				cout << "City: " << endl;
+				cout << "City: ";
 				getline(cin, city);
-				cout << "State: " << endl;
+				cout << "State: ";
 				getline(cin, state);
-				cout << "Zip1: " << endl;
+				cout << "Zip1: ";
 				getline(cin, zip);
-				cout << "Permanent or local: " << endl;
+				cout << "Permanent or local: ";
 				getline(cin, permanentOrLocal);
 
 				newMailingAddress.setMailingAddress(streetAddress, city, state, zip, permanentOrLocal);
@@ -102,42 +103,42 @@ namespace rlopez
 				count++;
 
 
-				cout << "Type + to add another address: " << endl;
+				cout << "Type + to add another address: ";
 				cin >> s;
 				if (count >= 3 && s == "+")
 				{
-					cout << "Can only have 3 entries" << endl;
+					cout << "Can only have 3 entries";
 					s = " ";
 				}
 			} while (s == "+");
 
 			do
 			{
-				cout << "Email: " << endl;
+				cout << "Email: ";
 				cin.ignore(100, '\n');
 				getline(cin, mail1);
-				cout << "Mail type: " << endl;
+				cout << "Mail type: ";
 				getline(cin, mailType1);
 
 				newMail.setEmail(mail1, mailType1);
 
 				stu.addMail(newMail);
 
-				cout << "Type + to add another email: " << endl;
+				cout << "Type + to add another email: ";
 				cin >> s;
 				if (count >= 3 && s == "+")
 				{
-					cout << "Can only have 3 entries" << endl;
+					cout << "Can only have 3 entries";
 					s = " ";
 				}
 			} while (s == "+");
 
 			do
 			{
-				cout << "Phone Number: " << endl;
+				cout << "Phone Number: ";
 				cin.ignore(100, '\n');
 				getline(cin, phoneNumber1);
-				cout << "Phone Number type: " << endl;
+				cout << "Phone Number type: ";
 				getline(cin, numberType1);
 
 				newNum.setNumber(phoneNumber1);
@@ -145,38 +146,75 @@ namespace rlopez
 
 				stu.addPhoneNumber(newNum);
 
-				cout << "Type + to add another phone number: " << endl;
+				cout << "Type + to add another phone number: ";
 				cin >> s;
 				if (count >= 3 && s == "+")
 				{
-					cout << "Can only have 3 entries" << endl;
+					cout << "Can only have 3 entries";
 					s = " ";
 				}
 			} while (s == "+");
 
-			cout << "Birth Date(year): " << endl;
+			LinkedList<Course> courses = stu.getCourseList();
+			do
+			{
+				Course newCourse;
+
+				cout << "Course number: ";
+				cin >> input;
+
+				newCourse.setCourseNum(input);
+
+				cout << "Course definition: ";
+				cin.ignore(100, '\n');
+				getline(cin, inputString);
+
+				newCourse.setCourseDef(inputString);
+
+				cout << "Semester taken: ";
+				getline(cin, inputString);
+
+				newCourse.setSemesterTaken(inputString);
+
+				cout << "Current status: ";
+				getline(cin, inputString);
+
+				newCourse.setCurrentStatus(inputString);
+
+				cout << "Letter grade: ";
+				getline(cin, inputString);
+
+				newCourse.setLetterGrade(inputString);
+
+				courses.push_back(newCourse);
+
+				cout << "Type + to add another course: ";
+				cin >> s;
+			} while (s == "+");
+
+			cout << "Birth Date(year): ";
 			cin >> birthYear;
-			cout << "Birth Date(month): " << endl;
+			cout << "Birth Date(month): ";
 			cin >> birthMonth;
-			cout << "Birth Date(day): " << endl;
+			cout << "Birth Date(day): ";
 			cin >> birthDay;
-			cout << "Acceptance Date(year): " << endl;
+			cout << "Acceptance Date(year): ";
 			cin >> acceptedYear;
-			cout << "Acceptance Date(month): " << endl;
+			cout << "Acceptance Date(month): ";
 			cin >> acceptedMonth;
-			cout << "Acceptance Date(day): " << endl;
+			cout << "Acceptance Date(day): ";
 			cin >> acceptedDay;
 
-			cout << "Intended Major: " << endl;
+			cout << "Intended Major: ";
 			cin.ignore(100, '\n');
 			getline(cin, intendedMajor);
-			cout << "Intended Minor: " << endl;
+			cout << "Intended Minor: ";
 			getline(cin, intendedMinor);
-			cout << "Starting Semester(Spring or Fall): " << endl;
+			cout << "Starting Semester(Spring or Fall): ";
 			getline(cin, startSemester1);
-			cout << "Starting year: " << endl;
+			cout << "Starting year: ";
 			getline(cin, startSemesterYear1);
-			cout << "Status(Enrolled, not enrolled, etc): " << endl;
+			cout << "Status(Enrolled, not enrolled, etc): ";
 			getline(cin, status);
 
 			stu.setFirstName(firstName);
@@ -422,7 +460,32 @@ namespace rlopez
 						cin >> input;
 					} while (input < 1 || input > courseSize);
 
+					//did i do this right?
+					cout << "Course number: ";
+					cin >> input;
 
+					courses.at(input - 1).setCourseNum(input);
+
+					cout << "Course definition: ";
+					cin.ignore(100, '\n');
+					getline(cin, inputString);
+
+					courses.at(input - 1).setCourseDef(inputString);
+
+					cout << "Semester taken: ";
+					getline(cin, inputString);
+
+					courses.at(input - 1).setSemesterTaken(inputString);
+
+					cout << "Current status: ";
+					getline(cin, inputString);
+
+					courses.at(input - 1).setCurrentStatus(inputString);
+
+					cout << "Letter grade: ";
+					getline(cin, inputString);
+
+					courses.at(input - 1).setLetterGrade(inputString);
 
 				}
 					break;

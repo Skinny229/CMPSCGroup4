@@ -23,6 +23,7 @@ namespace SpaghettiLizards
 		LinkedList();
 		ListType at(size_t);
 		void erase(size_t);
+		void replace(size_t, ListType&);
 		void push_back(ListType&);
 		size_t size();
 		bool empty();

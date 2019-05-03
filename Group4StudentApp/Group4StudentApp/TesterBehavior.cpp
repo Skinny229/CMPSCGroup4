@@ -61,6 +61,7 @@ namespace rlopez
 		string inputString;
 		int input;
 		int choice;
+		int stuElement;
 		switch (sel)
 		{
 
@@ -276,9 +277,11 @@ namespace rlopez
 				} while (input < 1 || input > studentList.size());
 
 				studentList.at(input - 1).printAllStuValues(cout);
+				stuElement = input - 1;
 				stu = studentList.at(input - 1);
 				choice = 0;
 			}
+			stuElement = input - 1;
 			while (choice < 13)
 			{
 				cout << "Select the data you want to edit: " << endl
@@ -309,9 +312,9 @@ namespace rlopez
 					getline(cin, lastName);
 
 					//Need to use studentList.at(input - 1) for some reason because stu not working
-					studentList.at(input - 1).setFirstName(firstName);
-					studentList.at(input - 1).setMiddleName(middleName);
-					studentList.at(input - 1).setLastName(lastName);
+					stu.setFirstName(firstName);
+					stu.setMiddleName(middleName);
+					stu.setLastName(lastName);
 					break;
 				case 2:
 					cout << "Id #: " << endl;
@@ -324,13 +327,13 @@ namespace rlopez
 					cin.ignore(100, '\n');
 					getline(cin, userId);
 
-					studentList.at(input - 1).setUserId(userId);
+					stu.setUserId(userId);
 					break;
 				case 4:
 					cout << "Which address would you like to edit?" << endl;
-					for (int i = 0; i < studentList.at(input - 1).getUsedAddress(); i++)
+					for (int i = 0; i < stu.getUsedAddress(); i++)
 					{
-						cout << i + 1 << ") " << studentList.at(input - 1).getAddress(i).getStreetAddress() << endl;
+						cout << i + 1 << ") " << stu.getAddress(i).getStreetAddress() << endl;
 					}
 					cin >> choice;
 
@@ -347,7 +350,7 @@ namespace rlopez
 					getline(cin, permanentOrLocal);
 
 					newMailingAddress.setMailingAddress(streetAddress, city, state, zip, permanentOrLocal);
-					studentList.at(input - 1).editAddress(choice - 1, newMailingAddress);
+					stu.editAddress(choice - 1, newMailingAddress);
 					break;
 				case 5:
 					cout << "Which Email would you like to edit?" << endl;
@@ -365,7 +368,7 @@ namespace rlopez
 
 					newMail.setEmail(mail1, mailType1);
 
-					studentList.at(input - 1).editMail(choice - 1, newMail);
+					stu.editMail(choice - 1, newMail);
 					break;
 				case 6:
 					cout << "Which phone number would you like to edit?" << endl;
@@ -384,7 +387,7 @@ namespace rlopez
 					newNum.setNumber(phoneNumber1);
 					newNum.setNumberType(numberType1);
 
-					studentList.at(input - 1).editPhoneNumber(choice - 1, newNum);
+					stu.editPhoneNumber(choice - 1, newNum);
 					break;
 				case 7:
 					cout << "Birth Date(year): " << endl;
@@ -398,7 +401,7 @@ namespace rlopez
 					newBirthDate.setMonth(birthMonth);
 					newBirthDate.setYear(birthYear);
 
-					studentList.at(input - 1).setBirthDate(newBirthDate);
+					stu.setBirthDate(newBirthDate);
 
 					break;
 				case 8:
@@ -413,7 +416,7 @@ namespace rlopez
 					newAcceptedDate.setMonth(acceptedMonth);
 					newAcceptedDate.setYear(acceptedYear);
 
-					studentList.at(input - 1).setAcceptedDate(newAcceptedDate);
+					stu.setAcceptedDate(newAcceptedDate);
 					break;
 				case 9:
 					cout << "Intended Major: " << endl;
@@ -422,8 +425,8 @@ namespace rlopez
 					cout << "Intended Minor: " << endl;
 					getline(cin, intendedMinor);
 
-					studentList.at(input - 1).setIntendedMajor(intendedMajor);
-					studentList.at(input - 1).setIntendedMinor(intendedMinor);
+					stu.setIntendedMajor(intendedMajor);
+					stu.setIntendedMinor(intendedMinor);
 					break;
 				case 10:
 					cout << "Starting Semester(Spring or Fall): " << endl;
@@ -434,13 +437,13 @@ namespace rlopez
 					newSem.setSpringOrFall(startSemester1);
 					newSem.setYear(startSemesterYear1);
 
-					studentList.at(input - 1).setStartSemester(newSem);
+					stu.setStartSemester(newSem);
 					break;
 				case 11:
 					cout << "Status(Enrolled, not enrolled, etc): " << endl;
 					getline(cin, status);
 
-					studentList.at(input - 1).setStatus(status);
+					stu.setStatus(status);
 					break;
 				case 12:
 				{
@@ -451,6 +454,7 @@ namespace rlopez
 						cout << "No Courses Exist for this student! Exiting...";
 						break;
 					}
+					Course cSelected;
 					cout << "Select a course:\n";
 					for (size_t i = 0; i < courseSize; i++)
 						cout << i + 1 << ") " << courses.at(i).getCourseNum() << " " << courses.at(i).getCourseDef() << endl;
@@ -460,38 +464,84 @@ namespace rlopez
 						cin >> input;
 					} while (input < 1 || input > courseSize);
 
-					//did i do this right?
-					cout << "Course number: ";
+					int courseElement = input - 1;
+					cSelected = courses.at(courseElement);
+
+
+					cout << "Do you want to edit:\n1.Course Number\n2.Course Name\n3.Semester Taken\n4.Status\n5.Grade\n6.All";
+					cout << "\nSelection: ";
 					cin >> input;
 
-					courses.at(input - 1).setCourseNum(input);
+					switch (input) 
+					{
+					case 1: {
+						cout << "Course number: ";
+						cin >> input;
+						cSelected.setCourseNum(input);
+						}
+							break;
+					case 2: {
+						cout << "Course definition: ";
+						cin.ignore(100, '\n');
+						getline(cin, inputString);
+					}
+							break;
+					case 3: {
+						cout << "Semester taken: ";
+						getline(cin, inputString);
 
-					cout << "Course definition: ";
-					cin.ignore(100, '\n');
-					getline(cin, inputString);
+						cSelected.setSemesterTaken(inputString); }
+							break;
+					case 4: {
+						cout << "Current status: ";
+						getline(cin, inputString);
 
-					courses.at(input - 1).setCourseDef(inputString);
+						cSelected.setCurrentStatus(inputString);
+					}break;
+					case 5: {
+						cout << "Letter grade: ";
+						getline(cin, inputString);
 
-					cout << "Semester taken: ";
-					getline(cin, inputString);
+						cSelected.setLetterGrade(inputString); 
+					}break;
+					case 6: {
+						cout << "Course number: ";
+						cin >> input;
 
-					courses.at(input - 1).setSemesterTaken(inputString);
+						cSelected.setCourseNum(input);
 
-					cout << "Current status: ";
-					getline(cin, inputString);
+						cout << "Course definition: ";
+						cin.ignore(100, '\n');
+						getline(cin, inputString);
 
-					courses.at(input - 1).setCurrentStatus(inputString);
+						cSelected.setCourseDef(inputString);
 
-					cout << "Letter grade: ";
-					getline(cin, inputString);
+						cout << "Semester taken: ";
+						getline(cin, inputString);
 
-					courses.at(input - 1).setLetterGrade(inputString);
+						cSelected.setSemesterTaken(inputString);
+
+						cout << "Current status: ";
+						getline(cin, inputString);
+
+						cSelected.setCurrentStatus(inputString);
+
+						cout << "Letter grade: ";
+						getline(cin, inputString);
+
+						cSelected.setLetterGrade(inputString);
+					}break;
+					}
+
+					courses.replace(courseElement,cSelected);
+
 
 				}
 					break;
 				case 13:
 					break;
 				}
+				studentList.replace(stuElement, stu);
 			}
 		}
 		break;

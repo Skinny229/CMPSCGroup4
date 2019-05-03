@@ -78,6 +78,25 @@ namespace SpaghettiLizards
 		}
 		return item->data;
 	}
+	
+	template<class ListType>
+	void LinkedList<ListType>::replace(size_t elem, ListType& entry) 
+	{
+		Node* item = NULL;
+		size_t loopCounter = 0;
+
+		for (Node* cursor = head_ptr; loopCounter <= elem && cursor != NULL; cursor = cursor->link)
+		{
+			if (elem == loopCounter)
+			{
+				item = cursor;
+				break;
+			}
+			loopCounter++;
+
+		}
+		item->data = entry;
+	}
 
 	template<class ListType>
 	void LinkedList<ListType>::erase(size_t elem)

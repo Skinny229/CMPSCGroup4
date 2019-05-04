@@ -367,8 +367,11 @@ namespace SpaghettiLizards
 		out << "Birth Day: "<< birthDate.getMonth() << "/" << birthDate.getDay() << "/" << birthDate.getYear() << "\nAcceptance Date: " << acceptedDate.getMonth() << "/"
 			<< acceptedDate.getDay() << "/" << acceptedDate.getYear() << "\nIntended Major: " << intendedMajor << "\nIntended Minor: " << intendedMinor << "\nStarting Semester: "
 			<< startSemester.getSpringOrFall() << " " << startSemester.getYear() <<  "\nStatus: " << status << endl;
-
-		for (size_t i = 0; i < courseList.size(); i++)
-			courseList.at(i).print(cout);
+		out << "~~Courses~~\n";
+		for (size_t i = 0; i < courseList.size(); i++) {
+			out << "---------Course " << i + 1 << "------------\n";
+			courseList.at(i).print(out);
+			out << "-----------------------------\n";
+		}
 	}
 }

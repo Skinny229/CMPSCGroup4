@@ -243,7 +243,7 @@ namespace rlopez
 			newSem.setYear(startSemesterYear1);
 
 			stu.setStartSemester(newSem);
-
+			stu.setCourseList(courses);
 			studentList.push_back(stu);
 		}
 			break;

@@ -48,7 +48,7 @@ namespace SpaghettiLizards
 		//Semester
 		Semester startSemester;
 
-		LinkedList<Course> &courseList;
+		LinkedList<Course> courseList;
 
 	public:
 		/*
@@ -117,7 +117,9 @@ namespace SpaghettiLizards
 
 		PhoneNumber getPhoneNumber(int x) const;
 
-		LinkedList<Course>& getCourseList() const;
+		LinkedList<Course> getCourseList() const;
+
+		void setCourseList(LinkedList<Course>);
 
 		void addAddress(MailingAddress address);
 

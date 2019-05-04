@@ -109,12 +109,18 @@ namespace SpaghettiLizards
 		return phoneNumber[x];
 	}
 
-	LinkedList<Course>& Student::getCourseList() const 
+	LinkedList<Course> Student::getCourseList() const 
 	{
 		return courseList;
 	}
   
-  
+
+
+	void Student::setCourseList(LinkedList<Course> newC)
+	{
+		courseList = newC;
+	}
+
   	void Student::setId(int idl)
 
 	{

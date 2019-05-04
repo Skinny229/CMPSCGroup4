@@ -642,8 +642,9 @@ namespace rlopez
 
 		case 8:
 		{
-			cout << "Please type in the major: ";
-			cin >> inputString;
+			cout << "Please type in the major: \n";
+			cin.ignore(100, '\n');
+			getline(cin, inputString);
 			cout << "----------------\n";
 			for (size_t i = 0; i < studentList.size(); i++)
 				if (studentList.at(i).getIntendedMajor() == inputString) {
@@ -655,8 +656,9 @@ namespace rlopez
 		break;
 		case 9:
 		{
-			cout << "Please type in the minor: ";
-			cin >> inputString;
+			cout << "Please type in the minor: \n";
+			cin.ignore(100, '\n');
+			getline(cin, inputString);
 			cout << "----------------\n";
 			for (size_t i = 0; i < studentList.size(); i++)
 				if (studentList.at(i).getIntendedMinor() == inputString) {
@@ -668,8 +670,9 @@ namespace rlopez
 		break;
 		case 10:
 		{
-			cout << "Please type in the status: ";
-			cin >> inputString;
+			cout << "Please type in the status: \n";
+			cin.ignore(100, '\n');
+			getline(cin, inputString);
 			cout << "----------------\n";
 			for (size_t i = 0; i < studentList.size(); i++)
 				if (studentList.at(i).getStatus() == inputString) {
